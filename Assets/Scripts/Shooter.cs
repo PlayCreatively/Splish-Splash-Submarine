@@ -19,7 +19,8 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        //TryShoot();
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            TryShoot();
     }
 
     public void TryShoot()
