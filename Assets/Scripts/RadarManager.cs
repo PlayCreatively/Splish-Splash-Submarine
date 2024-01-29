@@ -17,34 +17,33 @@ public class RadarManager : MonoBehaviour
             settings => scanTimer = new(settings.scanSpeed);
 
         pool = new(() => Instantiate(blipPrefab, transform), (isSpawning, blip) => blip.gameObject.SetActive(isSpawning));
-        StartCoroutine(ScanRoutine());
+        scanTimer = new(GlobalSettings.Current.radar.scanSpeed);
+
     }
 
-    IEnumerator ScanRoutine()
+    void Update()
     {
-        scanTimer = new(GlobalSettings.Current.radar.scanSpeed);
-        while (true)
+        if(!scanTimer)
         {
-            while(!scanTimer)
-            {
-                foreach (BlipTag blipTag in blipsTags)
-                    if (!blipTag.hasPingedThisScan
-                        && CalculatePos(blipTag.transform.position) < scanTimer)
-                    {
-                        blipTag.hasPingedThisScan = true;
-                        StartCoroutine(BlipRoutine(blipTag.transform.position));
-                    }
-                
-                float theta = scanTimer * Mathf.PI;
-                Debug.DrawRay(transform.position, -new Vector3(Mathf.Cos(-theta), Mathf.Sin(-theta)) * 100);
-                yield return null;
-            }
+            foreach (BlipTag blipTag in blipsTags)
+                if (!blipTag.hasPingedThisScan
+                    && CalculatePos(blipTag.transform.position) < scanTimer)
+                {
+                    blipTag.hasPingedThisScan = true;
+                    StartCoroutine(BlipRoutine(blipTag.transform.position));
+                }
 
+            float angle = 180 + -(scanTimer * 180);
+            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, angle);
+        }
+        else
+        {
             foreach (BlipTag blipTag in blipsTags)
                 blipTag.hasPingedThisScan = false;
 
             scanTimer.Offset(GlobalSettings.Current.radar.scanSpeed);
         }
+
     }
 
     // Tells the angle of the object relative to the radar, from 0 to 1.

@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class MovePattern : MonoBehaviour
 {
     [Min(0)]
     public float magnitude, frequency;
