@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour {
@@ -22,7 +23,13 @@ public class Spawn : MonoBehaviour {
             // Pauses the execution of the function for a given amount of seconds
             yield return new WaitForSeconds(spawnFrequency);
 
-            spawnedObject = Instantiate(objectToBeSpawned, randomPosition, transform.rotation);
+            spawnedObject = Instantiate(objectToBeSpawned, transform.position + randomPosition, transform.rotation);
         }
+    }
+
+    void OnDrawGizmosSelected ()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(bounds.x * 2, bounds.y * 2, 1));
     }
 }

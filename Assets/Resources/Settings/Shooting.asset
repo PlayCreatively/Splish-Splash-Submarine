@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2391724cc55095543a4e87e8796a8c4a, type: 3}
   m_Name: Shooting
   m_EditorClassIdentifier: 
-  shootRate: 1
+  shootRate: 0.1
   bulletSpeed: 10
