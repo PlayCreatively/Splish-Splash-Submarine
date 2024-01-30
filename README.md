@@ -9,4 +9,4 @@ It's important to have a window of the GlobalSettings open on a side panel in or
 1. Go into the folder "/Resources/Settings"
 2. Right click on the GlobalSettings file.
 3. Select "Properties..."
-![How to set up a settings window](Settings Window Setup.png)
+![How to set up a settings window](settings_window_setup.png)
