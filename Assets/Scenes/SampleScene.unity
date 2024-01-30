@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToBeSpawned: {fileID: 2354896243213820597, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
   bounds: {x: 6.25, y: 0}
-  spawnFrequency: 1
+  spawnFrequency: 2
 --- !u!4 &888197804
 Transform:
   m_ObjectHideFlags: 0
