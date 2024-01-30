@@ -5,16 +5,14 @@ using UnityEngine;
 public class Spawn : MonoBehaviour {
 
     public GameObject objectToBeSpawned;
-    private GameObject spawnedObject;
     public Vector2 bounds;
-    public int numberOfObjects = 1;
 
     // Spawn frequency in seconds
     public float spawnFrequency = 1f; 
 
     IEnumerator Start()
     {
-        for (int i = 0; i < numberOfObjects; i++)
+        while (true)
         {
             float x = Random.Range(-bounds.x, bounds.x);
             float y = Random.Range(-bounds.y, bounds.y);
@@ -23,7 +21,7 @@ public class Spawn : MonoBehaviour {
             // Pauses the execution of the function for a given amount of seconds
             yield return new WaitForSeconds(spawnFrequency);
 
-            spawnedObject = Instantiate(objectToBeSpawned, transform.position + randomPosition, transform.rotation);
+            Instantiate(objectToBeSpawned, transform.position + randomPosition, transform.rotation);
         }
     }
 
