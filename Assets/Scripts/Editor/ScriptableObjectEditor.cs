@@ -31,4 +31,10 @@ public class ScriptableObjectEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
+
+    [MenuItem("Game Settings/Open Global Settings")]
+    public static void OpenGlobalSettings()
+    {
+        EditorUtility.OpenPropertyEditor(GlobalSettings.Get);
+    }
 }
