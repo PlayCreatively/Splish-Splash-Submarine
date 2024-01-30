@@ -34,5 +34,8 @@ public class Shooter : MonoBehaviour
         shootRate.Restart();
         Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
+
+        float secondsTillOutOfBounds = Camera.main.orthographicSize * 2 / GlobalSettings.Current.shooting.bulletSpeed;
+        Destroy(bullet.gameObject, secondsTillOutOfBounds);
     }
 }

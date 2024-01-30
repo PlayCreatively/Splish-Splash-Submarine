@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3437160882287875938}
   - component: {fileID: -3337147371083921150}
   - component: {fileID: -6367785008498593884}
+  - component: {fileID: -3038345545940189533}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -162,3 +163,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &-3038345545940189533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410905997255611698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9a5949116122b4498c0c4041456215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -3038345545940189533}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
