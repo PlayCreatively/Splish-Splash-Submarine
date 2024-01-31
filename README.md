@@ -3,22 +3,22 @@
 
 # GlobalSettings
 - PLAYER
-	-- HP
-	-- movement speed
+	- HP
+	- movement speed
 - ENEMY
-	-- HP
-	-- spawning frequency
-	-- falling speed
-	-- movement speed
+	- HP
+	- spawning frequency
+	- falling speed
+	- movement speed
 - SCREEN
-	-- visible ratio (20/80)
+	- visible ratio (20/80)
 - RADAR
-	-- scan frequency
-	-- blip duration
+	- scan frequency
+	- blip duration
 - BULLET
-	-- bullet speed
-	-- shoot frequency
-	-- reload speed
+	- bullet speed
+	- shoot frequency
+	- reload speed
 
 
 (TODO: explain GlobalSettings)
