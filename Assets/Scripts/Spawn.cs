@@ -2,7 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour {
+public class Spawner : MonoBehaviour {
 
     public GameObject objectToBeSpawned;
     public Vector2 bounds;
