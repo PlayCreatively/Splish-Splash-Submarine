@@ -5,11 +5,14 @@
 - PLAYER
 	- HP
 	- movement speed
-- ENEMY
-	- HP
+- SPAWNER
 	- spawning frequency
-	- falling speed
-	- movement speed
+	- spawns[]
+		- prefab (enemy)
+			- HP
+			- falling speed
+			- movement speed
+		- likelyhood
 - SCREEN
 	- visible ratio (20/80)
 - RADAR
