@@ -16,11 +16,6 @@ public class GlobalSettings : ScriptableObject
     public GameSettings _current;
 
 #if UNITY_EDITOR
-    [UnityEditor.MenuItem("Tools/Settings")]
-    public static void OpenSettings()
-    {
-        UnityEditor.Selection.activeObject = Get;
-    }
 
     static GlobalSettings LoadGameSettings()
     {
@@ -45,6 +40,8 @@ public class GlobalSettings : ScriptableObject
 public class SettingsBase<T> : ScriptableObject where T : SettingsBase<T>
 {
     public Action<T> onValidate;
+
+    public const string Path = "Setting Objects/";
 
     void OnValidate()
     {

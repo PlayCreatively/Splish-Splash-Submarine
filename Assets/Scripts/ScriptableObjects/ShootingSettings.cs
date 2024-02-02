@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ShootingSettings", menuName = "Setting Objects/ShootingSettings", order = 0)]
+[CreateAssetMenu(fileName = "NewShootingSettings", menuName = Path + nameof(ShootingSettings), order = 0)]
 public class ShootingSettings : SettingsBase<ShootingSettings>
 {
     [Min(.1f)]

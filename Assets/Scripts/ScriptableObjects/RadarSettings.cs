@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RadarSettings", menuName = "Setting Objects/RadarSettings", order = 0)]
+[CreateAssetMenu(fileName = "RadarSettings", menuName = Path + nameof(RadarSettings), order = 0)]
 public class RadarSettings : SettingsBase<RadarSettings>
 {
     [Tooltip("How long it takes to do a scan."), Min(.01f)]
