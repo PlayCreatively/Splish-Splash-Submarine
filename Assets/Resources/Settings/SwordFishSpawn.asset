@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53eb01c8a6b9a274a94a751b854c4ec9, type: 3}
   m_Name: SwordFishSpawn
   m_EditorClassIdentifier: 
-  prefab: {fileID: 116118384887328986, guid: cf93102d1e7c9144e929ddaf8a3e8b42, type: 3}
+  prefab: {fileID: 116118384887328986, guid: 1b0203c00bc964e4295abd2b1ada337b, type: 3}
   likelyhood: 1
