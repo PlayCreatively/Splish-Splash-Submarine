@@ -5,36 +5,40 @@ using UnityEditor;
 [CustomEditor(typeof(ScriptableObject), true)]
 public class ScriptableObjectEditor : Editor
 {
-    public override void OnInspectorGUI() => DrawScriptableObject(serializedObject);
-
-    void DrawScriptableObject(SerializedObject serializedObject)
+    public override void OnInspectorGUI()
     {
-        EditorGUI.indentLevel++;
+        if (serializedObject == null)
+            return;
 
-        SerializedProperty serializedProperty = serializedObject.GetIterator();
-        serializedProperty.NextVisible(true);
+        DrawPropertiesExcluding(serializedObject, "m_Script");
 
-        while (serializedProperty.NextVisible(false))
-            if (serializedProperty.name == "m_Script")
-                continue;
-            else if (serializedProperty.propertyType == SerializedPropertyType.ObjectReference
-                && serializedProperty.objectReferenceValue != null)
-            {
-                EditorGUILayout.PropertyField(serializedProperty, true);
-
-                DrawScriptableObject(new(serializedProperty.objectReferenceValue));
-            }
-            else
-                EditorGUILayout.PropertyField(serializedProperty, true);
-
-        EditorGUI.indentLevel--;
-
+        if (GUI.changed)
+            EditorUtility.SetDirty(target);
         serializedObject.ApplyModifiedProperties();
+        serializedObject.Update();
+
+        EditorGUILayout.Separator();
     }
 
     [MenuItem("Game Settings/Open Global Settings")]
     public static void OpenGlobalSettings()
     {
         EditorUtility.OpenPropertyEditor(GlobalSettings.Get);
+    }
+}
+
+[CustomPropertyDrawer(typeof(ScriptableObject), true)]
+public class ScriptableObjectPropertyDrawer : PropertyDrawer
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EditorGUI.PropertyField(position, property, label, true);
+
+        if(property.objectReferenceValue != null)
+            Editor.CreateEditor(property.objectReferenceValue).OnInspectorGUI();
+
+        property.serializedObject.ApplyModifiedProperties();
+        property.serializedObject.Update();
+
     }
 }
