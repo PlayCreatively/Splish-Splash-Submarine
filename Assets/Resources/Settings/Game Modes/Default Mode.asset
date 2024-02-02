@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radar: {fileID: 11400000, guid: d92868d8634d99d4c94cafc413d5d54d, type: 2}
   shooting: {fileID: 11400000, guid: e024f60edda3e62419f34fde120e9539, type: 2}
+  spawnerSettings: {fileID: 11400000, guid: 8896845e6aa180d409de4be61d89c104, type: 2}

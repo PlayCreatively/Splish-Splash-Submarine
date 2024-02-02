@@ -7,4 +7,5 @@ public class GameSettings : ScriptableObject
 {
     public RadarSettings radar;
     public ShootingSettings shooting;
+    public SpawnerSettings spawnerSettings;
 }

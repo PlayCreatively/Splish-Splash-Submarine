@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6585968043249575150}
   - component: {fileID: 8795461465402419875}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: Base Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e094f80e34b8479588332b5b0cb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: -0.54}
+  direction: {x: 0, y: -0.82}
 --- !u!1 &4982864365773053542
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +99,9 @@ MonoBehaviour:
   health: 1
   onHit:
     m_PersistentCalls:
+      m_Calls: []
+  onDeath:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6450635838576119394}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
@@ -112,9 +115,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1321559030055773552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnitude: 2
   frequency: 2.36
-  magnitudeRatio: 0.5
+  magnitudeRatio: 1
   frequencyRatio: 0.5
   phaseOffset: 0.5
   linearX: 0
