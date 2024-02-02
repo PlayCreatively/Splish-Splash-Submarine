@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53eb01c8a6b9a274a94a751b854c4ec9, type: 3}
-  m_Name: SwordFishSpawn
+  m_Name: Blob Combo
   m_EditorClassIdentifier: 
-  prefab: {fileID: 116118384887328986, guid: 1b0203c00bc964e4295abd2b1ada337b, type: 3}
-  likelyhood: 2
+  prefab: {fileID: 7660283849795247139, guid: 0ad031005d9298a458ea0496ddfbc508, type: 3}
+  likelyhood: 0.5
