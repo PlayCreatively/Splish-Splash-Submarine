@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5000415510143848852}
   - component: {fileID: -9005332442590464263}
   - component: {fileID: 5233082360892069433}
-  - component: {fileID: 5928373895144062642}
+  - component: {fileID: 8481216232265901810}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Untagged
@@ -179,8 +179,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &5928373895144062642
-PolygonCollider2D:
+--- !u!58 &8481216232265901810
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -212,18 +212,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Radius: 0.25
