@@ -4,28 +4,27 @@
 
 # GlobalSettings
 
-- PLAYER
-  - HP
-  - movement speed
 - SPAWNER
   - spawning frequency
-  - spawns[]
+  - spawns[ ]
     - prefab (enemy)
       - HP
       - falling speed
       - movement speed
     - likelyhood
-- SCREEN
-  - visible ratio (20/80)
 - RADAR
   - scan frequency
   - blip duration
-- BULLET
+- SHOOTING
   - bullet speed
-  - shoot frequency
-  - reload speed
-
-(TODO: explain GlobalSettings)
+  - reload time
+<s>
+- PLAYER
+  - HP
+  - movement speed
+- SCREEN
+  - visible ratio (20/80)
+</s>
 
 It's important to have a window of the GlobalSettings open on a side panel in order to change the fundemental game settings during testing for quick and iterative game design.
 
@@ -40,12 +39,12 @@ It's important to have a window of the GlobalSettings open on a side panel in or
 1. Right click inside the `Assets/Resources/Settings` folder.
 2. select `Create/Setting Objects/` and what settings you want to create.
 
-You can also simply dublicate a setting by selecting the file and pressing `ctrl+d`.
+You can also simply dublicate a setting by selecting the file and pressing `ctrl+D`.
 
 `GameSettings` is the top most setting that contains all the other settings. Treat it like a setting for creating unique game modes by combining different settings to create a unique experience. Then call it something memorable like "Slow & Deliberate".
 
 ## Saving
 
-Though changes to the settings are registered in-game, they don't change on git until you explicitly save them using `ctrl+s` in the editor.
+NB! Though changes to the settings are registered in-game, they don't change on git until you explicitly save them using `ctrl+S` in the editor.
 
-When iterating over different values, make sure that you push the changes you want and `Discard` or `Revert` changes you don't want to push.
+When iterating over different values, make sure that you push the changes you want on git and `Discard` or `Revert` changes you don't want to push.
