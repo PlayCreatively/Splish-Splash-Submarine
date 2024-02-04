@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eb01c8a6b9a274a94a751b854c4ec9, type: 3}
+  m_Name: Blob Combo
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7660283849795247139, guid: 0ad031005d9298a458ea0496ddfbc508, type: 3}
+  likelyhood: 0.5
