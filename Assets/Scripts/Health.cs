@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
     {
         // If the other object has a Damage component
         // use a copy of that component to get the damage value
-        if (collision.TryGetComponent(out Damage damageComponent))
+        if ((collision.attachedRigidbody != null ? collision.attachedRigidbody as Component : collision).TryGetComponent(out Damage damageComponent))
         {
             health -= damageComponent.damage;
             onHit?.Invoke();
