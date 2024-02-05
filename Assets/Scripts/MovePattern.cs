@@ -7,6 +7,8 @@ public class MovePattern : MonoBehaviour
     public float magnitude, frequency;
     [Range(0, 1)]
     public float magnitudeRatio, frequencyRatio;
+    [Min(0)]
+    public float timingOffset;
     [Range(-.5f, .5f)]
     public float phaseOffset;
     [Header("Linear Interpolation\nOFF: circle, ON: linear")]
@@ -14,10 +16,16 @@ public class MovePattern : MonoBehaviour
 
     [Header("Gizmos\nPreview line length")]
     [SerializeField] float lineLength = Mathf.PI * 2;
+    float spawnTime;
+
+    void Start()
+    {
+        spawnTime = Time.time;
+    }
 
     void Update()
     {
-        float x = Time.time * frequency;
+        float x = (Time.time - spawnTime + timingOffset) * frequency;
         transform.localPosition = Evaluate(x);
     }
 

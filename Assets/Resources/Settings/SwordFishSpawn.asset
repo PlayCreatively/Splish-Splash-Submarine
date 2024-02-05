@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SwordFishSpawn
   m_EditorClassIdentifier: 
   prefab: {fileID: 116118384887328986, guid: 1b0203c00bc964e4295abd2b1ada337b, type: 3}
-  likelyhood: 1
+  likelyhood: 2
