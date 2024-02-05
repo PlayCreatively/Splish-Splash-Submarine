@@ -22,8 +22,9 @@ public class PlayerMovement : MonoBehaviour
         if (input == 0)
             return;
 
-        float x = transform.position.x + input * Time.deltaTime * 5;
-        x = Mathf.Clamp(x, -moveArea, moveArea);
-        transform.position = x * Vector3.right;
+        var temp = transform.position;
+        temp.x = transform.position.x + input * Time.deltaTime * 5;
+        temp.x = Mathf.Clamp(temp.x, -moveArea, moveArea);
+        transform.position = temp;
     }
 }
