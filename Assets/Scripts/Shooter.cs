@@ -19,8 +19,8 @@ public class Shooter : MonoBehaviour
         GlobalSettings.Current.shooting.onValidate += 
             (shooting) => shootRate.Start(shooting.shootRate);
 
-        onReloaded.AddListener(() => GetComponent<SpriteRenderer>().color = new Color(1, .6f, .6f));
-        onShot.AddListener(() => GetComponent<SpriteRenderer>().color = Color.white);
+        onReloaded.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = new Color(1, .6f, .6f));
+        onShot.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
     }
 
     private void Update()
@@ -46,7 +46,7 @@ public class Shooter : MonoBehaviour
         canShoot = false;
         shootRate.Restart();
         onShot.Invoke();
-        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, .5f), Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
 
         float secondsTillOutOfBounds = Camera.main.orthographicSize * 2 / GlobalSettings.Current.shooting.bulletSpeed;
