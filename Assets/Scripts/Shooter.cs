@@ -37,7 +37,7 @@ public class Shooter : MonoBehaviour
                 return;
         }
 
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.Space))
             Shoot();
     }
 
