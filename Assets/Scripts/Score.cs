@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        GetComponent<Text>().text = ((int)score).ToString();
+        this.GetComponent<Text>().text = ((int)score).ToString();
         score += Time.deltaTime;
     }
 }
