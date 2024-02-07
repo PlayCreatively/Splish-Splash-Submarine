@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8fd6d2455593924ababbe66cfd0a3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnWidth: 6.25
+  spawnWidth: 5
 --- !u!1 &960363029
 GameObject:
   m_ObjectHideFlags: 0
