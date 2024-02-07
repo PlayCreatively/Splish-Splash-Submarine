@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //TODO: make property that tells makes it not be able uneditable during runtime
 [CreateAssetMenu(fileName = "New" + nameof(SpawnerSettings), menuName = Path + nameof(SpawnerSettings), order = 0)]
@@ -20,6 +21,8 @@ public class SpawnerSettings : SettingsBase<SpawnerSettings>
         foreach (SpawnItem spawn in spawns)
             if(spawn != null)
                 likelyhoodSum += spawn.likelyhood;
+
+        SceneManager.sceneLoaded += (scene, mode) => timer.Restart();
     }
 
     public bool TrySpawn(out SpawnItem spawnItem)
