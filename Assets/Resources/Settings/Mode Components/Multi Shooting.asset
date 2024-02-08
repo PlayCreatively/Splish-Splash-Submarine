@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2391724cc55095543a4e87e8796a8c4a, type: 3}
-  m_Name: Shooting
+  m_Name: Multi Shooting
   m_EditorClassIdentifier: 
   reloadTime: 6
   bulletSpeed: 12
