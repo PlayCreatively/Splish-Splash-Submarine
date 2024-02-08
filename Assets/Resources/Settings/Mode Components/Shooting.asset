@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2391724cc55095543a4e87e8796a8c4a, type: 3}
   m_Name: Shooting
   m_EditorClassIdentifier: 
-  shootRate: 4
+  reloadTime: 6
   bulletSpeed: 12
+  magSize: 3
