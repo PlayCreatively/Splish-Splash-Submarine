@@ -7,10 +7,12 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D bulletPrefab;
-    public UnityEvent onReloaded, onShot;
+    public UnityEvent onReloaded, onEmptyMag, onShot;
+    public int magSize = 3;
 
     Timer shootRate;
     bool canShoot = false;
+    int bulletsInMag;
 
     private void Awake()
     {
@@ -20,7 +22,7 @@ public class Shooter : MonoBehaviour
             (shooting) => shootRate.Start(shooting.shootRate);
 
         onReloaded.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = new Color(1, .6f, .6f));
-        onShot.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
+        onEmptyMag.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
     }
 
     private void Update()
@@ -30,6 +32,7 @@ public class Shooter : MonoBehaviour
         {
             if (shootRate)
             {
+                bulletsInMag = magSize;
                 canShoot = true;
                 onReloaded.Invoke();
             }
@@ -37,15 +40,19 @@ public class Shooter : MonoBehaviour
                 return;
         }
 
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Shoot();
     }
 
     void Shoot()
     {
-        canShoot = false;
-        shootRate.Restart();
-        onShot.Invoke();
+        bulletsInMag--;
+        if (bulletsInMag == 0)
+        {
+            canShoot = false;
+            onEmptyMag.Invoke();
+            shootRate.Restart();
+        }
         Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, .5f), Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
 
