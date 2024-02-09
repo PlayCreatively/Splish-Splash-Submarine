@@ -1212,12 +1212,12 @@ GameObject:
   - component: {fileID: 1686742336}
   - component: {fileID: 1686742335}
   m_Layer: 0
-  m_Name: Game Mod
+  m_Name: Game Mode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686742334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1234,8 +1234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 61.4, y: 29.2401}
+  m_AnchoredPosition: {x: -0.0000066757, y: 0}
+  m_SizeDelta: {x: 90, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1686742335
 MonoBehaviour:
@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686742333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1271,11 +1271,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9874690e20fc96b4fb2e492aef7ac01a, type: 3}
-    m_FontSize: 47
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 5
-    m_MaxSize: 47
+    m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 0
