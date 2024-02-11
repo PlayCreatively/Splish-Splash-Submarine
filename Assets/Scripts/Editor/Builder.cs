@@ -35,11 +35,11 @@ class Builder
         if (SystemInfo.operatingSystem.Contains("Windows") == false)
             Debug.Log("This operation only works on Windows. You are using " + SystemInfo.operatingSystem);
 
-        //// reveal push.cmd in explorer
-        //EditorUtility.RevealInFinder(Application.dataPath.Replace("Assets", "") + pushCMD);
+        // reveal push.cmd in explorer
+        EditorUtility.RevealInFinder(Application.dataPath.Replace("Assets", "") + pushCMD);
 
-        // execute push.cmd
-        EditorUtility.OpenWithDefaultApp(Application.dataPath.Replace("Assets", "") + pushCMD);
+        //// execute push.cmd
+        //EditorUtility.OpenWithDefaultApp(Application.dataPath.Replace("Assets", "") + pushCMD);
     }
 }
 
