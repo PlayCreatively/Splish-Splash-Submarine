@@ -20,7 +20,7 @@ public class ScriptableObjectEditor : Editor
         EditorGUILayout.Separator();
     }
 
-    [MenuItem("Game Settings/Open Global Settings")]
+    [MenuItem("Game Settings/⚙ Open Global Settings")]
     public static void OpenGlobalSettings()
     {
         EditorUtility.OpenPropertyEditor(GlobalSettings.Get);
