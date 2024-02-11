@@ -97,8 +97,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2754736373145914385}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: playSound
+        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a835d62df89fc34dabdb6d6074918f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundPlayer: {fileID: 3037382334765600322, guid: 7a061e79203b30442b4ddb1558feb7f9, type: 3}
+  clip: {fileID: 8300000, guid: 356e48aa7192d6c4885265df8ae085ea, type: 3}
 --- !u!1 &4982864365773053542
 GameObject:
   m_ObjectHideFlags: 0
