@@ -18,9 +18,10 @@ public class ModeSwitcher : MonoBehaviour
         fadeOut = new(2);
         text = GetComponent<Text>();
         text.enabled = true;
+
         modes ??= Resources.LoadAll<GameSettings>("Settings/Game Modes");
         currentModeIndex = Array.IndexOf(modes, GlobalSettings.Get._current);
-        text.text = modes[currentModeIndex].ToString();
+        text.text = modes[currentModeIndex].name;
 
     }
 
