@@ -14,8 +14,17 @@ public class ScriptableObjectEditor : Editor
 
         if (GUI.changed)
             EditorUtility.SetDirty(target);
-        serializedObject.ApplyModifiedProperties();
-        serializedObject.Update();
+
+        if (serializedObject.hasModifiedProperties)
+        {
+            serializedObject.ApplyModifiedProperties();
+            serializedObject.Update();
+
+            // save scriptable object
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
+        }
+
 
         EditorGUILayout.Separator();
     }
