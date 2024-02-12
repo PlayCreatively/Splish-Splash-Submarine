@@ -375,11 +375,11 @@ Transform:
   m_GameObject: {fileID: 399385803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.91, y: 3.8, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 922939622}
+  m_Father: {fileID: 960363031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &399385805
 SpriteRenderer:
@@ -422,7 +422,7 @@ SpriteRenderer:
   m_SortingLayerID: -1126786105
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 803638c32420e1344981107dd93cf93c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30b20f5bad018e44aadc28e175aeb385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -837,7 +837,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b2ac2bc9b73608449cfcada1e144db1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30b20f5bad018e44aadc28e175aeb385, type: 3}
   m_MaskAlphaCutoff: 0.1
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
@@ -856,10 +856,11 @@ Transform:
   m_GameObject: {fileID: 960363029}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.92, y: 3.82, z: 0}
+  m_LocalPosition: {x: -1.86, y: 5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 399385804}
   m_Father: {fileID: 922939622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &960363032
@@ -1302,9 +1303,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2228419772506510397, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
       insertIndex: -1
       addedObject: {fileID: 960363031}
-    - targetCorrespondingSourceObject: {fileID: 2228419772506510397, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 399385804}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
 --- !u!1 &1686742333
