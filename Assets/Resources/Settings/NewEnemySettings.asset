@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: NewEnemySettings
   m_EditorClassIdentifier: 
   fallSpeed: 1
+  curFallspeed: 0

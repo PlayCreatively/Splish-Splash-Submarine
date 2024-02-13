@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024f9b3204e0ca24ea861d203c127916, type: 3}
   m_Name: NewEnemyFromBehindSettings
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 1
   constMoveSpeed: 1
   swipeSpeed: 1
   dashingAffectiveness: 1
+  curDistanceFromPlayer: 1
