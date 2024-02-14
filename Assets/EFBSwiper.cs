@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class EFBSwiper : MonoBehaviour
@@ -80,19 +81,28 @@ public class EFBSwiper : MonoBehaviour
         Timer swipeTimer = new(GlobalSettings.Current.enemyFromBehind.swipeDuration);
         var startPos = transform.position.x;
         var endPos = GetTargetX(-Side);
-        
+        Vector3 tempPos;
+
         isSwiping = true;
 
-            while(!swipeTimer)
+            while (!swipeTimer)
             {
-                var pos = transform.position;
-                pos.x = Mathf.Lerp(startPos, endPos, swipeTimer);
-                transform.position = pos;
                 yield return null;
-            }
+                float swipeNormal = swipeTimer.ClampedNormal();
+
+                tempPos = transform.position;
+                tempPos.x = Mathf.Lerp(startPos, endPos, swipeNormal * swipeNormal * swipeNormal);
+                transform.position = tempPos;
+            } 
 
         isSwiping = false;
 
         Side = -Side;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(Camera.main.transform.position, new Vector3(Camera.main.orthographicSize * Camera.main.aspect - edgeOfScreenMargin, Camera.main.orthographicSize) * 2);
     }
 }

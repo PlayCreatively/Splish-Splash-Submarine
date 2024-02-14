@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heightOfHand: 3
-  edgeOfScreenMargin: 7
+  edgeOfScreenMargin: 6
 --- !u!1 &1217632298
 GameObject:
   m_ObjectHideFlags: 0

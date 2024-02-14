@@ -33,6 +33,7 @@ struct Timer
 
     public readonly bool Finished() => Time.time >= startTime + duration;
 
+    public readonly float ClampedNormal() => Mathf.Clamp01(Normal());
     public readonly float Normal()
     {
         return (Time.time - startTime) / duration;
