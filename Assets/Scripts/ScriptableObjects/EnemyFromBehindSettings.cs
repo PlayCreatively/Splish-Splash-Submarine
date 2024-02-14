@@ -7,6 +7,9 @@ public class EnemyFromBehindSettings : SettingsBase<EnemyFromBehindSettings>
     public float
         constMoveSpeed = 1,
         swipeSpeed = 1;
+    [Min(10), Tooltip("At what distance from the enemy do you start to see the hand.")]
+    public float tipPosition = 10;
+        
 
     [Min(1)]
     public float dashingAffectiveness = 1;
