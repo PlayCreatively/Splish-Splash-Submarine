@@ -32,7 +32,6 @@ public class EFBSwiper : MonoBehaviour
         // If visible
         if (distanceToVisibility < 0)
         {
-
             UpdateHeight();
 
             // If visible for first time
@@ -42,17 +41,10 @@ public class EFBSwiper : MonoBehaviour
             // If the enemy reached the player
             if(GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer <= 0 && !isSwiping)
                 StartCoroutine(SwipeRoutine());
-                
         }
 
         // Update visaibility
         isVisible = distanceToVisibility < 0;
-    }
-
-    // Which side of the screen the player is on
-    float GetPlayerSide()
-    {
-        return Mathf.Sign(GlobalSettings.Current.player.Ref.position.x - Camera.main.transform.position.x);
     }
 
     void OnVisible()
@@ -64,15 +56,15 @@ public class EFBSwiper : MonoBehaviour
         transform.position = pos;
     }
 
-    float GetTargetX(float side)
-    {
-        return Camera.main.transform.position.x + side * (Camera.main.orthographicSize * Camera.main.aspect - edgeOfScreenMargin);
-    }
+    // Which side of the screen the player is on
+    float GetPlayerSide() 
+        => Mathf.Sign(GlobalSettings.Current.player.Ref.position.x - Camera.main.transform.position.x);
 
-    float GetBottomOfScreen()
-    {
-        return Camera.main.transform.position.y - Camera.main.orthographicSize;
-    }
+    float GetTargetX(float side) 
+        => Camera.main.transform.position.x + side * (Camera.main.orthographicSize * Camera.main.aspect - edgeOfScreenMargin);
+
+    float GetBottomOfScreen() 
+        => Camera.main.transform.position.y - Camera.main.orthographicSize;
 
     void UpdateHeight()
     {
