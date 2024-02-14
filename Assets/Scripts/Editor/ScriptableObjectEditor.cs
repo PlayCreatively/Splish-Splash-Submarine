@@ -35,52 +35,6 @@ public class ScriptableObjectEditor : Editor
     {
         EditorUtility.OpenPropertyEditor(GlobalSettings.Get);
     }
-
-
-
-    void OnEnable()
-    {
-        EditorApplication.contextualPropertyMenu += OnPropertyContextMenu;
-    }
-
-    void OnDestroy()
-    {
-        EditorApplication.contextualPropertyMenu -= OnPropertyContextMenu;
-    }
-
-    void OnPropertyContextMenu(GenericMenu menu, SerializedProperty property)
-    {
-        // show a custom menu item only for object properties
-        if (property.propertyType != SerializedPropertyType.ObjectReference)
-            return;
-
-        // and only when called on a ScriptableObject component
-        if (property.serializedObject.targetObject.GetType().IsSubclassOf(typeof(ScriptableObject)) == false)
-            return;
-
-        string soTypeName = property.type[6..^1];
-
-        menu.AddItem(new GUIContent($"Create new {soTypeName}"), false, () =>
-        {
-            string rootPath = "Assets/Resources/Settings";
-            string path =     Path.Combine(rootPath, soTypeName);
-            string fullPath = Path.Combine(path, $"new{soTypeName}.asset");
-
-            if(AssetDatabase.IsValidFolder(path) == false)
-                AssetDatabase.CreateFolder(rootPath, soTypeName);
-
-            // if file already exists, generate a unique path
-            if (File.Exists(fullPath))
-                fullPath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
-            
-            var createdSO = CreateInstance(soTypeName);
-            AssetDatabase.CreateAsset(createdSO, fullPath);
-
-            // select and higlight the new asset
-            Selection.activeObject = createdSO;
-            EditorGUIUtility.PingObject(createdSO);
-        });
-    }
 }
 
 [CustomPropertyDrawer(typeof(ScriptableObject), true)]
@@ -96,5 +50,55 @@ public class ScriptableObjectPropertyDrawer : PropertyDrawer
         property.serializedObject.ApplyModifiedProperties();
         property.serializedObject.Update();
 
+    }
+}
+
+[InitializeOnLoad]
+public class EditorStartup
+{
+    static EditorStartup()
+    {
+        EditorApplication.contextualPropertyMenu += OnPropertyContextMenu;
+    }
+
+    ~EditorStartup()
+    {
+        EditorApplication.contextualPropertyMenu -= OnPropertyContextMenu;
+    }
+
+    static void OnPropertyContextMenu(GenericMenu menu, SerializedProperty property)
+    {
+        // show a custom menu item only for object properties
+        if (property.propertyType != SerializedPropertyType.ObjectReference)
+            return;
+
+        // and only when called on a ScriptableObject component
+        if (property.serializedObject.targetObject.GetType().IsSubclassOf(typeof(ScriptableObject)) == false)
+            return;
+
+        string soTypeName = property.type[6..^1];
+
+        menu.AddItem(new GUIContent($"Create new {soTypeName}"), false, () =>
+        {
+            Debug.Log("adding menu item");
+
+            string rootPath = "Assets/Resources/Settings";
+            string path = Path.Combine(rootPath, soTypeName);
+            string fullPath = Path.Combine(path, $"new{soTypeName}.asset");
+
+            if (AssetDatabase.IsValidFolder(path) == false)
+                AssetDatabase.CreateFolder(rootPath, soTypeName);
+
+            // if file already exists, generate a unique path
+            if (File.Exists(fullPath))
+                fullPath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
+
+            var createdSO = ScriptableObject.CreateInstance(soTypeName);
+            AssetDatabase.CreateAsset(createdSO, fullPath);
+
+            // select and higlight the new asset
+            Selection.activeObject = createdSO;
+            EditorGUIUtility.PingObject(createdSO);
+        });
     }
 }
