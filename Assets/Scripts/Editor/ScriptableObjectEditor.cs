@@ -14,13 +14,22 @@ public class ScriptableObjectEditor : Editor
 
         if (GUI.changed)
             EditorUtility.SetDirty(target);
-        serializedObject.ApplyModifiedProperties();
-        serializedObject.Update();
+
+        if (serializedObject.hasModifiedProperties)
+        {
+            serializedObject.ApplyModifiedProperties();
+            serializedObject.Update();
+
+            // save scriptable object
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
+        }
+
 
         EditorGUILayout.Separator();
     }
 
-    [MenuItem("Game Settings/Open Global Settings")]
+    [MenuItem("Game Settings/⚙ Open Global Settings")]
     public static void OpenGlobalSettings()
     {
         EditorUtility.OpenPropertyEditor(GlobalSettings.Get);

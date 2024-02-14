@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,20 +5,24 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D bulletPrefab;
-    public UnityEvent onReloaded, onShot;
+    public UnityEvent onReloaded, onEmptyMag, onShot;
 
-    Timer shootRate;
+    Timer reloadTime;
     bool canShoot = false;
+    int magSize;
+    int bulletsInMag;
 
     private void Awake()
     {
-        shootRate.Start(GlobalSettings.Current.shooting.shootRate);
+        reloadTime.Start(GlobalSettings.Current.shooting.reloadTime);
 
         GlobalSettings.Current.shooting.onValidate += 
-            (shooting) => shootRate.Start(shooting.shootRate);
+            (shooting) => reloadTime.Start(shooting.reloadTime);
+
+        magSize = GlobalSettings.Current.shooting.magSize;
 
         onReloaded.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = new Color(1, .6f, .6f));
-        onShot.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
+        onEmptyMag.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
     }
 
     private void Update()
@@ -28,24 +30,30 @@ public class Shooter : MonoBehaviour
         // check if the player can shoot
         if (!canShoot)
         {
-            if (shootRate)
+            if (reloadTime)
             {
+                bulletsInMag = magSize;
                 canShoot = true;
-                onReloaded.Invoke();
+                onReloaded?.Invoke();
             }
             else
                 return;
         }
 
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Shoot();
     }
 
     void Shoot()
     {
-        canShoot = false;
-        shootRate.Restart();
-        onShot.Invoke();
+        onShot?.Invoke();
+        bulletsInMag--;
+        if (bulletsInMag == 0)
+        {
+            canShoot = false;
+            onEmptyMag?.Invoke();
+            reloadTime.Restart();
+        }
         Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, .5f), Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8bd2c635581c0e4fbe29e078456696e, type: 3}
   m_Name: GlobalSettings
   m_EditorClassIdentifier: 
-  _current: {fileID: 11400000, guid: 43978033a7d8b014688ec08df59bfc82, type: 2}
+  _current: {fileID: 11400000, guid: a8532878214b77149adc9c9e2cb137d2, type: 2}
