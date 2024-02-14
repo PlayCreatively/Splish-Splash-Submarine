@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: NewEnemyFromBehindSettings
   m_EditorClassIdentifier: 
   constMoveSpeed: 1
-  swipeSpeed: 1
+  swipeDuration: 1
+  tipPosition: 2
   dashingAffectiveness: 1
-  curDistanceFromPlayer: 1
+  initialDistanceFromPlayer: 4
+  curDistanceFromPlayer: 0
