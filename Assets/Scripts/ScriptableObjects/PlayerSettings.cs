@@ -9,11 +9,8 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
     [Min(0)]
     public float horizontalSpeed = 1;
 
-    public  Transform Ref => _player;
-    private Transform _player;
-
-    private void OnEnable()
-    {
-        _player = GameObject.FindWithTag("Player").transform;
-    }
+    public  Transform Ref => _player != null 
+        ? _player 
+        : _player = GameObject.FindWithTag("Player").transform;
+    private Transform _player;  
 }
