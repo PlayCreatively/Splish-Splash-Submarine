@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "New" + nameof(SpawnerSettings), menuName = Path + nameof(SpawnerSettings), order = 0)]
 public class SpawnerSettings : SettingsBase<SpawnerSettings>
 {
-    [Min(0), Tooltip("Spawn per second")]
-    public float spawnFrequency;
+    [Min(0), Tooltip("Seconds between spawns.")]
+    public float spawnCooldown = 1;
     public List<SpawnItem> spawns;
 
     float likelyhoodSum;
@@ -15,7 +15,7 @@ public class SpawnerSettings : SettingsBase<SpawnerSettings>
 
     void OnEnable()
     {
-        timer = new Timer(spawnFrequency);
+        timer = new Timer(spawnCooldown);
 
         likelyhoodSum = 0;
         foreach (SpawnItem spawn in spawns)
@@ -29,7 +29,7 @@ public class SpawnerSettings : SettingsBase<SpawnerSettings>
     {
         if (timer)
         {
-            timer.Offset(spawnFrequency);
+            timer.Offset(spawnCooldown);
 
             float choice = Random.Range(0, likelyhoodSum);
 
