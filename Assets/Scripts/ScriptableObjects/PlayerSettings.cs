@@ -4,7 +4,10 @@
 public class PlayerSettings : SettingsBase<PlayerSettings>
 {
     [Min(0)]
-    public float boostSpeed = 1;
+    public float dashSpeed = 1;
+
+    [Min(0)]
+    public float dashCooldown = 1;
 
     [Min(0)]
     public float horizontalSpeed = 1;
