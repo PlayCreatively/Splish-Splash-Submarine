@@ -31,8 +31,9 @@ public class PlayerDash : MonoBehaviour
 
         if (isDashing)
         {
-            GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + dashSpeed - dashSpeed * dashDuration;
-            GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer -= GlobalSettings.Current.player.curVerticalSpeed;
+            float curDashSpeed = dashSpeed - dashSpeed * dashDuration;
+            GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + curDashSpeed;
+            GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer += curDashSpeed;
         }
     }
 }

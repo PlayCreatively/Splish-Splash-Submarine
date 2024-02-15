@@ -7,7 +7,7 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
     public float dashSpeed = 1;
 
     [Min(0)]
-    public float dashCooldown = 1;
+    public float dashDuration = 1;
     
     [Min(0), Tooltip("How long it takes the player to recover from colliding with a fish")]
     public float collisionRecoverTime = 1;
