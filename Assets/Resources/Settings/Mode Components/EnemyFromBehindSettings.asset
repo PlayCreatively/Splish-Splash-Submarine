@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024f9b3204e0ca24ea861d203c127916, type: 3}
   m_Name: EnemyFromBehindSettings
   m_EditorClassIdentifier: 
-  constMoveSpeed: 2
+  constMoveSpeed: 3
   swipeDuration: 1
-  tipPosition: 10
-  initialDistanceFromPlayer: 10
-  curDistanceFromPlayer: 15.729613
+  tipPosition: 3
+  initialDistanceFromPlayer: 4
+  curDistanceFromPlayer: 13.711606
