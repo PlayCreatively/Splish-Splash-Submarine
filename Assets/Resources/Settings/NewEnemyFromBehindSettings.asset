@@ -15,6 +15,5 @@ MonoBehaviour:
   constMoveSpeed: 1
   swipeDuration: 1
   tipPosition: 2
-  dashingAffectiveness: 1
   initialDistanceFromPlayer: 4
-  curDistanceFromPlayer: 0
+  curDistanceFromPlayer: 4

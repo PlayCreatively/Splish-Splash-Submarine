@@ -23,7 +23,7 @@ public class ScriptableObjectEditor : Editor
 
             // save scriptable object
             EditorUtility.SetDirty(target);
-            AssetDatabase.SaveAssets();
+            //AssetDatabase.SaveAssets();
         }
 
 
@@ -80,8 +80,6 @@ public class EditorStartup
 
         menu.AddItem(new GUIContent($"Create new {soTypeName}"), false, () =>
         {
-            Debug.Log("adding menu item");
-
             string rootPath = "Assets/Resources/Settings";
             string path = Path.Combine(rootPath, soTypeName);
             string fullPath = Path.Combine(path, $"new{soTypeName}.asset");
