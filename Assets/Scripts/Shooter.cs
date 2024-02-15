@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        // check if the player can shoot
+        // check if the player has bullets left in the magazine
         if (!canShoot)
         {
             if (reloadTime)

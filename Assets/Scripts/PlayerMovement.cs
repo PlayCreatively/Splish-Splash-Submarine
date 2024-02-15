@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position - Vector3.right * moveArea, transform.position + Vector3.right * moveArea);
     }
-
+    
     void Update()
     {
         float input = 0;

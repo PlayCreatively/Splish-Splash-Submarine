@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 024f9b3204e0ca24ea861d203c127916, type: 3}
-  m_Name: NewEnemyFromBehindSettings
+  m_Name: EnemyFromBehindSettings
   m_EditorClassIdentifier: 
   constMoveSpeed: 1
   swipeDuration: 1

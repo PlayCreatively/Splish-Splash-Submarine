@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6585968043249575150}
-  - component: {fileID: 8795461465402419875}
   - component: {fileID: 1571636088459213313}
+  - component: {fileID: -3858624974657401602}
   - component: {fileID: 4189023037277894226}
   - component: {fileID: 2414102059078411603}
   - component: {fileID: 2754736373145914385}
@@ -37,19 +37,6 @@ Transform:
   - {fileID: 7939722483443238647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8795461465402419875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354896243213820597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d89e094f80e34b8479588332b5b0cb56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: -1}
 --- !u!50 &1571636088459213313
 Rigidbody2D:
   serializedVersion: 4
@@ -77,6 +64,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3858624974657401602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354896243213820597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89e094f80e34b8479588332b5b0cb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4189023037277894226
 MonoBehaviour:
   m_ObjectHideFlags: 0
