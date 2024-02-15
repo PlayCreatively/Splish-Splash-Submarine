@@ -26,7 +26,8 @@ public class EFBSwiper : MonoBehaviour
     void Update()
     {
         // Update distance to player
-        GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer = Mathf.MoveTowards(GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer, 0, GlobalSettings.Current.enemyFromBehind.constMoveSpeed * Time.deltaTime);
+        if (!PlayerDash.isDashing)
+            GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer = Mathf.MoveTowards(GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer, 0, GlobalSettings.Current.enemyFromBehind.constMoveSpeed * Time.deltaTime);
 
         float distanceToVisibility = GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer - GlobalSettings.Current.enemyFromBehind.tipPosition;
 
