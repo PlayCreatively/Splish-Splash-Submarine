@@ -33,7 +33,7 @@ public class PlayerDash : MonoBehaviour
         {
             float curDashSpeed = dashSpeed - dashSpeed * dashDuration;
             GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + curDashSpeed;
-            GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer += curDashSpeed;
+            GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer += curDashSpeed * Time.deltaTime;
         }
     }
 }
