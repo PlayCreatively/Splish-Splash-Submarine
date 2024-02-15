@@ -23,6 +23,11 @@ public class EFBSwiper : MonoBehaviour
         }
     } float _side;
 
+    void Awake()
+    {
+        GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.initialDistanceFromPlayer;
+    }
+
     void Update()
     {
         // Update distance to player
@@ -33,8 +38,6 @@ public class EFBSwiper : MonoBehaviour
         // If visible
         if (distanceToVisibility < 0)
         {
-            UpdateHeight();
-
             // If visible for first time
             if (!isVisible)
                 OnVisible();
@@ -43,6 +46,9 @@ public class EFBSwiper : MonoBehaviour
             if(GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer <= 0 && !isSwiping)
                 StartCoroutine(SwipeRoutine());
         }
+
+        if(isVisible)
+            UpdateHeight();
 
         // Update visaibility
         isVisible = distanceToVisibility < 0;
