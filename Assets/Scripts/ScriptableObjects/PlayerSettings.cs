@@ -8,6 +8,9 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
 
     [Min(0)]
     public float dashCooldown = 1;
+    
+    [Min(0), Tooltip("How long it takes the player to recover from colliding with a fish")]
+    public float collisionRecoverTime = 1;
 
     [Min(0)] public float 
         horizontalSpeed = 1,
@@ -15,6 +18,7 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
 
     [HideInInspector]
     public float curVerticalSpeed;
+    public bool recoveringFromCollision;
 
     public  Transform Ref => _player != null 
         ? _player 
