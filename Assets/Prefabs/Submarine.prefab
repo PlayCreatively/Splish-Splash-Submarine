@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: -9005332442590464263}
   - component: {fileID: 5233082360892069433}
   - component: {fileID: 8710826827440916218}
+  - component: {fileID: -5991084201561149432}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Player
@@ -288,3 +289,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &-5991084201561149432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d563fecfaf4e28419e7e4c34d9b5919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
