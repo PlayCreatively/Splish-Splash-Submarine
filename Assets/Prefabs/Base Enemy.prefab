@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1571636088459213313}
   - component: {fileID: -3858624974657401602}
   - component: {fileID: 4189023037277894226}
-  - component: {fileID: 2414102059078411603}
   - component: {fileID: 2754736373145914385}
   m_Layer: 8
   m_Name: Base Enemy
@@ -119,19 +118,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2414102059078411603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354896243213820597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14194470193232045a5dc93723765769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &2754736373145914385
 MonoBehaviour:
   m_ObjectHideFlags: 0

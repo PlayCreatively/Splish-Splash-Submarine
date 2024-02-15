@@ -5,10 +5,10 @@ public class PlayerFishCollision : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GlobalSettings.Current.player.recoveringFromCollision == false
-            && collision.gameObject.CompareTag("Enemy"))
+        // If the player is not recovering from a collision
+        // and the player collides with something (presumed to be enemy... can also be EfB, doesn't matter)
+        if (GlobalSettings.Current.player.recoveringFromCollision == false)
         {
-            // If the player collides with an enemy, the player goes through hit routine
             StartCoroutine(HitRoutine());
         }
     }

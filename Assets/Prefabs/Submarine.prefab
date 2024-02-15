@@ -131,11 +131,13 @@ GameObject:
   - component: {fileID: 2228419772506510397}
   - component: {fileID: 3769469424818796080}
   - component: {fileID: -5000415510143848852}
+  - component: {fileID: 8284908806695318717}
   - component: {fileID: -9005332442590464263}
   - component: {fileID: 5233082360892069433}
+  - component: {fileID: 8710826827440916218}
   m_Layer: 6
   m_Name: Submarine
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +174,9 @@ MonoBehaviour:
   onReloaded:
     m_PersistentCalls:
       m_Calls: []
+  onEmptyMag:
+    m_PersistentCalls:
+      m_Calls: []
   onShot:
     m_PersistentCalls:
       m_Calls: []
@@ -188,6 +193,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveArea: 6.0625
+--- !u!114 &8284908806695318717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d816152069d97942bcd4296042a017f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-9005332442590464263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +236,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &5233082360892069433
 Rigidbody2D:
   serializedVersion: 4
@@ -246,3 +275,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8710826827440916218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14194470193232045a5dc93723765769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
