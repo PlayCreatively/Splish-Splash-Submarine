@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a71b3bcf835e24c8c2a8b64a46cc73, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  dashSpeed: 3
+  dashSpeed: 10
   dashDuration: 1
+  collisionRecoverTime: 1
   horizontalSpeed: 0.03
   verticalSpeed: 1
-  curVerticalSpeed: 1
+  curVerticalSpeed: 1.0161171
+  recoveringFromCollision: 0
