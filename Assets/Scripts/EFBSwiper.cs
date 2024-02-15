@@ -19,7 +19,9 @@ public class EFBSwiper : MonoBehaviour
         set
         {
             _side = value;
-            GetComponent<SpriteRenderer>().flipX = _side > 0;
+            var scale = transform.localScale;
+            scale.x = -value;
+            transform.localScale = scale;
         }
     } float _side;
 
