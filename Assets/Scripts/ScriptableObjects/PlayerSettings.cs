@@ -18,6 +18,7 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
 
     [HideInInspector]
     public float curVerticalSpeed;
+    [HideInInspector]
     public bool recoveringFromCollision;
 
     public  Transform Ref => _player != null 
