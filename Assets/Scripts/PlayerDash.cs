@@ -2,36 +2,41 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-    Timer dashDuration;
+    Timer dashTimer;
     float dashSpeed;
     bool isDashing;
 
     void Awake()
     {
         GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
-        dashDuration.Start(GlobalSettings.Current.player.dashDuration);
+        dashTimer.Start(GlobalSettings.Current.player.dashDuration);
         dashSpeed = GlobalSettings.Current.player.dashSpeed;
     }
 
     void Update()
     {
-        if (dashDuration)
+        if (dashTimer)
         {
-            if (isDashing) 
-                Debug.Log("Stopped dashing");
             isDashing = false;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 isDashing = true;
-                dashDuration.Restart();
-                Debug.Log("Started dashing");
+                dashTimer.Restart();
             }
         }
 
         if (isDashing)
         {
-            float curDashSpeed = dashSpeed - dashSpeed * dashDuration;
+            // If collided whilst dashing 
+            if(GlobalSettings.Current.player.recoveringFromCollision)
+            {
+                isDashing = false;
+                dashTimer.Restart();
+                return;
+            }
+
+            float curDashSpeed = dashSpeed - dashSpeed * dashTimer;
             GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + curDashSpeed;
             GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer += curDashSpeed * Time.deltaTime;
         }

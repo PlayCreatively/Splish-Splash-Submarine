@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class PlayerFishCollision : MonoBehaviour
 {
+    void Awake()
+    {
+        GlobalSettings.Current.player.recoveringFromCollision = false;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player is not recovering from a collision
