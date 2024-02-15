@@ -4,7 +4,7 @@ public class PlayerDash : MonoBehaviour
 {
     Timer dashDuration;
     float dashSpeed;
-    public static bool isDashing;
+    bool isDashing;
 
     void Awake()
     {
