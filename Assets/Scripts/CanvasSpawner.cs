@@ -4,10 +4,42 @@ public class CanvasSpawner : MonoBehaviour
 {
     [SerializeField] float spawnWidth;
 
+    float likelyhoodSum;
+    float unitsTraveled;
+    float unitsPerSpawn;
+
+    void Awake()
+    {
+        likelyhoodSum = GlobalSettings.Current.spawnerSettings.GetLikelyhoodSum();
+        unitsPerSpawn = (Camera.main.orthographicSize * 2) / GlobalSettings.Current.spawnerSettings.spawnsPerScreenHeight;
+    }
+
     void Update()
     {
-        if (GlobalSettings.Current.spawnerSettings.TrySpawn(out var spawnItem))
-            Instantiate(spawnItem.prefab, transform.position + new Vector3(Random.Range(-spawnWidth, spawnWidth), 0), Quaternion.identity);
+        unitsTraveled += GlobalSettings.Current.player.curVerticalSpeed * Time.deltaTime;
+        int spawnCount = (int)(unitsTraveled / unitsPerSpawn);
+        unitsTraveled -= spawnCount * unitsPerSpawn;
+
+        for (int i = 0; i < spawnCount; i++)
+            Instantiate(GetRandomSpawn().prefab, transform.position + new Vector3(Random.Range(-spawnWidth, spawnWidth), 0), Quaternion.identity);
+
+        Debug.Log("spawn per unit: " + unitsPerSpawn);
+        Debug.Log("current vertical speed: " + GlobalSettings.Current.player.curVerticalSpeed);
+        Debug.Log("screen height: " + Camera.main.orthographicSize * 2);
+        Debug.Log(unitsTraveled);
+    }
+
+    public SpawnItem GetRandomSpawn()
+    {
+        float choice = Random.Range(0, likelyhoodSum);
+
+        foreach (SpawnItem spawn in GlobalSettings.Current.spawnerSettings.spawns)
+            if (choice < spawn.likelyhood)
+                return spawn;
+            else
+                choice -= spawn.likelyhood;
+
+        throw new System.Exception("Should not be able to reach this point, talk to Alex... not the Sasha one.");
     }
 
     void OnDrawGizmosSelected()
