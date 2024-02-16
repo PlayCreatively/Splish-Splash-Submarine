@@ -34,7 +34,6 @@ public class EFBSwiper : MonoBehaviour
     {
         // Update distance to player
         GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer = Mathf.MoveTowards(GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer, 0, GlobalSettings.Current.enemyFromBehind.VerticalSpeed * Time.deltaTime);
-        Debug.Log($"enemy {GlobalSettings.Current.enemyFromBehind.VerticalSpeed} : player {GlobalSettings.Current.player.curVerticalSpeed}");
 
         float distanceToVisibility = GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer - GlobalSettings.Current.enemyFromBehind.tipPosition;
 
