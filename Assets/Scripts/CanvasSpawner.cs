@@ -22,11 +22,6 @@ public class CanvasSpawner : MonoBehaviour
 
         for (int i = 0; i < spawnCount; i++)
             Instantiate(GetRandomSpawn().prefab, transform.position + new Vector3(Random.Range(-spawnWidth, spawnWidth), 0), Quaternion.identity);
-
-        Debug.Log("spawn per unit: " + unitsPerSpawn);
-        Debug.Log("current vertical speed: " + GlobalSettings.Current.player.curVerticalSpeed);
-        Debug.Log("screen height: " + Camera.main.orthographicSize * 2);
-        Debug.Log(unitsTraveled);
     }
 
     public SpawnItem GetRandomSpawn()
