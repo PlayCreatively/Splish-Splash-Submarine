@@ -4,6 +4,11 @@ public class CanvasSpawner : MonoBehaviour
 {
     [SerializeField] float spawnWidth;
 
+    void Awake()
+    {
+        GlobalSettings.Current.spawnerSettings.curSpawnCooldown = GlobalSettings.Current.spawnerSettings.spawnCooldown;
+    }
+
     void Update()
     {
         if (GlobalSettings.Current.spawnerSettings.TrySpawn(out var spawnItem))

@@ -8,6 +8,10 @@ public class SpawnerSettings : SettingsBase<SpawnerSettings>
 {
     [Min(0), Tooltip("Seconds between spawns.")]
     public float spawnCooldown = 1;
+
+    [HideInInspector]
+    public float curSpawnCooldown;
+
     public List<SpawnItem> spawns;
 
     float likelyhoodSum;
