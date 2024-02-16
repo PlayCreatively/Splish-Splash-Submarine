@@ -31,7 +31,7 @@ public class PlayerFishCollision : MonoBehaviour
 
         while (!recoveryTimer)
         {
-            GlobalSettings.Current.player.curVerticalSpeed = (1f - recoveryTimer) * GlobalSettings.Current.player.verticalSpeed;
+            GlobalSettings.Current.player.curVerticalSpeed = recoveryTimer * recoveryTimer * GlobalSettings.Current.player.verticalSpeed;
             yield return null;
         }
 
