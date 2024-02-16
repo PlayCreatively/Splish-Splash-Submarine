@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerFishCollision : MonoBehaviour
 {
+    public UnityEvent OnCollision;
+
     void Awake()
     {
         GlobalSettings.Current.player.recoveringFromCollision = false;
@@ -20,6 +23,8 @@ public class PlayerFishCollision : MonoBehaviour
 
     IEnumerator HitRoutine()
     {
+        OnCollision?.Invoke();
+
         GlobalSettings.Current.player.recoveringFromCollision = true;
 
         Timer recoveryTimer = new(GlobalSettings.Current.player.collisionRecoverTime);
