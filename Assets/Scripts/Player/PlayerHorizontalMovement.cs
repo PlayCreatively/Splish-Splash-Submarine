@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerHorizontalMovement : MonoBehaviour
 {
     [SerializeField] float moveArea;
 
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         var temp = transform.position;
-        temp.x = transform.position.x + input * Time.deltaTime * 5;
+        temp.x = transform.position.x + input * GlobalSettings.Current.player.horizontalSpeed * Time.deltaTime;
         temp.x = Mathf.Clamp(temp.x, -moveArea, moveArea);
         transform.position = temp;
     }
