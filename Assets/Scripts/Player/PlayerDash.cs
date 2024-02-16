@@ -39,10 +39,6 @@ public class PlayerDash : MonoBehaviour
             float curDashSpeed = dashSpeed - dashSpeed * dashTimer;
             GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + curDashSpeed;
             GlobalSettings.Current.enemyFromBehind.curDistanceFromPlayer += curDashSpeed * Time.deltaTime;
-            // Keeps the spawn cooldown the same, even if the player moves faster
-            GlobalSettings.Current.spawnerSettings.curSpawnCooldown = GlobalSettings.Current.spawnerSettings.spawnCooldown / (1 + curDashSpeed);
         }
-
-        Debug.Log(GlobalSettings.Current.spawnerSettings.curSpawnCooldown);
     }
 }
