@@ -32,8 +32,7 @@ public class PlayerFishCollision : MonoBehaviour
         while (!recoveryTimer)
         {
             yield return null;
-            float recoveryNormal = recoveryTimer.ClampedNormal();
-            GlobalSettings.Current.player.curVerticalSpeed = recoveryNormal * recoveryNormal * GlobalSettings.Current.player.verticalSpeed;
+            GlobalSettings.Current.player.curVerticalSpeed = recoveryTimer.ClampedNormal() * GlobalSettings.Current.player.verticalSpeed;
         }
 
         GlobalSettings.Current.player.recoveringFromCollision = false;

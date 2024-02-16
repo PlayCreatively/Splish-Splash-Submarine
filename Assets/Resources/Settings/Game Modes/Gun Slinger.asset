@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Gun Slinger
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 9adfb175e49e97644aac1ea71a53d5f9, type: 2}
-  enemy: {fileID: 11400000, guid: f15e0eef2c980204093a27931697047a, type: 2}
   enemyFromBehind: {fileID: 11400000, guid: 40c2593689f4ab946ac9376d4723d01c, type: 2}
   radar: {fileID: 11400000, guid: d92868d8634d99d4c94cafc413d5d54d, type: 2}
   shooting: {fileID: 11400000, guid: e024f60edda3e62419f34fde120e9539, type: 2}
