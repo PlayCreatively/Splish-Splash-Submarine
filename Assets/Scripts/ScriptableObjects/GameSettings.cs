@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameSettings : ScriptableObject
 {
     public PlayerSettings player;
-    public EnemySettings enemy;
+    //public EnemySettings enemy;
     public EnemyFromBehindSettings enemyFromBehind;
     public RadarSettings radar;
     public ShootingSettings shooting;
