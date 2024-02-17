@@ -14,6 +14,11 @@ public class ModeSettings : ScriptableObject
 
     void OnValidate()
     {
+        OnEnable();
+    }
+
+    void OnEnable()
+    {
         Time.timeScale = timeScale;
     }
 }
