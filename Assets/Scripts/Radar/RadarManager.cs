@@ -56,7 +56,7 @@ public class RadarManager : MonoBehaviour
     {
         SpriteRenderer blipVisual = pool.Borrow();
         blipVisual.transform.position = position;
-        Timer timer = new(GlobalSettings.Current.radar.pingDuration);
+        Timer timer = new(GlobalSettings.Current.radar.scanSpeed * GlobalSettings.Current.radar.pingDuration);
         while (!timer)
         {
             var color = blipVisual.color;
