@@ -40,7 +40,7 @@ public class Shooter : MonoBehaviour
                 return;
         }
 
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.Space))
             Shoot();
     }
 

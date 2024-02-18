@@ -19,7 +19,7 @@ public class PlayerDash : MonoBehaviour
         {
             isDashing = false;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 isDashing = true;
                 dashTimer.Restart();
