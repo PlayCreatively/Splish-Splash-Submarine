@@ -36,7 +36,7 @@ public class PlayerDash : MonoBehaviour
                 return;
             }
 
-            float curDashSpeed = dashSpeed - dashSpeed * dashTimer;
+            float curDashSpeed = dashSpeed * GlobalSettings.Current.player.dashCurve.Evaluate(dashTimer);
             GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed + curDashSpeed;
         }
 

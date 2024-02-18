@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "New" + nameof(PlayerSettings), menuName = Path + nameof(PlayerSettings), order = 0)]
 public class PlayerSettings : SettingsBase<PlayerSettings>
 {
+    public NormalCurve dashCurve;
     [Min(0)]
     public float dashSpeed = 1;
 
