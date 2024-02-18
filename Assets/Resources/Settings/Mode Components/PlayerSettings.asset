@@ -20,7 +20,13 @@ MonoBehaviour:
     releaseEase: -1
   dashSpeed: 10
   dashDuration: 0.6
-  collisionRecoverTime: 1
+  collisionRecoverCurve:
+    attack: 1
+    sustain: 0
+    release: 0
+    attackEase: -1
+    releaseEase: 0
+  collisionRecoverTime: 0.8
   horizontalSpeed: 8
   curVerticalSpeed: 1.0161171
   verticalSpeed: 6

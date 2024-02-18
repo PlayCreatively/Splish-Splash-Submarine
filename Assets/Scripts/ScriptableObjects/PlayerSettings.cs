@@ -6,10 +6,10 @@ public class PlayerSettings : SettingsBase<PlayerSettings>
     public NormalCurve dashCurve;
     [Min(0)]
     public float dashSpeed = 1;
-
     [Min(0)]
     public float dashDuration = 1;
     
+    public NormalCurve collisionRecoverCurve;
     [Min(0), Tooltip("How long it takes the player to recover from colliding with a fish")]
     public float collisionRecoverTime = 1;
 

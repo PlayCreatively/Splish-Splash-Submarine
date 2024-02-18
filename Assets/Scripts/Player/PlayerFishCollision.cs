@@ -6,16 +6,18 @@ public class PlayerFishCollision : MonoBehaviour
 {
     public UnityEvent OnCollision;
 
+    PlayerSettings Settings => GlobalSettings.Current.player;
+
     void Awake()
     {
-        GlobalSettings.Current.player.recoveringFromCollision = false;
+        Settings.recoveringFromCollision = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player is not recovering from a collision
         // and the player collides with something (presumed to be enemy... can also be EfB, doesn't matter)
-        if (GlobalSettings.Current.player.recoveringFromCollision == false)
+        if (Settings.recoveringFromCollision == false)
         {
             StartCoroutine(HitRoutine());
         }
@@ -25,16 +27,16 @@ public class PlayerFishCollision : MonoBehaviour
     {
         OnCollision?.Invoke();
 
-        GlobalSettings.Current.player.recoveringFromCollision = true;
+        Settings.recoveringFromCollision = true;
 
-        Timer recoveryTimer = new(GlobalSettings.Current.player.collisionRecoverTime);
+        Timer recoveryTimer = new(Settings.collisionRecoverTime);
 
         while (!recoveryTimer)
         {
             yield return null;
-            GlobalSettings.Current.player.curVerticalSpeed = recoveryTimer.ClampedNormal() * GlobalSettings.Current.player.verticalSpeed;
+            Settings.curVerticalSpeed = Settings.collisionRecoverCurve.Evaluate(recoveryTimer.ClampedNormal()) * Settings.verticalSpeed;
         }
 
-        GlobalSettings.Current.player.recoveringFromCollision = false;
+        Settings.recoveringFromCollision = false;
     }
 }
