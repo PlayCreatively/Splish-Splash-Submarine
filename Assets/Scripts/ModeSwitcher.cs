@@ -21,8 +21,8 @@ public class ModeSwitcher : MonoBehaviour
 
         modes ??= Resources.LoadAll<ModeSettings>("Settings/Game Modes");
         currentModeIndex = Array.IndexOf(modes, GlobalSettings.Get._current);
-        text.text = modes[currentModeIndex].name;
-
+        // Change name to full caps
+        text.text = modes[currentModeIndex].name.ToUpper();
     }
 
     void Update()
