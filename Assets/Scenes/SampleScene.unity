@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 82323802}
   - component: {fileID: 82323801}
   m_Layer: 0
-  m_Name: EndScreen (1)
+  m_Name: RestartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25.2}
+  m_AnchoredPosition: {x: 0, y: -39.5}
   m_SizeDelta: {x: 84.5276, y: 22.082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82323801
@@ -183,7 +183,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9874690e20fc96b4fb2e492aef7ac01a, type: 3}
+    m_Font: {fileID: 12800000, guid: 8514148bc1b86f34eaa84b3e20ebf0e2, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press R to restart
+  m_Text: PRESS R TO RESTART
 --- !u!222 &82323802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -695,8 +695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 9.3, y: -9.7}
-  m_SizeDelta: {x: 52.4505, y: 57.0231}
+  m_AnchoredPosition: {x: 12.617, y: -7}
+  m_SizeDelta: {x: 38.9114, y: 37.6293}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &786270580
 MonoBehaviour:
@@ -1506,8 +1506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.281}
-  m_SizeDelta: {x: 111.9553, y: 55.1229}
+  m_AnchoredPosition: {x: -0.0000014305, y: -12.281}
+  m_SizeDelta: {x: 100.6117, y: 46.3408}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1686742335
 MonoBehaviour:
