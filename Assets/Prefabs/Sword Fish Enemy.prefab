@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8194762039405044438, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+      propertyPath: frequency
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194762039405044438, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: magnitude
       value: 1.5
       objectReference: {fileID: 0}

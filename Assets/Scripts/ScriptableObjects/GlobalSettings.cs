@@ -11,9 +11,9 @@ public class GlobalSettings : ScriptableObject
     const string Path = "Settings/GlobalSettings";
     const string FullPath = "Assets/Resources/" + Path + ".assets";
     public static ScriptableObject Load(string name) => Resources.Load<ScriptableObject>("Settings/" + name);
-    public static GameSettings Current => Get._current;
+    public static ModeSettings Current => Get._current;
     [Tooltip("The currently selected game mode setting. This is the one that will be used in the game.\nSelect a different one for a different game style.")]
-    public GameSettings _current;
+    public ModeSettings _current;
 
 #if UNITY_EDITOR
 

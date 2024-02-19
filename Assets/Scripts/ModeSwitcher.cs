@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ModeSwitcher : MonoBehaviour
 {
     int currentModeIndex = -1;
-    static GameSettings[] modes;
+    static ModeSettings[] modes;
 
     Timer fadeOut;
     Text text;
@@ -19,7 +19,7 @@ public class ModeSwitcher : MonoBehaviour
         text = GetComponent<Text>();
         text.enabled = true;
 
-        modes ??= Resources.LoadAll<GameSettings>("Settings/Game Modes");
+        modes ??= Resources.LoadAll<ModeSettings>("Settings/Game Modes");
         currentModeIndex = Array.IndexOf(modes, GlobalSettings.Get._current);
         text.text = modes[currentModeIndex].name;
 

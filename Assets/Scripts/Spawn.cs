@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour {
     public Vector2 bounds;
 
     // Spawn frequency in seconds
-    public float spawnFrequency = 1f; 
+    public float spawnCooldown = 1f; 
 
     IEnumerator Start()
     {
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour {
             Vector3 randomPosition = new Vector3(x, y, transform.position.z);
 
             // Pauses the execution of the function for a given amount of seconds
-            yield return new WaitForSeconds(spawnFrequency);
+            yield return new WaitForSeconds(spawnCooldown);
 
             Instantiate(objectToBeSpawned, transform.position + randomPosition, transform.rotation);
         }
