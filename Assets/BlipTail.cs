@@ -28,8 +28,8 @@ public class BlipTail : MonoBehaviour
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
         while (!timer)
         {
-            BlipTails[i].startColor = new Color(1, 1, 1, 1 - timer);
             yield return null;
+            BlipTails[i].startColor = new Color(BlipTails[i].startColor.r, BlipTails[i].startColor.g, BlipTails[i].startColor.b, 1 - timer);
         }
         BlipTails[i].GetComponent<TrailRenderer>().Clear();
     }
