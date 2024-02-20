@@ -1189,10 +1189,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171506937}
-  - component: {fileID: 1171506938}
   - component: {fileID: 1171506936}
   - component: {fileID: 1171506935}
   - component: {fileID: 1171506939}
+  - component: {fileID: 1171506940}
   m_Layer: 0
   m_Name: EfB
   m_TagString: Untagged
@@ -1207,7 +1207,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171506934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1312,20 +1312,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1171506938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171506934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9ac4604d5abd9146aa4da53e96ae9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heightOfHand: 3
-  edgeOfScreenMargin: 6
 --- !u!114 &1171506939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,6 +1325,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 666
+--- !u!114 &1171506940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171506934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cea28691dd3d94aa2b57b8d38f85b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOfHand: 2
 --- !u!1 &1217632298
 GameObject:
   m_ObjectHideFlags: 0

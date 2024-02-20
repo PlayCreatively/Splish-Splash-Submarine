@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3858624974657401602}
   - component: {fileID: 4189023037277894226}
   - component: {fileID: 2754736373145914385}
+  - component: {fileID: 54775082360317035}
   m_Layer: 8
   m_Name: Base Enemy
   m_TagString: Untagged
@@ -131,6 +132,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPlayer: {fileID: 11400000, guid: 008fd0b0b50935a42b37bdaef43adab3, type: 2}
+--- !u!114 &54775082360317035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354896243213820597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cf5c6c5485029478510d6e119b9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latchingSpeedChange: 1
+  latchDuration: 6
 --- !u!1 &4982864365773053542
 GameObject:
   m_ObjectHideFlags: 0
