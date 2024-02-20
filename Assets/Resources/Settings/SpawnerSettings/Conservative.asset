@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
   m_Name: Conservative
   m_EditorClassIdentifier: 
-  spawnsPerScreenHeight: 5
+  spawnsPerScreenHeight: 3
   spawns:
   - {fileID: 11400000, guid: 3d3909afc8f889442b79c67247c63797, type: 2}
-  - {fileID: 11400000, guid: f9d0f5de696ec294bb0049af3db7befb, type: 2}

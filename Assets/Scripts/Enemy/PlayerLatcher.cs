@@ -18,7 +18,7 @@ public class PlayerLatcher : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < player.position.y)
+        if (transform.position.y - 2 < player.position.y)
             StartCoroutine(LatchOntoPlayerRoutine());
     }
 
@@ -50,7 +50,7 @@ public class PlayerLatcher : MonoBehaviour
 
     void ApplyLatchingSpeedChanges(float latchingSpeedChange)
     {
-        GlobalSettings.Current.player.curVerticalSpeed -= latchingSpeedChange;
-        GlobalSettings.Current.enemyFromBehind.curMoveSpeedOverPlayer += latchingSpeedChange;
+        //GlobalSettings.Current.player.curVerticalSpeed -= latchingSpeedChange;
+        GlobalSettings.Current.enemyFromBehind.curMoveSpeedOverPlayer += latchingSpeedChange * 2;
     }
 }

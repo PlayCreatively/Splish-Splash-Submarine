@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EFBLurker : MonoBehaviour
 {
     [SerializeField]
     float heightOfHand = 4;
 
-    bool isVisible;
+    public UnityEvent OnCaught;
 
     EnemyFromBehindSettings Settings => GlobalSettings.Current.enemyFromBehind;
 
@@ -13,6 +14,7 @@ public class EFBLurker : MonoBehaviour
     {
         Settings.curDistanceFromPlayer = Settings.maxDistanceFromPlayer;
         Settings.curMoveSpeedOverPlayer = 0;
+        GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
     }
 
     void Update()
@@ -20,11 +22,15 @@ public class EFBLurker : MonoBehaviour
         // Update distance to player
         float VerticalDelta = Settings.curMoveSpeedOverPlayer != 0
             ? Settings.curMoveSpeedOverPlayer
-            : -.35f;
+            : -Settings.curMoveSpeedOverPlayer;
 
         Settings.curDistanceFromPlayer -= VerticalDelta * Time.deltaTime;
         Settings.curDistanceFromPlayer = Mathf.Clamp(Settings.curDistanceFromPlayer, 0, Settings.maxDistanceFromPlayer);
 
+        if(Settings.curDistanceFromPlayer <= 0)
+        {
+            OnCaught.Invoke();
+        }
 
         UpdatePosition();
     }

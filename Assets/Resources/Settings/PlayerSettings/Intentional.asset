@@ -27,7 +27,7 @@ MonoBehaviour:
     attackEase: -20
     releaseEase: 0
   collisionRecoverTime: 2.5
-  horizontalSpeed: 8
-  verticalSpeed: 1.5
-  curVerticalSpeed: 1.5205123
+  horizontalSpeed: 7
+  verticalSpeed: 0.6
+  curVerticalSpeed: 0.6
   recoveringFromCollision: 0

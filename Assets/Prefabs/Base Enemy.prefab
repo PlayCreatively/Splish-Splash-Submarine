@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cf5c6c5485029478510d6e119b9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  latchingSpeedChange: 1
-  latchDuration: 6
+  latchingSpeedChange: 0.4
+  latchDuration: 10
 --- !u!114 &3909835701964143613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28835908f43f39f448bc8e9307fbdb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 4
-  frequency: 1
+  magnitude: 1.4
+  frequency: 4
   magnitudeRatio: 1
   frequencyRatio: 0.5
   timingOffset: 0
@@ -329,4 +329,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.45
