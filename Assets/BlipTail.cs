@@ -34,7 +34,7 @@ public class BlipTail : MonoBehaviour
             yield return null;
             Color color = trailRend.startColor;
             color.a = 1f - timer.ClampedNormal();
-            trailRend.startColor = trailRend.endColor = color;
+            trailRend.startColor = color;
         }
 
         trailRend.Clear();
