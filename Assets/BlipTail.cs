@@ -14,30 +14,30 @@ public class BlipTail : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             BlipTails[i] = Instantiate(blipTailPrefab, transform.position, Quaternion.identity, transform);
-            BlipTails[i].time = GlobalSettings.Current.radar.scanSpeed;
             BlipTails[i].emitting = false;
-
         }
     }
 
     public void OnBlip()
     {
         i = (i + 1) % 2;
-        StartCoroutine(StartTrail());
+        StartCoroutine(StartTrail(BlipTails[i]));
     }
 
-    IEnumerator StartTrail()
+    IEnumerator StartTrail(TrailRenderer trailRend)
     {
-        BlipTails[i].emitting = false;
+        trailRend.emitting = false;
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
+
         while (!timer)
         {
             yield return null;
-            Color color = BlipTails[i].startColor;
-            color.a = 1 - timer;
-            BlipTails[i].startColor = BlipTails[i].endColor = color;
+            Color color = trailRend.startColor;
+            color.a = 1f - timer.ClampedNormal();
+            trailRend.startColor = trailRend.endColor = color;
         }
-        BlipTails[i].Clear();
-        BlipTails[i].emitting = true;
+
+        trailRend.Clear();
+        trailRend.emitting = true;
     }
 }
