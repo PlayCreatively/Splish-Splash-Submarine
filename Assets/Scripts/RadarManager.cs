@@ -30,6 +30,7 @@ public class RadarManager : MonoBehaviour
                     && CalculatePos(blipTag.transform.position) < scanTimer)
                 {
                     blipTag.hasPingedThisScan = true;
+                    blipTag.GetComponent<BlipTail>().OnBlip();
                     StartCoroutine(BlipRoutine(blipTag.transform.position));
                 }
 

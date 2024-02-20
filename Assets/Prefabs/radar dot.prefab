@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5996019131445171606}
   - component: {fileID: 4557685778325771173}
-  - component: {fileID: -8922938832708447378}
   m_Layer: 0
   m_Name: radar dot
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &-8922938832708447378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763493414071977014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d89e094f80e34b8479588332b5b0cb56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
