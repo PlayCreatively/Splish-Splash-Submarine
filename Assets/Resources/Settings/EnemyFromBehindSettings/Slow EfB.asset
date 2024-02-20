@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024f9b3204e0ca24ea861d203c127916, type: 3}
   m_Name: Slow EfB
   m_EditorClassIdentifier: 
-  moveSpeedOverPlayer: 2
+  curMoveSpeedOverPlayer: 1
   swipeDuration: 1
   tipPosition: 8
   initialDistanceFromPlayer: 6
   curDistanceFromPlayer: 10
+  maxDistanceFromPlayer: 5

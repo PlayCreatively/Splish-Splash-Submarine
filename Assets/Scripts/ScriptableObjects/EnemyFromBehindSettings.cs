@@ -3,10 +3,8 @@
 [CreateAssetMenu(fileName = "New" + nameof(EnemyFromBehindSettings), menuName = Path + nameof(EnemyFromBehindSettings), order = 0)]
 public class EnemyFromBehindSettings : SettingsBase<EnemyFromBehindSettings>
 {
-    [SerializeField, Min(0), Tooltip("How much it moves over the player's base speed.")]
-    float moveSpeedOverPlayer = 1;
     [HideInInspector]
-    public float VerticalSpeed => moveSpeedOverPlayer + GlobalSettings.Current.player.verticalSpeed;
+    public float curMoveSpeedOverPlayer = 0;
     [Min(0)]
     public float swipeDuration = 1;
     [Min(2), Tooltip("At what distance from the enemy do you start to see the hand.")]
@@ -20,6 +18,7 @@ public class EnemyFromBehindSettings : SettingsBase<EnemyFromBehindSettings>
 
     [HideInInspector]
     public float curDistanceFromPlayer = 1;
+    public float maxDistanceFromPlayer = 5;
 
     void OnEnable()
     {
