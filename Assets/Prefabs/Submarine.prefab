@@ -186,9 +186,9 @@ GameObject:
   - component: {fileID: 8341459698694777763}
   - component: {fileID: 3769469424818796080}
   - component: {fileID: -5000415510143848852}
-  - component: {fileID: 3477007126502837588}
   - component: {fileID: -9005332442590464263}
   - component: {fileID: 5233082360892069433}
+  - component: {fileID: 6165952997105868981}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Player
@@ -263,18 +263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveArea: 6.0625
---- !u!114 &3477007126502837588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3372748033856870707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e56a71db45ed994591768321e396261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-9005332442590464263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +333,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6165952997105868981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a16c84ada6252d44886ac8774371830c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3769469424818796080}
+        m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6398596332239545792
 GameObject:
   m_ObjectHideFlags: 0

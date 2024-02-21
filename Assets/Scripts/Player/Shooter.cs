@@ -28,19 +28,20 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         if (!canShoot)
-        {
             if (reloadTime)
-            {
-                bulletsInMag = magSize;
-                canShoot = true;
-                onReloaded?.Invoke();
-            }
+                Reload();
             else
                 return;
-        }
 
         if(Input.GetKeyDown(KeyCode.Space))
             Shoot();
+    }
+
+    public void Reload()
+    {
+        bulletsInMag = magSize;
+        canShoot = true;
+        onReloaded?.Invoke();
     }
 
     void Shoot()
