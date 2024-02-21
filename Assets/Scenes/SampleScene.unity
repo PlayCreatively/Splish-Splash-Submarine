@@ -1395,6 +1395,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submarine
       objectReference: {fileID: 0}
+    - target: {fileID: 6739273586952908172, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
+      propertyPath: frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739273586952908172, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
+      propertyPath: magnitude
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
