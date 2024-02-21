@@ -9,9 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2391724cc55095543a4e87e8796a8c4a, type: 3}
-  m_Name: Single Shooting
+  m_Script: {fileID: 11500000, guid: 07a71b3bcf835e24c8c2a8b64a46cc73, type: 3}
+  m_Name: Snail
   m_EditorClassIdentifier: 
-  reloadTime: 6
-  bulletSpeed: 12
-  magSize: 1
+  verticalSpeed: 0.4
+  horizontalCurve:
+    time: 1
+    normal:
+      attack: 1
+      sustain: 0
+      release: 0
+      attackEase: -4
+      releaseEase: 0
+  horizontalSpeed: 1
+  curVerticalSpeed: 0.4
