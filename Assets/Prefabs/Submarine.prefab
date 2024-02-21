@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28835908f43f39f448bc8e9307fbdb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 0.2
+  magnitude: 0.1
   frequency: 3
   magnitudeRatio: 0
   frequencyRatio: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   phaseOffset: 0
   linearX: 0
   linearY: 0
-  lineLength: 6.2831855
+  lineLength: 10
 --- !u!1 &3372748033856870707
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2228419772506510397}
+  - component: {fileID: 8341459698694777763}
   - component: {fileID: 3769469424818796080}
   - component: {fileID: -5000415510143848852}
   - component: {fileID: 3477007126502837588}
@@ -212,6 +213,21 @@ Transform:
   - {fileID: 5835691611106444499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8341459698694777763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fdf34a7c0e905448609a1035bc2fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.6
+  reCenteringSpeed: 0.2
+  maxAngle: 25
 --- !u!114 &3769469424818796080
 MonoBehaviour:
   m_ObjectHideFlags: 0

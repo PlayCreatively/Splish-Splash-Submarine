@@ -54,7 +54,7 @@ public class Shooter : MonoBehaviour
             onEmptyMag?.Invoke();
             reloadTime.Restart();
         }
-        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, .5f), Quaternion.identity);
+        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + transform.up * .5f, Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
 
         float secondsTillOutOfBounds = Camera.main.orthographicSize * 2 / GlobalSettings.Current.shooting.bulletSpeed;
