@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Latches onto the player when below the player's position
@@ -8,6 +9,9 @@ public class PlayerLatcher : MonoBehaviour
 {
     public float latchingSpeedChange = .2f;
     public float latchDuration = 2f;
+
+    [SerializeField]
+    UnityEvent onLatch, onRelease;
 
     Transform player;
 
@@ -38,11 +42,12 @@ public class PlayerLatcher : MonoBehaviour
         ApplyLatchingSpeedChanges(latchingSpeedChange);
         Timer latchTimer = new(latchDuration);
 
+        onLatch?.Invoke();
+
         while (!latchTimer)
-        {
             yield return null;
 
-        }
+        onRelease?.Invoke();
 
         ApplyLatchingSpeedChanges(-latchingSpeedChange);
         Destroy(gameObject);

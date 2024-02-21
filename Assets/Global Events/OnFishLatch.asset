@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e1501bb52ced5d47a4bfec9ebb7e7f9, type: 3}
-  m_Name: OnEnemyHit
+  m_Name: OnFishLatch
   m_EditorClassIdentifier: 
   StaticResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 008fd0b0b50935a42b37bdaef43adab3, type: 2}
+      - m_Target: {fileID: 11400000, guid: 609dd6c83ad4a7d40b393aa98f21b4e2, type: 2}
         m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
