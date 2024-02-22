@@ -56,6 +56,6 @@ public class PlayerLatcher : MonoBehaviour
     void ApplyLatchingSpeedChanges(float latchingSpeedChange)
     {
         //GlobalSettings.Current.player.curVerticalSpeed -= latchingSpeedChange;
-        GlobalSettings.Current.enemyFromBehind.curMoveSpeedOverPlayer += latchingSpeedChange * 2;
+        GlobalSettings.Current.enemyFromBehind.curMoveSpeedOverPlayer += latchingSpeedChange;
     }
 }
