@@ -9,12 +9,14 @@ public class EFBLurker : MonoBehaviour
     public UnityEvent OnCaught;
 
     EnemyFromBehindSettings Settings => GlobalSettings.Current.enemyFromBehind;
+    float flickerThreshold;
 
     void Awake()
     {
         Settings.curDistanceFromPlayer = Settings.maxDistanceFromPlayer;
         Settings.curMoveSpeedOverPlayer = 0;
         GlobalSettings.Current.player.curVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
+        flickerThreshold = Settings.maxDistanceFromPlayer * .75f;
     }
 
     void Update()
@@ -31,6 +33,11 @@ public class EFBLurker : MonoBehaviour
         {
             OnCaught?.Invoke();
             enabled = false;
+        }
+        else if(Settings.curDistanceFromPlayer < flickerThreshold)
+        {
+            float onRatio = Settings.curDistanceFromPlayer / flickerThreshold;
+            GlobalSettings.Current.player.Ref.GetComponentInChildren<Flicker>().UpdateFlicker(onRatio + .1f);
         }
 
         UpdatePosition();
