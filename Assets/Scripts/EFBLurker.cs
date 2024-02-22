@@ -22,14 +22,15 @@ public class EFBLurker : MonoBehaviour
         // Update distance to player
         float VerticalDelta = Settings.curMoveSpeedOverPlayer != 0
             ? Settings.curMoveSpeedOverPlayer
-            : -Settings.curMoveSpeedOverPlayer;
+            : -.35f;
 
         Settings.curDistanceFromPlayer -= VerticalDelta * Time.deltaTime;
         Settings.curDistanceFromPlayer = Mathf.Clamp(Settings.curDistanceFromPlayer, 0, Settings.maxDistanceFromPlayer);
 
         if(Settings.curDistanceFromPlayer <= 0)
         {
-            OnCaught.Invoke();
+            OnCaught?.Invoke();
+            enabled = false;
         }
 
         UpdatePosition();
