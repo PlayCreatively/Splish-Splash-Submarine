@@ -23,6 +23,7 @@ public class Distance : MonoBehaviour
 
         distanceText.text = (Math.Floor(distance) * 1000 + 1000).ToString() + "m";
 
-        preassurePin.localRotation = Quaternion.Euler(0, 0, -distance * 360);
+        // Goes at half the speed of the bar
+        preassurePin.localRotation = Quaternion.Euler(0, 0, -distance * 360 / 2);
     }
 }
