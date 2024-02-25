@@ -4,10 +4,13 @@ using UnityEngine.UI;
 
 public class Distance : MonoBehaviour
 {
+    // distance in "targets" reached
     float distance = 0;
-    public int timeToTarget = 40;
+    const int targetInMeters = 100;
+    public int timeToTarget = 30;
     public Text distanceText;
     public Transform preassurePin;
+    public float prsPinRelSpeed = 0.4f;
 
     void Start()
     {
@@ -21,9 +24,10 @@ public class Distance : MonoBehaviour
 
         transform.localScale = new Vector3(1, distance % 1, 1);
 
-        distanceText.text = (Math.Floor(distance) * 1000 + 1000).ToString() + "m";
+        if (distance * targetInMeters < 10000)
+            distanceText.text = (Math.Floor(distance) * targetInMeters + targetInMeters).ToString() + "m";
 
         // Goes at half the speed of the bar
-        preassurePin.localRotation = Quaternion.Euler(0, 0, -distance * 360 / 2);
+        preassurePin.localRotation = Quaternion.Euler(0, 0, -distance * 360 * prsPinRelSpeed);
     }
 }
