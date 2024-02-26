@@ -11,9 +11,9 @@ public class PlayerRotator : MonoBehaviour
         // horizontal input
         float input = 0;
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             input -= 1;
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             input += 1;
 
         float angle = transform.localEulerAngles.z;
