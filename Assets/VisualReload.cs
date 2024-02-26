@@ -13,6 +13,7 @@ public class VisualReload : MonoBehaviour
     {
         transform.localScale = new Vector3(0, 1, 1);
         shooter.onEmptyMag.AddListener(() => curReloadTime = 0); 
+        shooter.onReloaded.AddListener(() => curReloadTime = 1); 
     }
 
     void Update()
