@@ -27,21 +27,21 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        // check if the player has bullets left in the magazine
         if (!canShoot)
-        {
             if (reloadTime)
-            {
-                bulletsInMag = magSize;
-                canShoot = true;
-                onReloaded?.Invoke();
-            }
+                Reload();
             else
                 return;
-        }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Shoot();
+    }
+
+    public void Reload()
+    {
+        bulletsInMag = magSize;
+        canShoot = true;
+        onReloaded?.Invoke();
     }
 
     void Shoot()
@@ -54,7 +54,7 @@ public class Shooter : MonoBehaviour
             onEmptyMag?.Invoke();
             reloadTime.Restart();
         }
-        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, .5f), Quaternion.identity);
+        Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + transform.up * .5f, Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
 
         float secondsTillOutOfBounds = Camera.main.orthographicSize * 2 / GlobalSettings.Current.shooting.bulletSpeed;
