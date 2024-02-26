@@ -12,6 +12,7 @@ public class CanvasSpawner : MonoBehaviour
     {
         likelyhoodSum = GlobalSettings.Current.spawnerSettings.GetLikelyhoodSum();
         unitsPerSpawn = (Camera.main.orthographicSize * 2) / GlobalSettings.Current.spawnerSettings.spawnsPerScreenHeight;
+        unitsTraveled = unitsPerSpawn;
     }
 
     void Update()
