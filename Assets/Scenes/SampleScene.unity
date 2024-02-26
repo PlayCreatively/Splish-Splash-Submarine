@@ -1783,6 +1783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176348395}
   - component: {fileID: 1176348396}
+  - component: {fileID: 1176348397}
   m_Layer: 0
   m_Name: DistanceBarPivot
   m_TagString: Untagged
@@ -1823,7 +1824,34 @@ MonoBehaviour:
   distanceIndicator: {fileID: 611852756}
   preassurePin: {fileID: 995981682}
   prsPinRelSpeed: 0.3
-  efbLurker: {fileID: 1171506940}
+--- !u!114 &1176348397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176348394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f0fe38b02cf6f2c45a646bff35f6f96a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1176348396}
+        m_TargetAssemblyTypeName: Distance, Assembly-CSharp
+        m_MethodName: set_isMoving
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1404080528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6398596332239545792, guid: b8c94a364bd961e42968ac931882fe35, type: 3}

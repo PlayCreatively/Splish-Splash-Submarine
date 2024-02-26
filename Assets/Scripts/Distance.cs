@@ -6,7 +6,7 @@ public class Distance : MonoBehaviour
 {
     // distance in "targets" reached
     float distance = 0;
-    bool isMoving = true;
+    public bool isMoving {get;set;} = true;
     const int targetInMeters = 100;
     public int timeToTarget = 30;
     public Text distanceText;
@@ -14,15 +14,12 @@ public class Distance : MonoBehaviour
     float dItopPos;
     public Transform preassurePin;
     public float prsPinRelSpeed = 0.4f;
-    public EFBLurker efbLurker;
 
     void Start()
     {
         transform.localScale = new Vector3(1, 0, 1);
 
         dItopPos = distanceIndicator.localPosition.y;
-
-        efbLurker.OnCaught.AddListener(() => isMoving = false);
     }
 
     void Update()
