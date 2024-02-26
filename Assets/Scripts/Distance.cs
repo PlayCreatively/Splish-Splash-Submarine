@@ -10,6 +10,8 @@ public class Distance : MonoBehaviour
     const int targetInMeters = 100;
     public int timeToTarget = 30;
     public Text distanceText;
+    public Transform distanceIndicator;
+    float dItopPos;
     public Transform preassurePin;
     public float prsPinRelSpeed = 0.4f;
     public EFBLurker efbLurker;
@@ -17,6 +19,8 @@ public class Distance : MonoBehaviour
     void Start()
     {
         transform.localScale = new Vector3(1, 0, 1);
+
+        dItopPos = distanceIndicator.localPosition.y;
 
         efbLurker.OnCaught.AddListener(() => isMoving = false);
     }
@@ -31,6 +35,8 @@ public class Distance : MonoBehaviour
 
         if (distance * targetInMeters < 10000)
             distanceText.text = (Math.Floor(distance) * targetInMeters + targetInMeters).ToString() + "m";
+
+        distanceIndicator.localPosition = new Vector3(0, distance % 1 * dItopPos, 0);
 
         // Goes at half the speed of the bar
         preassurePin.localRotation = Quaternion.Euler(0, 0, -distance * 360 * prsPinRelSpeed);
