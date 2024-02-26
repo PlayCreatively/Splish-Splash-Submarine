@@ -1,7 +1,4 @@
-using System;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class VisualReload : MonoBehaviour
 {
