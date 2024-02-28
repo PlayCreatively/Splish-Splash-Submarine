@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6585968043249575150}
+  - component: {fileID: 4654118863749535942}
   - component: {fileID: 1571636088459213313}
   - component: {fileID: -3858624974657401602}
   - component: {fileID: 4189023037277894226}
@@ -37,6 +38,28 @@ Transform:
   - {fileID: 7939722483443238647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4654118863749535942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354896243213820597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28835908f43f39f448bc8e9307fbdb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oscillations:
+  - pattern: {fileID: 11400000, guid: 022787baf55376c419385f40b0b6fe9a, type: 2}
+    magnitude: 5
+    oscillationTime: 5
+    timingOffset: 0
+  constMovement: 0
+  angle: 0
+  halfBounds: 2.5
+  boundsOffset: 0
+  previewLength: 5
 --- !u!50 &1571636088459213313
 Rigidbody2D:
   serializedVersion: 4
@@ -163,7 +186,6 @@ GameObject:
   - component: {fileID: 7939722483443238647}
   - component: {fileID: 3495625679326160016}
   - component: {fileID: 9212169864152371075}
-  - component: {fileID: 8194762039405044438}
   - component: {fileID: 2169180696372056494}
   - component: {fileID: 9057798184906943073}
   m_Layer: 8
@@ -182,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 4982864365773053542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02412564, y: -2.4998837, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -214,27 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blipTailPrefab: {fileID: 2973677027991916811, guid: 5706a0b10239fe04b8ef5e8c6ec9d26e, type: 3}
---- !u!114 &8194762039405044438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982864365773053542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28835908f43f39f448bc8e9307fbdb52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitude: 1.4
-  frequency: 4
-  magnitudeRatio: 1
-  frequencyRatio: 0.5
-  timingOffset: 0
-  phaseOffset: 0.5
-  linearX: 0
-  linearY: 0
-  lineLength: 452.8
 --- !u!212 &2169180696372056494
 SpriteRenderer:
   m_ObjectHideFlags: 0
