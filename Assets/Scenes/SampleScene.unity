@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 342199376}
   - component: {fileID: 342199377}
   m_Layer: 0
-  m_Name: grid
+  m_Name: grid16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -757,11 +757,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1694524437
+  m_SortingLayerID: 294117257
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a706ccac0491ce543900d06b0c33c99a, type: 3}
-  m_Color: {r: 0.08688785, g: 0.12452829, b: 0.06179422, a: 1}
+  m_Color: {r: 0.2676923, g: 0.4, b: 0.2, a: 0.02745098}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -846,11 +846,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1694524437
+  m_SortingLayerID: 294117257
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fe6e89dbe3357aa4e9f9210b6bb75e6a, type: 3}
-  m_Color: {r: 0.7670857, g: 1, b: 0.50377357, a: 0.03137255}
+  m_Color: {r: 0.265625, g: 0.4, b: 0.2, a: 0.05882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1238,6 +1238,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5034948254041543020, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034948254041543020, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.113295004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034948254041543020, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.273
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034948254041543020, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1707888
+      objectReference: {fileID: 0}
     - target: {fileID: 7030372892658968679, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
       propertyPath: m_Name
       value: radar manager
@@ -1281,6 +1297,10 @@ PrefabInstance:
     - target: {fileID: 7799558421786355952, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482221235910836423, guid: a28f0ebf2d141b84cba56c041cf7ff5d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2942,6 +2962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 342199376}
+  - {fileID: 357349931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
