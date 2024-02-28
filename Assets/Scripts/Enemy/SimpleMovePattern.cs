@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class MovePattern : MonoBehaviour
+public class SimpleMovePattern : MonoBehaviour
 {
     [Min(0)]
     public float magnitude, frequency;
@@ -16,16 +15,10 @@ public class MovePattern : MonoBehaviour
 
     [Header("Gizmos\nPreview line length")]
     [SerializeField] float lineLength = Mathf.PI * 2;
-    float spawnTime;
-
-    void Start()
-    {
-        spawnTime = Time.time;
-    }
 
     void Update()
     {
-        float x = (Time.time - spawnTime + timingOffset) * frequency;
+        float x = (Time.time + timingOffset) * frequency;
         transform.localPosition = Evaluate(x);
     }
 
@@ -48,12 +41,8 @@ public class MovePattern : MonoBehaviour
         for (int i = 1; i < lineCount; i++)
         {
             Vector3 point = Evaluate(i / (lineCount - 1f) * lineLength) + transform.parent.position;
-            //float colorT = lineCount / (lastPoint - point).sqrMagnitude;
-            //print(colorT);
-            //Gizmos.color = Color.Lerp(Color.blue, Color.red, colorT);
             Gizmos.DrawLine(lastPoint, point);
             lastPoint = point;
-
         }
     }
 }
