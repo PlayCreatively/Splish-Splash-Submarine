@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
-  m_Name: Overflow
+  m_Script: {fileID: 11500000, guid: 967b22bd4311a954dbec37467ed2ac9d, type: 3}
+  m_Name: Circle
   m_EditorClassIdentifier: 
-  spawnsPerScreenHeight: 20
-  spawns:
-  - {fileID: 11400000, guid: 3d3909afc8f889442b79c67247c63797, type: 2}
-  - {fileID: 11400000, guid: 3d66535ffa866cd439f3ccbcc9457c7e, type: 2}
+  magnitudeRatio: 0.5
+  frequencyRatio: 0.5
+  phaseOffset: 0.25
+  linearX: 0
+  linearY: 0

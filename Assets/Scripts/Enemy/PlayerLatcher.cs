@@ -30,7 +30,7 @@ public class PlayerLatcher : MonoBehaviour
     {
         // turn off fish logic
         GetComponentInChildren<EnemyConstantMover>().enabled = false;
-        GetComponentInChildren<MovePattern>().enabled = false;
+        //GetComponentInChildren<MovePattern>().enabled = false;
 
         transform.parent = player;
         transform.localPosition = Vector3.down;

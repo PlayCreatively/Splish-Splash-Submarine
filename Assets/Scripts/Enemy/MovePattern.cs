@@ -1,59 +1,144 @@
-using Unity.VisualScripting;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
 public class MovePattern : MonoBehaviour
 {
-    [Min(0)]
-    public float magnitude, frequency;
-    [Range(0, 1)]
-    public float magnitudeRatio, frequencyRatio;
-    [Min(0)]
-    public float timingOffset;
-    [Range(-.5f, .5f)]
-    public float phaseOffset;
-    [Header("Linear Interpolation\nOFF: circle, ON: linear")]
-    public bool linearX, linearY;
+    public List<Oscillation> oscillations = new(1);
 
-    [Header("Gizmos\nPreview line length")]
-    [SerializeField] float lineLength = Mathf.PI * 2;
-    float spawnTime;
+    public float constMovement;
+    public float angle;
 
-    void Start()
+    [Min(1)]
+    public float halfBounds;
+    public float boundsOffset;
+    [Header("Gizmos\nPreview time")]
+    [SerializeField] float previewLength = 3;
+    float timeElapsed;
+    Transform child;
+
+    private void Start()
     {
-        spawnTime = Time.time;
+        timeElapsed = 0;
+        child = transform.GetChild(0);
     }
 
     void Update()
     {
-        float x = (Time.time - spawnTime + timingOffset) * frequency;
-        transform.localPosition = Evaluate(x);
+        timeElapsed += Time.deltaTime;
+
+        if (Application.isPlaying)
+        {
+            child.localPosition = oscillations.Evaluate(timeElapsed);
+            transform.position += Time.deltaTime * GetConstMovementVector();
+        }
+        
     }
 
-    Vector3 Evaluate(float x)
+    Vector3 GetConstMovementVector()
     {
-        return new Vector3(Evaluate(x * frequencyRatio + phaseOffset * Mathf.PI, linearX) * magnitude * magnitudeRatio, Evaluate(x * (1 - frequencyRatio), linearY) * magnitude * (1 - magnitudeRatio));
+        const float HALF_PI = MathF.PI * .5f;
+        return constMovement * new Vector3(MathF.Cos(angle - HALF_PI), MathF.Sin(angle - HALF_PI));
     }
 
-    public float Evaluate(float x, bool linearInterp)
-    {
-        return linearInterp ? (Mathf.PingPong(x/Mathf.PI, 1) - .5f) * 2 : Mathf.Sin(x);
-    }
-
-
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        int lineCount = (int)(lineLength * magnitude * 4);
-        Vector3 lastPoint = Evaluate(0) + transform.parent.position;
+
+        int lineCount = (int)(previewLength * oscillations.MaxMagnitude() / oscillations.MinOscillationTime()) * 10;
+        Vector3 lastPoint = oscillations.Evaluate(0) + transform.position;
         for (int i = 1; i < lineCount; i++)
         {
-            Vector3 point = Evaluate(i / (lineCount - 1f) * lineLength) + transform.parent.position;
-            //float colorT = lineCount / (lastPoint - point).sqrMagnitude;
-            //print(colorT);
-            //Gizmos.color = Color.Lerp(Color.blue, Color.red, colorT);
+            float time = i / (float)(lineCount - 1);
+            time *= previewLength;
+            Vector3 point = oscillations.Evaluate(time) + transform.position + GetConstMovementVector() * time;
+
             Gizmos.DrawLine(lastPoint, point);
             lastPoint = point;
+        }
 
+        Gizmos.color = Color.green;
+        float halfHeight = lastPoint.y - transform.position.y;
+        Vector3 cubeOffset = new(boundsOffset, .5f * halfHeight);
+        Gizmos.DrawWireCube(transform.position + cubeOffset, new Vector3(halfBounds * 2, halfHeight, 0));
+
+
+        // Only update in editor if selected
+        if (UnityEditor.Selection.activeObject == gameObject)
+        {
+            timeElapsed %= previewLength;
+            child.localPosition = oscillations.Evaluate(timeElapsed) + timeElapsed * GetConstMovementVector();
+
+            UnityEditor.SceneView.RepaintAll();
         }
     }
+#endif
+}
+
+[Serializable]
+public class Oscillation
+{
+    public ScriptablePattern pattern;
+    [Min(.2f)]
+    public float magnitude = 1;
+    [Min(0.1f), Tooltip("Seconds for a single oscillation")]
+    public float oscillationTime = 1;
+    [Min(0)]
+    public float timingOffset;
+
+    public Vector3 Evaluate(float t)
+    {
+        if(pattern == null)
+            return Vector3.zero;
+
+        t = (t + timingOffset) / oscillationTime;
+        return new Vector3(Evaluate(t * pattern.frequencyRatio * 2 + pattern.phaseOffset, pattern.linearX) * magnitude * pattern.magnitudeRatio, Evaluate(t * (1 - pattern.frequencyRatio) * 2, pattern.linearY) * magnitude * (1 - pattern.magnitudeRatio));
+    }
+
+    /// <summary>
+    /// Evaluate the oscillation function at a given time where t = 1 is one oscillation.
+    /// </summary>
+    float Evaluate(float t, bool linearInterp)
+    {
+        return linearInterp ? (Mathf.PingPong(t, 1f) - .5f) * 2 : Mathf.Sin(t * Mathf.PI * 2);
+    }
+}
+
+public static class OscillationHelper
+{
+    public static Vector3 Evaluate(this List<Oscillation> oscillations, float t)
+    {
+        Vector3 result = Vector3.zero;
+
+        foreach (Oscillation osc in oscillations)
+        {
+
+            result += osc.Evaluate(t);
+            //offset = Vector2.SignedAngle(Vector2.up, result) * Mathf.Deg2Rad / MathF.PI;
+        }
+
+        return result;
+    }
+
+    public static float MaxMagnitude(this List<Oscillation> oscillations)
+    {
+        float result = float.MinValue;
+
+        foreach (Oscillation osc in oscillations)
+            result = MathF.Max(result, osc.magnitude);
+
+        return result;
+    }
+    public static float MinOscillationTime(this List<Oscillation> oscillations)
+    {
+        float result = float.MaxValue;
+
+        foreach (Oscillation osc in oscillations)
+            result = MathF.Min(result, osc.oscillationTime);
+
+        return result;
+    }
+
 }

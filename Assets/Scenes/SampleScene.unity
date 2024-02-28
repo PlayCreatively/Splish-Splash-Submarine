@@ -497,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: -1126786105
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a4d18d7667584c478195a9d5e937501, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f530bbfd230786149a2818cb4c5a107d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -505,7 +505,7 @@ SpriteRenderer:
   m_Size: {x: 2.8125, y: 2.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &238193421
@@ -1209,7 +1209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8fd6d2455593924ababbe66cfd0a3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnWidth: 4
+  spawnRadius: 6
+  margin: 1
 --- !u!1 &934926553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,11 +1994,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submarine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6739273586952908172, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2915079103422209125, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1637965749}
   m_SourcePrefab: {fileID: 100100000, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
+--- !u!1 &1637965748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2915079103422209125, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
+  m_PrefabInstance: {fileID: 1637965747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1637965749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637965748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fdf405fe7a50d4f94829aad603d748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 0.08
+  frequency: 2
+  magnitudeRatio: 0
+  frequencyRatio: 0
+  timingOffset: 0
+  phaseOffset: 0
+  linearX: 0
+  linearY: 0
+  lineLength: 6.2831855
 --- !u!1 &1686742333
 GameObject:
   m_ObjectHideFlags: 0
