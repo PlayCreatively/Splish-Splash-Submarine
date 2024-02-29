@@ -15,7 +15,6 @@ public class VisualReload : MonoBehaviour
         shooter.onEmptyMag.AddListener(() => curReloadTime = 0); 
         shooter.onReloaded.AddListener(() => curReloadTime = 1); 
     }
-
     void Update()
     {
         if (curReloadTime < 1)
