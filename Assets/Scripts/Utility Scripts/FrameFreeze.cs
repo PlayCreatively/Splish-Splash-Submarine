@@ -17,7 +17,7 @@ public class FrameFreeze : MonoBehaviour
     {
         float freezeTimer = 0;
         float normal = 0;
-        float previousTimeScale = Time.timeScale;
+        float previousTimeScale = GlobalSettings.Current.timeScale;
         
         while (normal < 1f)
         {
