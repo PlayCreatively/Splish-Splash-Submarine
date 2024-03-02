@@ -15,7 +15,6 @@ public class ModeSwitcher : MonoBehaviour
 
     void Awake()
     {
-        fadeOut = new(2);
         text = GetComponent<Text>();
         text.enabled = true;
 
@@ -23,6 +22,9 @@ public class ModeSwitcher : MonoBehaviour
         currentModeIndex = Array.IndexOf(modes, GlobalSettings.Get._current);
         // Change name to full caps
         text.text = modes[currentModeIndex].name.ToUpper();
+
+        fadeOut = new(2);
+        StartCoroutine(FadeOutRoutine());
     }
 
     void Update()
@@ -31,12 +33,17 @@ public class ModeSwitcher : MonoBehaviour
         {
             LoadMode(currentModeIndex + 1);
         }
+    }
 
-        if(!fadeOut)
+    IEnumerator FadeOutRoutine()
+    {
+        var color = text.color;
+
+        while (!fadeOut)
         {
-            var temp = text.color;
-            temp.a = 1f - fadeOut;
-            text.color = temp;
+            yield return null;
+            color.a = fadeOut.Inverse;
+            text.color = color;
         }
     }
 
