@@ -7,6 +7,7 @@ public class EFBLurker : MonoBehaviour
     float heightOfHand = 4;
 
     public UnityEvent OnCaught;
+    public UnityEvent<float> OnApproaching;
 
     EnemyFromBehindSettings Settings => GlobalSettings.Current.enemyFromBehind;
     float flickerThreshold;
@@ -37,7 +38,7 @@ public class EFBLurker : MonoBehaviour
         else if(Settings.curDistanceFromPlayer < flickerThreshold)
         {
             float onRatio = Settings.curDistanceFromPlayer / flickerThreshold;
-            GlobalSettings.Current.player.Ref.GetComponentInChildren<Flicker>().UpdateFlicker(onRatio + .1f);
+            OnApproaching?.Invoke(onRatio);
         }
 
         UpdatePosition();
