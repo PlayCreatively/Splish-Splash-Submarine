@@ -10,13 +10,16 @@ public class RadarManager : MonoBehaviour
     SpriteRenderer blipPrefab;
     Pool<SpriteRenderer> pool;
     Timer scanTimer;
+    Transform poolParent;
 
     void Awake()
     {
         GlobalSettings.Current.radar.onValidate += 
             settings => scanTimer = new(settings.scanSpeed);
 
-        pool = new(() => Instantiate(blipPrefab, transform), (isSpawning, blip) => blip.gameObject.SetActive(isSpawning));
+        poolParent = new GameObject("Blip Pool").transform;
+
+        pool = new(() => Instantiate(blipPrefab, poolParent), (isSpawning, blip) => blip.gameObject.SetActive(isSpawning));
         scanTimer = new(GlobalSettings.Current.radar.scanSpeed);
 
     }
