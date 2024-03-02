@@ -27,6 +27,9 @@ public class BlipTail : MonoBehaviour
     IEnumerator StartTrail(TrailRenderer trailRend)
     {
         trailRend.emitting = false;
+        trailRend.sortingLayerName = "Default";
+        trailRend.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
 
         while (!timer)
@@ -37,7 +40,13 @@ public class BlipTail : MonoBehaviour
             trailRend.startColor = color;
         }
 
+        Color temp = trailRend.startColor;
+        temp.a = 1;
+        trailRend.startColor = temp;
+
         trailRend.Clear();
         trailRend.emitting = true;
+        trailRend.sortingLayerName = "HiddenRadar";
+        trailRend.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
     }
 }
