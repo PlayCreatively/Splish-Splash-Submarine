@@ -20,9 +20,6 @@ public class Shooter : MonoBehaviour
             (shooting) => reloadTime.Start(shooting.reloadTime);
 
         magSize = GlobalSettings.Current.shooting.magSize;
-
-        onReloaded.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = new Color(1, .6f, .6f));
-        onEmptyMag.AddListener(() => GetComponentInChildren<SpriteRenderer>().color = Color.white);
     }
 
     private void Update()

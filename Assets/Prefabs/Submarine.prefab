@@ -14532,7 +14532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6055082875407299404}
   - component: {fileID: 5317485061855443733}
-  - component: {fileID: 6739273586952908172}
+  - component: {fileID: 3928239644338448969}
   m_Layer: 6
   m_Name: visual
   m_TagString: Untagged
@@ -14607,7 +14607,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
---- !u!114 &6739273586952908172
+--- !u!114 &3928239644338448969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14616,15 +14616,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2915079103422209125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28835908f43f39f448bc8e9307fbdb52, type: 3}
+  m_Script: {fileID: 11500000, guid: 77fdf405fe7a50d4f94829aad603d748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oscillations: []
-  constMovement: 0
-  angle: 0
-  halfBounds: 0
-  boundsOffset: 0
-  previewLength: 3
+  magnitude: 0.08
+  frequency: 2
+  magnitudeRatio: 0
+  frequencyRatio: 0
+  timingOffset: 0
+  phaseOffset: 0
+  linearX: 0
+  linearY: 0
+  lineLength: 6.2831855
 --- !u!1 &3372748033856870707
 GameObject:
   m_ObjectHideFlags: 0
