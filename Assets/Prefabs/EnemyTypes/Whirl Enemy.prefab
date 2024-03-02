@@ -10,19 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2354896243213820597, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_Name
-      value: Twirl Enemy
+      value: Whirl Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585968043249575150, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6585968043249575150, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6585968043249575150, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.96
+      value: 9.06
       objectReference: {fileID: 0}
     - target: {fileID: 6585968043249575150, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.041436482
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6585968043249575150, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9640223
+      value: 3.694949
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.363104
+      value: -0.10174179
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -190,14 +194,14 @@ MonoBehaviour:
   oscillations:
   - pattern: {fileID: 11400000, guid: 79f7a1abad1c8a94a85a7d3587443d63, type: 2}
     magnitude: 3.72
-    oscillationTime: 5.6
+    oscillationTime: 18.7
     timingOffset: 0
   - pattern: {fileID: 11400000, guid: 79f7a1abad1c8a94a85a7d3587443d63, type: 2}
     magnitude: 2.49
-    oscillationTime: 5.76
+    oscillationTime: 19.2
     timingOffset: 0
-  constMovement: 0.05
+  constMovement: 0.015
   angle: 0
   halfBounds: 6
   boundsOffset: 0
-  previewLength: 223.2
+  previewLength: 1092
