@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 struct Timer
 {
@@ -31,21 +26,22 @@ struct Timer
         startTime += duration;
     }
 
-    public readonly bool Finished() => Time.time >= startTime + duration;
+    public readonly bool Finished => Time.time >= startTime + duration;
 
-    public readonly float ClampedNormal() => Mathf.Clamp01(Normal());
-    public readonly float Normal()
+    public readonly float Normal => Mathf.Clamp01(UnClampedNormal());
+    public readonly float Inverse => 1f - Normal;
+    public readonly float UnClampedNormal()
     {
         return (Time.time - startTime) / duration;
     }
 
     public static implicit operator bool (Timer timer)
     {
-        return timer.Finished();
+        return timer.Finished;
     }
 
     public static implicit operator float (Timer timer)
     {
-        return timer.Normal();
+        return timer.Normal;
     }
 }
