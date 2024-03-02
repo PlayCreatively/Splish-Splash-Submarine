@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BlipTail : MonoBehaviour
+public class BlipTrail : MonoBehaviour
 {
     public TrailRenderer blipTailPrefab;
     TrailRenderer[] BlipTails;
@@ -16,6 +16,8 @@ public class BlipTail : MonoBehaviour
             BlipTails[i] = Instantiate(blipTailPrefab, transform.position, Quaternion.identity, transform);
             BlipTails[i].emitting = false;
         }
+
+        OnBlip();
     }
 
     public void OnBlip()

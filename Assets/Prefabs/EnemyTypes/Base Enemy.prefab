@@ -201,7 +201,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982864365773053542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade22ea35d711fa4d937ce7923543521, type: 3}
+  m_Script: {fileID: 11500000, guid: 28818a4bfcf9d0a4396497494c0467d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blipTailPrefab: {fileID: 2973677027991916811, guid: 5706a0b10239fe04b8ef5e8c6ec9d26e, type: 3}
