@@ -33,18 +33,17 @@ public class BlipTrail : MonoBehaviour
         trailRend.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
 
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
+        Color color = trailRend.startColor;
 
         while (!timer)
         {
-            yield return null;
-            Color color = trailRend.startColor;
-            color.a = timer.Inverse;
+            color.a = timer.SubNormal(.075f) - timer.Normal;
             trailRend.startColor = color;
+            yield return null;
         }
 
-        Color temp = trailRend.startColor;
-        temp.a = 1;
-        trailRend.startColor = temp;
+        color.a = 1;
+        trailRend.startColor = color;
 
         trailRend.Clear();
         trailRend.emitting = true;
