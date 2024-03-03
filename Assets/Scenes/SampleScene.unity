@@ -2360,7 +2360,7 @@ GameObject:
   - component: {fileID: 1502993168}
   - component: {fileID: 1502993169}
   m_Layer: 0
-  m_Name: body
+  m_Name: Body_Captain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2446,6 +2446,7 @@ GameObject:
   - component: {fileID: 1559355806}
   - component: {fileID: 1559355805}
   - component: {fileID: 1559355804}
+  - component: {fileID: 1559355807}
   m_Layer: 0
   m_Name: Alarm-EfB
   m_TagString: Untagged
@@ -2484,18 +2485,6 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1559355805}
-        m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1559355805}
         m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
         m_MethodName: Change
@@ -2573,6 +2562,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1559355807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559355802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5bbe6b546e26c0f4d8f5c25868da06ab, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1559355805}
+        m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
+        m_MethodName: ChangeBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1620319973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,8 +2920,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1768437097}
   - component: {fileID: 1768437098}
+  - component: {fileID: 1768437102}
+  - component: {fileID: 1768437101}
+  - component: {fileID: 1768437099}
   m_Layer: 0
-  m_Name: face
+  m_Name: Face_Captain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2977,6 +2997,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1768437099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768437096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f0fe38b02cf6f2c45a646bff35f6f96a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1768437102}
+        m_TargetAssemblyTypeName: SwitchSprites, Assembly-CSharp
+        m_MethodName: ChangeTo
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 11324ed8d3443074e89386b976cdac14, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1768437101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768437096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e2d136d49c442cc45aaa649f4b184945, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1768437102}
+        m_TargetAssemblyTypeName: SwitchSprites, Assembly-CSharp
+        m_MethodName: ChangeTo
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: cac1307455bdcd4419e1ffb6e091e4d6, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1768437102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768437096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972db42fa7fd525448e2b191bbe6281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: b00a25e008cab584081f5269f967c40c, type: 3}
+  - {fileID: 21300000, guid: 1540bac75ebde774095135997e93a71f, type: 3}
+  - {fileID: 21300000, guid: 11324ed8d3443074e89386b976cdac14, type: 3}
+  - {fileID: 21300000, guid: df7f3277d7e4f974a912a53676bb55fe, type: 3}
+  - {fileID: 21300000, guid: cac1307455bdcd4419e1ffb6e091e4d6, type: 3}
 --- !u!1 &1838390276
 GameObject:
   m_ObjectHideFlags: 0
