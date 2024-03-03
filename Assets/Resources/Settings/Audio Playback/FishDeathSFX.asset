@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FishDeathSFX
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
-  clip: {fileID: 8300000, guid: 356e48aa7192d6c4885265df8ae085ea, type: 3}
-  dbVolume: -45
+  clip: {fileID: 8300000, guid: 05f295288a6bf4bca84c5a4812c051f7, type: 3}
+  dbVolume: -5.5
   pitch: 1
   randomPitchVariance: 0.1
