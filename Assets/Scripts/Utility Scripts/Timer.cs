@@ -26,14 +26,16 @@ struct Timer
         startTime += duration;
     }
 
+    public readonly float SubNormal(float max)
+    {
+        return Mathf.Clamp01(UnClampedNormal / max);
+    }
+
     public readonly bool Finished => Time.time >= startTime + duration;
 
-    public readonly float Normal => Mathf.Clamp01(UnClampedNormal());
+    public readonly float Normal => Mathf.Clamp01(UnClampedNormal);
     public readonly float Inverse => 1f - Normal;
-    public readonly float UnClampedNormal()
-    {
-        return (Time.time - startTime) / duration;
-    }
+    public readonly float UnClampedNormal => (Time.time - startTime) / duration;
 
     public static implicit operator bool (Timer timer)
     {
