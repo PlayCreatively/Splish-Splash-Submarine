@@ -262,7 +262,7 @@ SpriteMask:
   m_BackSortingLayer: -1
   m_FrontSortingOrder: 5
   m_BackSortingOrder: -5
-  m_IsCustomRangeActive: 1
+  m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
 --- !u!212 &6860286807985923190
 SpriteRenderer:
