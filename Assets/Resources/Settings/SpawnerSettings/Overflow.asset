@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
   m_Name: Overflow
   m_EditorClassIdentifier: 
-  spawnsPerScreenHeight: 20
+  spawnsPerScreenHeight: 6
   spawns:
   - {fileID: 11400000, guid: 3d3909afc8f889442b79c67247c63797, type: 2}
   - {fileID: 11400000, guid: 3d66535ffa866cd439f3ccbcc9457c7e, type: 2}

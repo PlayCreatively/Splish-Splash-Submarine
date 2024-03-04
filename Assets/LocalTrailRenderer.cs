@@ -45,8 +45,13 @@ public class LocalTrailRenderer : MonoBehaviour
             AddPoint(curPoint);
     }
 
+    float RoundStep(float value, float step) => Mathf.Round(value * step) / step;
+
     public void AddPoint(Vector2 point)
     {
+        // round to the nearest step. Trying to keep the points on the pixel grid
+        point = new Vector2(RoundStep(point.x, 16), RoundStep(point.y, 16));
+
         if (trail.positionCount < maxPointCount)
             trail.positionCount++;
 
