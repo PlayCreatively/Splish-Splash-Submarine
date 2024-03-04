@@ -3,18 +3,18 @@ using System.Collections;
 
 public class BlipTrail : MonoBehaviour
 {
-    public TrailRenderer blipTailPrefab;
-    TrailRenderer[] BlipTails;
+    //public TrailRenderer blipTailPrefab;
+    LocalTrailRenderer[] BlipTrails;
 
     int i = 0;
 
     void Awake()
     {
-        BlipTails = new TrailRenderer[2];
+        //BlipTails = new LocalTrailRenderer[2];
+        BlipTrails = GetComponents<LocalTrailRenderer>();
         for (int i = 0; i < 2; i++)
         {
-            BlipTails[i] = Instantiate(blipTailPrefab, transform.position, Quaternion.identity, transform);
-            BlipTails[i].emitting = false;
+            BlipTrails[i].emitting = false;
         }
 
         OnBlip();
@@ -23,31 +23,31 @@ public class BlipTrail : MonoBehaviour
     public void OnBlip()
     {
         i = (i + 1) % 2;
-        StartCoroutine(StartTrail(BlipTails[i]));
+        StartCoroutine(StartTrail(BlipTrails[i]));
     }
 
-    IEnumerator StartTrail(TrailRenderer trailRend)
+    IEnumerator StartTrail(LocalTrailRenderer trailRend)
     {
         trailRend.emitting = false;
-        trailRend.sortingLayerName = "Default";
-        trailRend.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+        trailRend.trail.sortingLayerName = "Default";
+        trailRend.trail.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
 
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
-        Color color = trailRend.startColor;
+        Color color = trailRend.Color;
 
         while (!timer)
         {
-            color.a = timer.SubNormal(.075f) - timer.Normal;
-            trailRend.startColor = color;
             yield return null;
+            color.a = timer.SubNormal(.075f) - timer.Normal;
+            trailRend.Color = color;
         }
 
-        color.a = 1;
-        trailRend.startColor = color;
+        //color.a = 1;
+        //trailRend.Color = color;
+        //trailRend.trail.sortingLayerName = "HiddenRadar";
+        //trailRend.trail.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
         trailRend.Clear();
         trailRend.emitting = true;
-        trailRend.sortingLayerName = "HiddenRadar";
-        trailRend.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
     }
 }

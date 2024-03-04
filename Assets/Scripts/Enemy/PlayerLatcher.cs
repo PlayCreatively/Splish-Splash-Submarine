@@ -28,15 +28,11 @@ public class PlayerLatcher : MonoBehaviour
 
     IEnumerator LatchOntoPlayerRoutine()
     {
-        // turn off fish logic
-        GetComponentInParent<EnemyConstantMover>().enabled = false;
-        GetComponentInParent<MovePattern>().enabled = false;
+        Destroy(transform.parent.gameObject);
         enabled = false;
 
-        transform.parent = player;
+        transform.parent = player.GetChild(0).GetChild(0);
         transform.localPosition = Vector3.down;
-        transform.GetChild(0).localPosition = Vector3.zero;
-
 
         ApplyLatchingSpeedChanges(latchingSpeedChange);
         Timer latchTimer = new(latchDuration);
