@@ -29,7 +29,10 @@ public class PlayerLatcher : MonoBehaviour
     IEnumerator LatchOntoPlayerRoutine()
     {
         Destroy(transform.parent.gameObject);
+        transform.parent = null;
         enabled = false;
+
+        yield return StartCoroutine(InterpolateRoutine(player.position, 12f));
 
         transform.parent = player.GetChild(0).GetChild(0);
         transform.localPosition = Vector3.down;
@@ -46,6 +49,18 @@ public class PlayerLatcher : MonoBehaviour
 
         ApplyLatchingSpeedChanges(-latchingSpeedChange);
         Destroy(gameObject);
+    }
+
+    IEnumerator InterpolateRoutine(Vector3 target, float speed)
+    {
+        Vector3 startPos = transform.position; 
+        float duration = Vector3.Distance(startPos, target) / speed;
+        Timer moveTimer = new(duration);
+        while(!moveTimer)
+        {
+            yield return null;
+            transform.position = Vector3.Lerp(startPos, target, moveTimer);
+        }
     }
 
     void ApplyLatchingSpeedChanges(float latchingSpeedChange)
