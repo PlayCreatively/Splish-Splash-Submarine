@@ -2,10 +2,22 @@
 
 public class GameManager : ScriptableSingleton<GameManager>
 {
+    
     public static void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
     }
+    
+    public static void LoadScene(SceneType type)
+    {
+        SceneManager.LoadScene((int)type);
+    }
+
+
+
+
+
+
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Tools/Find/" + nameof(GameManager))]
