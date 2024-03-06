@@ -40,11 +40,13 @@ public class PlayerLatcher : MonoBehaviour
         ApplyLatchingSpeedChanges(latchingSpeedChange);
         Timer latchTimer = new(latchDuration);
 
+        GameState.Get.latchedEnemyCount++;
         onLatch?.Invoke();
 
         while (!latchTimer)
             yield return null;
 
+        GameState.Get.latchedEnemyCount--;
         onRelease?.Invoke();
 
         ApplyLatchingSpeedChanges(-latchingSpeedChange);
@@ -65,7 +67,7 @@ public class PlayerLatcher : MonoBehaviour
 
     void ApplyLatchingSpeedChanges(float latchingSpeedChange)
     {
-        //GlobalSettings.Current.player.curVerticalSpeed -= latchingSpeedChange;
-        GlobalSettings.Current.enemyFromBehind.curMoveSpeedOverPlayer += latchingSpeedChange;
+        //GameState.Get.playerVerticalSpeed -= latchingSpeedChange;
+        GameState.Get.efbMoveSpeedOverPlayer += latchingSpeedChange;
     }
 }
