@@ -11,9 +11,4 @@ public class ModeSettings : ScriptableObject
     public RadarSettings radar;
     public ShootingSettings shooting;
     public SpawnerSettings spawnerSettings;
-
-    void OnValidate()
-    {
-        Time.timeScale = timeScale;
-    }
 }

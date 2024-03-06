@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms;
+﻿using UnityEngine.SceneManagement;
 
-/// <summary>
-/// This class was just made to assign the game speed on scene load. 
-/// This may be for more general usecase later on or moved to another script.
-/// </summary>
-public class GameManager : MonoBehaviour
+public class GameManager : ScriptableSingleton<GameManager>
 {
-    void Start()
+    public static void LoadScene(int index)
     {
-        Time.timeScale = GlobalSettings.Current.timeScale;
+        SceneManager.LoadScene(index);
     }
+
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Tools/Find/" + nameof(GameManager))]
+    public static new void CreateAndShow()
+    {
+        ScriptableSingleton<GameManager>.CreateAndShow();
+    }
+#endif
 }
