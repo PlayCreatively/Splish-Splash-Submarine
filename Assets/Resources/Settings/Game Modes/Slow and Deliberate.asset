@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slow and Deliberate
   m_EditorClassIdentifier: 
   timeScale: 0.7
-  levelLengthInMinutes: 1
+  levelLengthInMinutes: 3
   player: {fileID: 11400000, guid: 9adfb175e49e97644aac1ea71a53d5f9, type: 2}
   enemyFromBehind: {fileID: 11400000, guid: 45349e8317941a44494fa2611ba112b8, type: 2}
   radar: {fileID: 11400000, guid: d92868d8634d99d4c94cafc413d5d54d, type: 2}

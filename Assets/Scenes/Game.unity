@@ -2714,54 +2714,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submarine
       objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 67326cb31d610b945895cc9d705130f8, type: 2}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScriptableEvent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760393911079953921, guid: b8c94a364bd961e42968ac931882fe35, type: 3}
-      propertyPath: OnLevelComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -19588,10 +19588,10 @@ MonoBehaviour:
   OnLevelComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 11400000, guid: 67326cb31d610b945895cc9d705130f8, type: 2}
+        m_TargetAssemblyTypeName: ScriptableEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
