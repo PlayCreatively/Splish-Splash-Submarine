@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: previewLength
-      value: 1300
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: oscillations.Array.size
