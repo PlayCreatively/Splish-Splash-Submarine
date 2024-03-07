@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: magnitudeRatio
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9057798184906943073, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
