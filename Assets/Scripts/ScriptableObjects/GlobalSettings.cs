@@ -1,40 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-public class GlobalSettings : ScriptableObject
+public class GlobalSettings : ScriptableSingleton<GlobalSettings>
 {
-    public static GlobalSettings Get => (_instance != null) 
-        ? _instance
-        : (_instance = LoadGameSettings());
-    static GlobalSettings _instance;
-
-    const string Path = "Settings/GlobalSettings";
-    const string FullPath = "Assets/Resources/" + Path + ".assets";
-    public static ScriptableObject Load(string name) => Resources.Load<ScriptableObject>("Settings/" + name);
     public static ModeSettings Current => Get._current;
     [Tooltip("The currently selected game mode setting. This is the one that will be used in the game.\nSelect a different one for a different game style.")]
     public ModeSettings _current;
 
 #if UNITY_EDITOR
-
-    static GlobalSettings LoadGameSettings()
+    [UnityEditor.MenuItem("Tools/Find/" + nameof(GlobalSettings))]
+    public static new void CreateAndShow()
     {
-        GlobalSettings settings = Resources.Load<GlobalSettings>(Path);
-
-        // if settings is null, create a new one
-        if (settings == null)
-        {
-            settings = CreateInstance<GlobalSettings>();
-            UnityEditor.AssetDatabase.CreateAsset(settings, Path);
-            UnityEditor.AssetDatabase.SaveAssets();
-            Debug.LogError($"No {nameof(GlobalSettings)} found at: {Path}\nCreated a new instance.", settings);
-        }
-
-        return settings;
+        ScriptableSingleton<GlobalSettings>.CreateAndShow();
     }
-#else
-    static GlobalSettings LoadGameSettings() => Resources.Load<GlobalSettings>(Path);
 #endif
+
 }
 
 public class SettingsBase<T> : ScriptableObject where T : SettingsBase<T>

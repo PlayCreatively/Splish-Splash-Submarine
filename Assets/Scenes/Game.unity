@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 62376602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3, y: -7.28, z: -1}
+  m_LocalPosition: {x: -3.4, y: -7.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1269,7 +1269,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519420032}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
@@ -1374,18 +1373,57 @@ MonoBehaviour:
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
---- !u!114 &519420034
+--- !u!1 &550333327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550333329}
+  - component: {fileID: 550333328}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &550333328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
+  m_GameObject: {fileID: 550333327}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d825f0639dcc5940a565016d5d8f072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  distanceTraveled: 0
+  scene: 1
+  playerVerticalSpeed: 0
+  latchedEnemyCount: 0
+  efbMoveSpeedOverPlayer: 0
+  efbDistanceFromPlayer: 1
+--- !u!4 &550333329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550333327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611852755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,7 +2220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1176348395}
   - component: {fileID: 1176348396}
-  - component: {fileID: 1176348397}
   m_Layer: 0
   m_Name: DistanceBarPivot
   m_TagString: Untagged
@@ -2218,39 +2255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbe00a5e34907a418cac661ca28b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToTarget: 30
   distanceText: {fileID: 174209977}
   distanceIndicator: {fileID: 611852756}
   preassurePin: {fileID: 995981682}
-  prsPinRelSpeed: 0.3
---- !u!114 &1176348397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176348394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd93a2efb3a742f41b4d576b5b4af551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f0fe38b02cf6f2c45a646bff35f6f96a, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1176348396}
-        m_TargetAssemblyTypeName: Distance, Assembly-CSharp
-        m_MethodName: set_isMoving
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1490827477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2331,7 @@ Transform:
   m_GameObject: {fileID: 1490827477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1906312, y: 4.8557057, z: -0.0027616683}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2444,7 +2451,7 @@ Transform:
   m_GameObject: {fileID: 1559355802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2, y: -1.11, z: -1}
+  m_LocalPosition: {x: -3.5, y: -1.11, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3685,6 +3692,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 550333329}
   - {fileID: 519420032}
   - {fileID: 1637965747}
   - {fileID: 722313153}

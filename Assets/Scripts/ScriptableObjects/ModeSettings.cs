@@ -5,6 +5,10 @@ public class ModeSettings : ScriptableObject
 {
     [Range(0, 1)]
     public float timeScale = 1;
+    [SerializeField, Min(0)]
+    float levelLengthInMinutes = 1;
+    [HideInInspector]
+    public float LevelLength;
     public PlayerSettings player;
     //public EnemySettings enemy;
     public EnemyFromBehindSettings enemyFromBehind;
@@ -12,8 +16,8 @@ public class ModeSettings : ScriptableObject
     public ShootingSettings shooting;
     public SpawnerSettings spawnerSettings;
 
-    void OnValidate()
+    private void OnEnable()
     {
-        Time.timeScale = timeScale;
+        LevelLength = levelLengthInMinutes * 60f * player.verticalSpeed * Time.timeScale;
     }
 }

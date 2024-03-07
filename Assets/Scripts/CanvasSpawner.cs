@@ -18,7 +18,7 @@ public class CanvasSpawner : MonoBehaviour
 
     void Update()
     {
-        unitsTraveled += GlobalSettings.Current.player.curVerticalSpeed * Time.deltaTime;
+        unitsTraveled += GameState.Get.playerVerticalSpeed * Time.deltaTime;
         int spawnCount = (int)(unitsTraveled / unitsPerSpawn);
         unitsTraveled -= spawnCount * unitsPerSpawn;
 

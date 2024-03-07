@@ -4,6 +4,6 @@ class EnemyConstantMover: MonoBehaviour
 {
     void Update()
     {
-        transform.position += GlobalSettings.Current.player.curVerticalSpeed * Time.deltaTime * Vector3.down;
+        transform.position += GameState.Get.playerVerticalSpeed * Time.deltaTime * Vector3.down;
     }
 }
