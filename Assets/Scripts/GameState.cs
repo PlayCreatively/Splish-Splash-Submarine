@@ -11,6 +11,12 @@ public class GameState : MonoBehaviour
     // Game State Variables //
     [HideInInspector]
     public int level = 1;
+    /// <summary>
+    /// Normalized level progress
+    /// </summary>
+    public float LevelProgress => distanceTraveled / GlobalSettings.Current.LevelLength;
+    [HideInInspector]
+    public float distanceTraveled = 0;
     [HideInInspector]
     public SceneType scene = SceneType.StartMenu;
     [HideInInspector]

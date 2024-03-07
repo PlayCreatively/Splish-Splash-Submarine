@@ -20,4 +20,3 @@ MonoBehaviour:
     attackEase: 0
     releaseEase: 0
   horizontalSpeed: 1
-  curVerticalSpeed: 0.2

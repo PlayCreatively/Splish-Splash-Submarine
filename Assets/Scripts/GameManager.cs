@@ -13,7 +13,10 @@ public class GameManager : ScriptableSingleton<GameManager>
         SceneManager.LoadScene((int)type);
     }
 
-
+    public static void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 
 

@@ -67,7 +67,7 @@ public class PlayerLatcher : MonoBehaviour
 
     void ApplyLatchingSpeedChanges(float latchingSpeedChange)
     {
-        //GameState.Get.playerVerticalSpeed -= latchingSpeedChange;
+        GameState.Get.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1);
         GameState.Get.efbMoveSpeedOverPlayer += latchingSpeedChange;
     }
 }
