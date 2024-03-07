@@ -7,10 +7,8 @@ public class Shooter : MonoBehaviour
     Rigidbody2D bulletPrefab;
     public UnityEvent onReloaded, onEmptyMag, onShot;
 
-    Timer reloadTime;
+    public Timer reloadTime;
     bool canShoot = false;
-    int magSize;
-    int bulletsInMag;
 
     private void Awake()
     {
@@ -18,25 +16,24 @@ public class Shooter : MonoBehaviour
 
         GlobalSettings.Current.shooting.onValidate += 
             (shooting) => reloadTime.Start(shooting.reloadTime);
-
-        magSize = GlobalSettings.Current.shooting.magSize;
     }
 
     private void Update()
     {
-        if (!canShoot)
-            if (reloadTime)
-                Reload();
-            else
-                return;
-
+        if (!canShoot && reloadTime)
+            Reload();
+        
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            Shoot();
+        {
+            if (canShoot)
+                Shoot();
+            else
+                onEmptyMag?.Invoke();
+        }
     }
 
     public void Reload()
     {
-        bulletsInMag = magSize;
         canShoot = true;
         onReloaded?.Invoke();
     }
@@ -44,13 +41,8 @@ public class Shooter : MonoBehaviour
     void Shoot()
     {
         onShot?.Invoke();
-        bulletsInMag--;
-        if (bulletsInMag == 0)
-        {
-            canShoot = false;
-            onEmptyMag?.Invoke();
-            reloadTime.Restart();
-        }
+        canShoot = false;
+        reloadTime.Restart();
         Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position + transform.up * .5f, Quaternion.identity);
         bullet.velocity = transform.up * GlobalSettings.Current.shooting.bulletSpeed;
         bullet.transform.localRotation = transform.localRotation;
