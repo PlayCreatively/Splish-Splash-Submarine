@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e83659a0c204914f983a8f6e2aced9b, type: 3}
-  m_Name: FishLatching
+  m_Name: FishDetaching
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
-  clip: {fileID: 8300000, guid: 82bb9607ae50d426ebfd98d824a36f07, type: 3}
+  clip: {fileID: 8300000, guid: 8687707817b794dbfbdd1a4924fbd9fc, type: 3}
   dbVolume: 0
-  pitch: 1
+  pitch: 0.85
   randomPitchVariance: 0.1

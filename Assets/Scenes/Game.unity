@@ -2432,7 +2432,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1559355803}
   - component: {fileID: 1559355806}
-  - component: {fileID: 1559355805}
+  - component: {fileID: 1559355809}
+  - component: {fileID: 1559355808}
   - component: {fileID: 1559355804}
   - component: {fileID: 1559355807}
   m_Layer: 0
@@ -2473,31 +2474,18 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1559355805}
-        m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 1
+      - m_Target: {fileID: 1559355809}
+        m_TargetAssemblyTypeName: EventsSpriteSwitcher, Assembly-CSharp
+        m_MethodName: OnFishLatch
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 8812c66a029bd144f905f80e456f6914, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1559355805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559355802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7fee59b873b6fb41a532018ac9e5f1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherSprite: {fileID: 21300000, guid: 8812c66a029bd144f905f80e456f6914, type: 3}
 --- !u!212 &1559355806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2566,18 +2554,42 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1559355805}
-        m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
-        m_MethodName: ChangeBack
-        m_Mode: 1
+      - m_Target: {fileID: 1559355809}
+        m_TargetAssemblyTypeName: EventsSpriteSwitcher, Assembly-CSharp
+        m_MethodName: OnFishRelease
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 6305e3d5613a0f6448d77acece03bcb9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1559355808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559355802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972db42fa7fd525448e2b191bbe6281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1559355809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559355802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a79d01c2866a1468806eed67cdbd36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620319973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,8 +2920,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1768437097}
   - component: {fileID: 1768437098}
-  - component: {fileID: 1768437104}
-  - component: {fileID: 1768437102}
+  - component: {fileID: 1768437106}
+  - component: {fileID: 1768437105}
   - component: {fileID: 1768437101}
   - component: {fileID: 1768437103}
   - component: {fileID: 1768437099}
@@ -3003,9 +3015,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1768437102}
-        m_TargetAssemblyTypeName: SwitchSprites, Assembly-CSharp
-        m_MethodName: ChangeTo
+      - m_Target: {fileID: 1768437106}
+        m_TargetAssemblyTypeName: EventsSpriteSwitcher, Assembly-CSharp
+        m_MethodName: OnGameOver
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 11324ed8d3443074e89386b976cdac14, type: 3}
@@ -3031,9 +3043,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1768437102}
-        m_TargetAssemblyTypeName: SwitchSprites, Assembly-CSharp
-        m_MethodName: ChangeTo
+      - m_Target: {fileID: 1768437106}
+        m_TargetAssemblyTypeName: EventsSpriteSwitcher, Assembly-CSharp
+        m_MethodName: OnFishLatch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: cac1307455bdcd4419e1ffb6e091e4d6, type: 3}
@@ -3043,24 +3055,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1768437102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768437096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972db42fa7fd525448e2b191bbe6281a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: b00a25e008cab584081f5269f967c40c, type: 3}
-  - {fileID: 21300000, guid: 1540bac75ebde774095135997e93a71f, type: 3}
-  - {fileID: 21300000, guid: 11324ed8d3443074e89386b976cdac14, type: 3}
-  - {fileID: 21300000, guid: df7f3277d7e4f974a912a53676bb55fe, type: 3}
-  - {fileID: 21300000, guid: cac1307455bdcd4419e1ffb6e091e4d6, type: 3}
 --- !u!114 &1768437103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3077,19 +3071,31 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1768437102}
-        m_TargetAssemblyTypeName: SwitchSprites, Assembly-CSharp
-        m_MethodName: Default
-        m_Mode: 1
+      - m_Target: {fileID: 1768437106}
+        m_TargetAssemblyTypeName: CaptainStates, Assembly-CSharp
+        m_MethodName: OnFishRelease
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 21300000, guid: 1540bac75ebde774095135997e93a71f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1768437104
+--- !u!114 &1768437105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768437096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972db42fa7fd525448e2b191bbe6281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1768437106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

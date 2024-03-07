@@ -1,17 +1,12 @@
-using System.Linq;
 using UnityEngine;
 
 public class SwitchSprites : MonoBehaviour
 {
-    public Sprite[] sprites;
     Sprite originalSprite;
+
     void Start()
     {
         originalSprite = GetComponent<SpriteRenderer>().sprite;
-    }
-    public void ChangeByIndex(int index)
-    {
-        GetComponent<SpriteRenderer>().sprite = sprites[index];
     }
     public void ChangeTo(Sprite sprite)
     {
@@ -20,16 +15,28 @@ public class SwitchSprites : MonoBehaviour
     public void ChangeToIf(Sprite sprite, bool condition)
     {
         if (condition)
-            GetComponent<SpriteRenderer>().sprite = sprite;
-    }
-    public void ChangeToIfs(Sprite sprite, bool[] conditions)
-    {
-        // Check if all conditions are true
-        if (conditions.All(c => c))
-            GetComponent<SpriteRenderer>().sprite = sprite;
+            ChangeTo(sprite);
     }
     public void Default()
     {
         GetComponent<SpriteRenderer>().sprite = originalSprite;
     }
+
+    // public Sprite[] Sprites;
+    // public void ChangeByIndex(int index)
+    // {
+    //     GetComponent<SpriteRenderer>().sprite = Sprites[index];
+    // }   
+    // int GetIndex()
+    // {
+    //     return Sprites.ToList().IndexOf(GetComponent<SpriteRenderer>().sprite);
+    // }
+    // int GetNextIndex()
+    // {
+    //     return (GetIndex() + 1) % Sprites.Length;
+    // }
+    // int GetPreviousIndex()
+    // {
+    //     return (GetIndex() - 1) % Sprites.Length;
+    // }
 }
