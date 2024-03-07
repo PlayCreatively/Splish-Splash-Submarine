@@ -34,6 +34,7 @@ public class Shooter : MonoBehaviour
 
     public void Reload()
     {
+        reloadTime.Offset(-GlobalSettings.Current.shooting.reloadTime);
         canShoot = true;
         onReloaded?.Invoke();
     }
