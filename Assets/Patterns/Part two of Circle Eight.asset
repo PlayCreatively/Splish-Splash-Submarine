@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 967b22bd4311a954dbec37467ed2ac9d, type: 3}
-  m_Name: Wide Circle
+  m_Name: Part two of Circle Eight
   m_EditorClassIdentifier: 
-  magnitudeRatio: 0.765
+  magnitudeRatio: 0.66
   frequencyRatio: 0.5
-  phaseOffset: 0.254
+  phaseOffset: 0.241
   linearX: 0
   linearY: 0
