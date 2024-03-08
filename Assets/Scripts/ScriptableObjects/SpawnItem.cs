@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "New" + nameof(SpawnItem), menuName = Path + nameof(SpawnItem), order = 0)]
-public class SpawnItem : SettingsBase<SpawnItem>
+[Serializable]
+public struct SpawnItem
 {
     public MovePattern prefab;
     [Min(0), Tooltip("Likelyhood of being spawned relative to all the other spawns in the list.")]

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-struct Timer
+public struct Timer
 {
     float startTime, duration;
 

@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnsPerScreenHeight: 6
   spawns:
-  - {fileID: 11400000, guid: 3d3909afc8f889442b79c67247c63797, type: 2}
-  - {fileID: 11400000, guid: 3d66535ffa866cd439f3ccbcc9457c7e, type: 2}
+  - prefab: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+    likelyhood: 1
+  - prefab: {fileID: 418859012655280789, guid: 35e488ba7d1fa054ebc794f52d0f9cfe, type: 3}
+    likelyhood: 1
+  - prefab: {fileID: 418859012655280789, guid: 271ab341c367be0429452bc12b5b8834, type: 3}
+    likelyhood: 1
+  - prefab: {fileID: 7035762626567916201, guid: cf93102d1e7c9144e929ddaf8a3e8b42, type: 3}
+    likelyhood: 1

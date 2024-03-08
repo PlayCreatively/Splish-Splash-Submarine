@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RadarManager : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class RadarManager : MonoBehaviour
 
     [SerializeField]
     SpriteRenderer blipPrefab;
+
+    public UnityEvent OnBlip;
     Pool<SpriteRenderer> pool;
     Timer scanTimer;
     Transform poolParent;
+    
 
     void Awake()
     {
@@ -34,6 +38,7 @@ public class RadarManager : MonoBehaviour
                 {
                     blipTag.hasPingedThisScan = true;
                     blipTag.GetComponentInParent<BlipTrail>().OnBlip();
+                    OnBlip?.Invoke();
                     //StartCoroutine(BlipRoutine(blipTag.transform.position));
                 }
 

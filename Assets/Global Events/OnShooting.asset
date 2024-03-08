@@ -10,24 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e1501bb52ced5d47a4bfec9ebb7e7f9, type: 3}
-  m_Name: OnFishLatch
+  m_Name: OnShooting
   m_EditorClassIdentifier: 
   StaticResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 609dd6c83ad4a7d40b393aa98f21b4e2, type: 2}
-        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 968bc0c7e086045528ff64ddea4dc8a9, type: 2}
+      - m_Target: {fileID: 11400000, guid: a057903e4ac3d4e1bb883a7f041d3500, type: 2}
         m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
