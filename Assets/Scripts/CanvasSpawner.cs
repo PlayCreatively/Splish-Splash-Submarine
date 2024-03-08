@@ -11,8 +11,8 @@ public class CanvasSpawner : MonoBehaviour
 
     void Awake()
     {
-        likelyhoodSum = GlobalSettings.Current.spawnerSettings.GetLikelyhoodSum();
-        unitsPerSpawn = (Camera.main.orthographicSize * 2) / GlobalSettings.Current.spawnerSettings.spawnsPerScreenHeight;
+        likelyhoodSum = GlobalSettings.Current.level.spawningSettings.GetLikelyhoodSum();
+        unitsPerSpawn = (Camera.main.orthographicSize * 2) / GlobalSettings.Current.level.spawningSettings.spawnsPerScreenHeight;
         unitsTraveled = unitsPerSpawn;
     }
 
@@ -47,7 +47,7 @@ public class CanvasSpawner : MonoBehaviour
     {
         float choice = Random.Range(0, likelyhoodSum);
 
-        foreach (SpawnItem spawn in GlobalSettings.Current.spawnerSettings.spawns)
+        foreach (SpawnItem spawn in GlobalSettings.Current.level.spawningSettings.spawns)
             if (choice < spawn.likelyhood)
                 return spawn.prefab;
             else

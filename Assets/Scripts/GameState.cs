@@ -14,7 +14,7 @@ public class GameState : MonoBehaviour
     /// <summary>
     /// Normalized level progress
     /// </summary>
-    public float LevelProgress => distanceTraveled / GlobalSettings.Current.LevelLength;
+    public float LevelProgress => distanceTraveled / GlobalSettings.Current.level.LevelLength;
     [HideInInspector]
     public float distanceTraveled = 0;
     [HideInInspector]

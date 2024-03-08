@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
-  m_Name: Lite NewSpawnerSettings
+  m_Name: Level 3
   m_EditorClassIdentifier: 
-  spawnFrequency: 4
-  spawns:
-  - {fileID: 11400000, guid: af786ca9dadb6473880176278f2976ca, type: 2}
-  - {fileID: 11400000, guid: f9d0f5de696ec294bb0049af3db7befb, type: 2}
+  levelLengthInMinutes: 3
+  LevelLength: 8.4
+  spawningSettings:
+    spawnsPerScreenHeight: 6
+    spawns:
+    - prefab: {fileID: 418859012655280789, guid: 35e488ba7d1fa054ebc794f52d0f9cfe, type: 3}
+      likelyhood: 1
+    - prefab: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+      likelyhood: 1
