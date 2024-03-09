@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class ComicManager : MonoBehaviour
 {
     public ComicAsset comic;
@@ -32,7 +34,7 @@ public class ComicManager : MonoBehaviour
     {
         if (index < comic.panels.Count)
         {
-            GetComponent<SpriteRenderer>().sprite = comic.panels[index];
+            GetComponent<Image>().sprite = comic.panels[index];
             onChangePanel.Invoke();
             return true;
         }
