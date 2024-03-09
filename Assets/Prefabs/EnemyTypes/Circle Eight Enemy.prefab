@@ -4884,16 +4884,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oscillations:
   - pattern: {fileID: 11400000, guid: 2c7dab3de0ac4d041bd4fc3bd885b5de, type: 2}
-    magnitude: 5
+    magnitude: 4
     oscillationTime: 5
     timingOffset: 0
   - pattern: {fileID: 11400000, guid: 20bd5a08e3b1f11458eeaeb8946a810c, type: 2}
-    magnitude: 5
+    magnitude: 3.6
     oscillationTime: 5
     timingOffset: 0
   constMovement: 0
   angle: 0
-  halfBounds: 2.5
+  halfBounds: 5.8
   boundsOffset: 0
   previewLength: 5
 --- !u!50 &1571636088459213313

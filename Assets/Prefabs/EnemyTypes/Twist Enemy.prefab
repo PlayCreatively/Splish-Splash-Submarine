@@ -222,6 +222,6 @@ MonoBehaviour:
     timingOffset: 0
   constMovement: 0.16
   angle: 0
-  halfBounds: 6
-  boundsOffset: 0
+  halfBounds: 1.1
+  boundsOffset: -0.25
   previewLength: 20

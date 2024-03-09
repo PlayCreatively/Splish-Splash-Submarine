@@ -4889,7 +4889,7 @@ MonoBehaviour:
     timingOffset: 0
   constMovement: 0
   angle: 0
-  halfBounds: 6
+  halfBounds: 2.65
   boundsOffset: 0
   previewLength: 10
 --- !u!50 &1571636088459213313
