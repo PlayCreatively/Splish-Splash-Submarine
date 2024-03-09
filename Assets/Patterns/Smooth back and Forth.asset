@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967b22bd4311a954dbec37467ed2ac9d, type: 3}
   m_Name: Smooth back and Forth
   m_EditorClassIdentifier: 
-  magnitudeRatio: 0.96
-  frequencyRatio: 0.497
+  magnitudeRatio: 0.95
+  frequencyRatio: 0.5
   phaseOffset: 0
   linearX: 1
   linearY: 0

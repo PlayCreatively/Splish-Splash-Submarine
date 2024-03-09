@@ -14,7 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 32a592e14af46124cb946f1d485fcd40, type: 3}
     - target: {fileID: 2354896243213820597, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_Name
-      value: blob enemy 1
+      value: Smooth  Moving back and forth
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+      propertyPath: constMovement
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: previewLength

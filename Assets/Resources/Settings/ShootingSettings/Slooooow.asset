@@ -14,5 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reloadTime: 3
   bulletSpeed: 4
-  maxAimAngle: 25
-  rotationTime: 1
