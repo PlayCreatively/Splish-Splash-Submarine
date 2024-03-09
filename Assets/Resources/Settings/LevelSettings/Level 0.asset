@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
   m_Name: Level 0
   m_EditorClassIdentifier: 
-  levelLengthInMinutes: 1
-  LevelLength: 8.4
+  levelLengthInMinutes: 9999
+  LevelLength: 83991.6
   spawningSettings:
     spawnsPerScreenHeight: 1
     spawns:

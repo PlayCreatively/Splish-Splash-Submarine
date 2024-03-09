@@ -6,11 +6,9 @@ public class GameState : MonoBehaviour
     public static GameState Get => _get;
     public static GameState _get;
 
-
-
     // Game State Variables //
     [HideInInspector]
-    public int level = 1;
+    public int level = 0;
     /// <summary>
     /// Normalized level progress
     /// </summary>
@@ -54,8 +52,14 @@ public class GameState : MonoBehaviour
         {
             //case SceneType.MainMenu:
             //    break;
-            //case SceneType.Game:
-            //    break;
+            case SceneType.Game:
+                if (level == 0)
+                {
+                    Tutorial tutorial = Resources.Load<Tutorial>("Settings/LevelSettings/TutorialPrefab");
+                    Instantiate(tutorial);
+                } 
+                GlobalSettings.Current.level = Resources.Load<LevelAsset>("Settings/LevelSettings/Level " + level);
+                break;
             case SceneType.Comic:
                 FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(level);
                 break;
