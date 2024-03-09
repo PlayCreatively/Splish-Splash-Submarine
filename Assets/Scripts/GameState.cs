@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameState : MonoBehaviour
 {
     public static GameState Get => _get;
-    public static GameState _get;
+    static GameState _get;
 
     // Game State Variables //
     [HideInInspector]
@@ -47,6 +47,8 @@ public class GameState : MonoBehaviour
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         this.scene = (SceneType)scene.buildIndex;
+        //Camera.main.rect = new Rect(0, 0, .8f, .8f);
+
 
         switch (this.scene)
         {
