@@ -7,11 +7,9 @@ public class ShootingSettings : SettingsBase<ShootingSettings>
     public float reloadTime = 6f;
     [Min(1)]
     public float bulletSpeed = 1f;
-    [Min(1)]
-    public int magSize = 3;
-    [Header("not implemented yet...")]
-    public float maxAimAngle = 25;
-    [Header("not implemented yet...")]
-    public float rotationTime = 1f;
+    //[Header("not implemented yet...")]
+    //public float maxAimAngle = 25;
+    //[Header("not implemented yet...")]
+    //public float rotationTime = 1f;
 
 }

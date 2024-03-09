@@ -24,10 +24,7 @@ public class GameState : MonoBehaviour
     [HideInInspector]
     public int latchedEnemyCount = 0;
     [HideInInspector]
-    public float efbMoveSpeedOverPlayer = 0, 
-                 efbDistanceFromPlayer  = 1;
-
-
+    public float efbDistanceFromPlayer  = 1;
 
     void Awake()
     {

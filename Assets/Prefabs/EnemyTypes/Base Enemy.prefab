@@ -5169,8 +5169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cf5c6c5485029478510d6e119b9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  latchingSpeedChange: 0.4
-  latchDuration: 10
+  latchingSpeedChange: 1
+  latchDuration: 8
   onLatch:
     m_PersistentCalls:
       m_Calls:

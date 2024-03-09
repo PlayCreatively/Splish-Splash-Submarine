@@ -37,7 +37,7 @@ public class PlayerLatcher : MonoBehaviour
         transform.parent = player.GetChild(0).GetChild(0);
         transform.localPosition = Vector3.down;
 
-        ApplyLatchingSpeedChanges(latchingSpeedChange);
+        ApplyLatchingSpeedChanges();
         Timer latchTimer = new(latchDuration);
 
         GameState.Get.latchedEnemyCount++;
@@ -49,7 +49,7 @@ public class PlayerLatcher : MonoBehaviour
         GameState.Get.latchedEnemyCount--;
         onRelease?.Invoke();
 
-        ApplyLatchingSpeedChanges(-latchingSpeedChange);
+        ApplyLatchingSpeedChanges();
         Destroy(gameObject);
     }
 
@@ -65,9 +65,8 @@ public class PlayerLatcher : MonoBehaviour
         }
     }
 
-    void ApplyLatchingSpeedChanges(float latchingSpeedChange)
+    void ApplyLatchingSpeedChanges()
     {
-        GameState.Get.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1);
-        GameState.Get.efbMoveSpeedOverPlayer += latchingSpeedChange;
+        GameState.Get.playerVerticalSpeed = Mathf.Lerp(GlobalSettings.Current.player.verticalSpeed, GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1), .5f);
     }
 }

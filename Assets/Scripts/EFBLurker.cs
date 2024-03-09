@@ -20,9 +20,8 @@ public class EFBLurker : MonoBehaviour
         maxDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
 
         State.efbDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
-        State.efbMoveSpeedOverPlayer = 0;
         State.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
-        flickerThreshold = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer * .75f;
+        flickerThreshold = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer * .5f;
     }
 
     void Update()
@@ -30,9 +29,9 @@ public class EFBLurker : MonoBehaviour
         distanceFromPlayer = State.efbDistanceFromPlayer;
 
         // Update distance to player
-        float VerticalDelta = State.efbMoveSpeedOverPlayer != 0
-            ? State.efbMoveSpeedOverPlayer
-            : -.35f;
+        float VerticalDelta = State.latchedEnemyCount > 0
+            ? State.latchedEnemyCount
+            : -GlobalSettings.Current.enemyFromBehind.detractingSpeedRatio;
 
         distanceFromPlayer -= VerticalDelta * Time.deltaTime;
         distanceFromPlayer = Mathf.Clamp(distanceFromPlayer, 0, GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer);
@@ -45,6 +44,8 @@ public class EFBLurker : MonoBehaviour
         else if(distanceFromPlayer < flickerThreshold)
         {
             float onRatio = distanceFromPlayer / flickerThreshold;
+            Debug.Log(onRatio);
+            onRatio = Mathf.Lerp(.3f, 1, onRatio);
             OnApproaching?.Invoke(onRatio);
         }
 

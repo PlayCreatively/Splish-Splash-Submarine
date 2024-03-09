@@ -10,7 +10,6 @@ public class BlipTrail : MonoBehaviour
 
     void Awake()
     {
-        //BlipTails = new LocalTrailRenderer[2];
         BlipTrails = GetComponents<LocalTrailRenderer>();
         for (int i = 0; i < 2; i++)
         {

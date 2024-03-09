@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnitudeRatio: 0.66
   frequencyRatio: 0.5
-  phaseOffset: 0.241
+  phaseOffset: 0.25
   linearX: 0
   linearY: 0
