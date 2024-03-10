@@ -21,6 +21,7 @@ public class EFBLurker : MonoBehaviour
 
         State.efbDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
         State.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
+        State.latchedEnemyCount = 0;
         flickerThreshold = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer * .5f;
     }
 
