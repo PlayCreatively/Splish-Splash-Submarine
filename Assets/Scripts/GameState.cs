@@ -80,7 +80,7 @@ public class GameState : MonoBehaviour
                 } 
                 break;
             case SceneType.Comic:
-                FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level);
+                    FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level-1);
                 break;
         }
     }

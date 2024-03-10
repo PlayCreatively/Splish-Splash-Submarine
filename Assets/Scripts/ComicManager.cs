@@ -14,7 +14,10 @@ public class ComicManager : MonoBehaviour
 
     void Start()
     {
-        LoadPanel(panelIndex);
+        if(comic.panels.Count > 0)
+            LoadPanel(panelIndex);
+        else
+            GameManager.LoadScene(SceneType.Game);
     }
 
     void Update()
@@ -32,7 +35,7 @@ public class ComicManager : MonoBehaviour
 
     bool LoadPanel(int index)
     {
-        if (index < comic.panels.Count)
+        if (comic.panels.Count > 0 && index < comic.panels.Count)
         {
             GetComponent<Image>().sprite = comic.panels[index];
             onChangePanel.Invoke();

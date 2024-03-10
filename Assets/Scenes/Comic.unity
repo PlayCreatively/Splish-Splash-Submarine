@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37f17da04dde74aa54674b91a7cfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comic: {fileID: 11400000, guid: 93fa3f030356a70418acdec435c6333f, type: 2}
+  comic: {fileID: 0}
   onComicEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4527e2dfe5abac54b9a545b3fe71327d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
