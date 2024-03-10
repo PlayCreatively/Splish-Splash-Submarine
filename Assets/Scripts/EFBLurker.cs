@@ -10,7 +10,6 @@ public class EFBLurker : MonoBehaviour
     public UnityEvent<float> OnApproaching;
 
     GameState State => GameState.Get;
-    float flickerThreshold;
 
     float maxDistanceFromPlayer;
     float distanceFromPlayer;
@@ -22,7 +21,6 @@ public class EFBLurker : MonoBehaviour
         State.efbDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
         State.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
         State.latchedEnemyCount = 0;
-        flickerThreshold = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer * .5f;
     }
 
     void Update()
@@ -42,10 +40,9 @@ public class EFBLurker : MonoBehaviour
             OnCaught?.Invoke();
             enabled = false;
         }
-        else if(distanceFromPlayer < flickerThreshold)
+        else
         {
-            float onRatio = distanceFromPlayer / flickerThreshold;
-            onRatio = Mathf.Lerp(.3f, 1, onRatio);
+            float onRatio = distanceFromPlayer / maxDistanceFromPlayer;
             OnApproaching?.Invoke(onRatio);
         }
 
