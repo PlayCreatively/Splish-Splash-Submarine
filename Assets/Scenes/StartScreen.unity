@@ -882,7 +882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d825f0639dcc5940a565016d5d8f072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   distanceTraveled: 0
   scene: 0
   playerVerticalSpeed: 0

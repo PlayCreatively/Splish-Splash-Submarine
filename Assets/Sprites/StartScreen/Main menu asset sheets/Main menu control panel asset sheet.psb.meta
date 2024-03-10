@@ -1,0 +1,620 @@
+fileFormatVersion: 2
+guid: 01ed92e8353fa8b40af40a37ba1eeb39
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: quit button click
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 332
+      y: 192
+      width: 32
+      height: 32
+    spriteID: f54f9895c78e46847abcde03136a6f67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 332, y: 192}
+    spritePosition: {x: 118, y: 9}
+  - name: quit button hover
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 372
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 636e1267ad1021340b6a2805b3c652cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 372, y: 192}
+    spritePosition: {x: 82, y: 9}
+  - name: ' quit button normal'
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 4
+      width: 32
+      height: 32
+    spriteID: d578bfd9c00fdea42af4f529d892f850
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 4}
+    spritePosition: {x: 19, y: 9}
+  - name: switch hover
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 81
+      width: 18
+      height: 27
+    spriteID: ac976c651ebca0745b35cbc27da8f39f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 81}
+    spritePosition: {x: 11, y: 99}
+  - name: switch normal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 116
+      width: 18
+      height: 27
+    spriteID: d9e3636b3d501524a8306dc4fd6c1f28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 116}
+    spritePosition: {x: 37, y: 99}
+  - name: text plate
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 372
+      y: 232
+      width: 40
+      height: 15
+    spriteID: ca4f25b7f00c47643a3b6867f5d14c77
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 372, y: 232}
+    spritePosition: {x: 15, y: 46}
+  - name: switch bg
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 44
+      width: 32
+      height: 29
+    spriteID: 90a8818d9a0afaa41a78256d0aa65b51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 44}
+    spritePosition: {x: 19, y: 66}
+  - name: screw 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 332
+      y: 232
+      width: 9
+      height: 9
+    spriteID: 515a0f631264eea47973ed7853bae6ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 332, y: 232}
+    spritePosition: {x: 10, y: 132}
+  - name: screw 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 349
+      y: 232
+      width: 9
+      height: 9
+    spriteID: 28fefa4140c8733468dc4c659535cc24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 349, y: 232}
+    spritePosition: {x: 22, y: 132}
+  - name: screw 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 151
+      width: 9
+      height: 9
+    spriteID: 023c1c657d52b374586fb7ed018f60fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 151}
+    spritePosition: {x: 34, y: 132}
+  - name: screw 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 168
+      width: 9
+      height: 9
+    spriteID: abe7946c2c1a1844a8ce232e8ad68bc4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 168}
+    spritePosition: {x: 46, y: 132}
+  - name: control panel bg
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 332
+      y: 4
+      width: 80
+      height: 180
+    spriteID: 27778338f2b97e44c8cb7cb95829229e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 332, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: bg texture
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 320
+      height: 180
+    spriteID: b16e6e59b7d751a4c9b504f4ace1ef96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: buttons
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: e33381acd983ca541a153a406ac3bed2
+    layerID: 0
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: quit button
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 3e09bfdce895c7143a025a3d306c39ca
+    layerID: -465715421
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: quit button click
+    spriteName: quit button click
+    isGroup: 0
+    parentIndex: 1
+    spriteID: f54f9895c78e46847abcde03136a6f67
+    layerID: -581007187
+    mosaicPosition: {x: 332, y: 192}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: quit button hover
+    spriteName: quit button hover
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 636e1267ad1021340b6a2805b3c652cc
+    layerID: -97412143
+    mosaicPosition: {x: 372, y: 192}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ' quit button normal'
+    spriteName: ' quit button normal'
+    isGroup: 0
+    parentIndex: 1
+    spriteID: d578bfd9c00fdea42af4f529d892f850
+    layerID: -219591010
+    mosaicPosition: {x: 420, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: switches
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: d9402fd576825fb4fa130b11f8975bed
+    layerID: -719706454
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: switch hover
+    spriteName: switch hover
+    isGroup: 0
+    parentIndex: 5
+    spriteID: ac976c651ebca0745b35cbc27da8f39f
+    layerID: 761940544
+    mosaicPosition: {x: 420, y: 81}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: switch normal
+    spriteName: switch normal
+    isGroup: 0
+    parentIndex: 5
+    spriteID: d9e3636b3d501524a8306dc4fd6c1f28
+    layerID: -622358479
+    mosaicPosition: {x: 420, y: 116}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: text plate
+    spriteName: text plate
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ca4f25b7f00c47643a3b6867f5d14c77
+    layerID: -1638793807
+    mosaicPosition: {x: 372, y: 232}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: switch bg
+    spriteName: switch bg
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 90a8818d9a0afaa41a78256d0aa65b51
+    layerID: -932338569
+    mosaicPosition: {x: 420, y: 44}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: screws
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 4cb9bc4ee05acaa49b1842bb822c3621
+    layerID: -953358013
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: screw 1
+    spriteName: screw 1
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 515a0f631264eea47973ed7853bae6ce
+    layerID: 1976696017
+    mosaicPosition: {x: 332, y: 232}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: screw 2
+    spriteName: screw 2
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 28fefa4140c8733468dc4c659535cc24
+    layerID: 1976696016
+    mosaicPosition: {x: 349, y: 232}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: screw 3
+    spriteName: screw 3
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 023c1c657d52b374586fb7ed018f60fe
+    layerID: 1976696015
+    mosaicPosition: {x: 420, y: 151}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: screw 4
+    spriteName: screw 4
+    isGroup: 0
+    parentIndex: 10
+    spriteID: abe7946c2c1a1844a8ce232e8ad68bc4
+    layerID: 1976696022
+    mosaicPosition: {x: 420, y: 168}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: control panel bg
+    spriteName: control panel bg
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 27778338f2b97e44c8cb7cb95829229e
+    layerID: 280528384
+    mosaicPosition: {x: 332, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: bg texture
+    spriteName: bg texture
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b16e6e59b7d751a4c9b504f4ace1ef96
+    layerID: 1770559770
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638457007600831743
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
