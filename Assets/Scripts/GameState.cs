@@ -27,8 +27,13 @@ public class GameState : MonoBehaviour
     public float distanceTraveled = 0;
     [HideInInspector]
     public SceneType scene = SceneType.StartMenu;
-    [HideInInspector]
-    public float playerVerticalSpeed;
+
+    public float PlayerVerticalSpeed
+    {
+        get => _playerVerticalSpeed * GlobalSettings.Current.level.moveSpeedMultiplier;
+        set => _playerVerticalSpeed = value;
+    }
+    float _playerVerticalSpeed;
     [HideInInspector]
     public int latchedEnemyCount = 0;
     [HideInInspector]

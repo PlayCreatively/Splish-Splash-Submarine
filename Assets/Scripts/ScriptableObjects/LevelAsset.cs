@@ -9,6 +9,8 @@ public class LevelAsset : ScriptableObject
     float levelLengthInMinutes = 1;
     [HideInInspector]
     public float LevelLength;
+    [Min(1)]
+    public float moveSpeedMultiplier = 1;
     public SpawningSettings spawningSettings;
 
     private void OnEnable()

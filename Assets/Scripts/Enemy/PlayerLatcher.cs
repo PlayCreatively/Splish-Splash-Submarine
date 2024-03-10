@@ -67,6 +67,6 @@ public class PlayerLatcher : MonoBehaviour
 
     void ApplyLatchingSpeedChanges()
     {
-        GameState.Get.playerVerticalSpeed = Mathf.Lerp(GlobalSettings.Current.player.verticalSpeed, GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1), .5f);
+        GameState.Get.PlayerVerticalSpeed = Mathf.Lerp(GlobalSettings.Current.player.verticalSpeed, GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1), .5f);
     }
 }

@@ -11,7 +11,7 @@ public class PlayerMovementSpriteScroller : MonoBehaviour
 
     float GetScrollSpeed()
     {
-        return GameState.Get.playerVerticalSpeed * 16f;
+        return GameState.Get.PlayerVerticalSpeed * 16f;
     }
 
     void Update()

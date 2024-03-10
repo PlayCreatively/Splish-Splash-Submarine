@@ -13,7 +13,7 @@ public class TravelDistanceTracker : MonoBehaviour
     void Update()
     {
         // Update distance traveled
-        GameState.Get.distanceTraveled += Time.deltaTime * GameState.Get.playerVerticalSpeed;
+        GameState.Get.distanceTraveled += Time.deltaTime * GameState.Get.PlayerVerticalSpeed;
 
         // Check if level is complete
         if (GameState.Get.distanceTraveled >= GlobalSettings.Current.level.LevelLength)

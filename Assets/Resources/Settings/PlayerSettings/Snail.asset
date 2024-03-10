@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a71b3bcf835e24c8c2a8b64a46cc73, type: 3}
   m_Name: Snail
   m_EditorClassIdentifier: 
-  verticalSpeed: 0.3
+  verticalSpeed: 0.2
   horizontalCurve:
     attack: 0
     sustain: 0

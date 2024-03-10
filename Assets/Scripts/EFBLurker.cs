@@ -19,7 +19,7 @@ public class EFBLurker : MonoBehaviour
         maxDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
 
         State.efbDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
-        State.playerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
+        State.PlayerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
         State.latchedEnemyCount = 0;
     }
 
