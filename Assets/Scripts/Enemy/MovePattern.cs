@@ -30,8 +30,7 @@ public class MovePattern : MonoBehaviour
 
         if (Application.isPlaying)
         {
-            child.localPosition = oscillations.Evaluate(timeElapsed);
-            transform.position += Time.deltaTime * GetConstMovementVector();
+            child.localPosition = oscillations.Evaluate(timeElapsed) + timeElapsed * GetConstMovementVector();
         }
         
     }
@@ -66,7 +65,7 @@ public class MovePattern : MonoBehaviour
 
 
         // Only update in editor if selected
-        if (UnityEditor.Selection.activeObject == gameObject)
+        if (!Application.isPlaying && UnityEditor.Selection.activeObject == gameObject)
         {
             timeElapsed %= previewLength;
             child.localPosition = oscillations.Evaluate(timeElapsed) + timeElapsed * GetConstMovementVector();
