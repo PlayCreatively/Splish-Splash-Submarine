@@ -44,16 +44,17 @@ public class Tutorial : MonoBehaviour
 
         yield return new WaitForSeconds(4);
 
-        GameState.Get.level++;
+        GameState.Get.Level++;
         GameManager.RestartScene();
     }
 
     IEnumerator SpawnEnemyRoutine(GameObject enemyPrefab)
     {
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-        
+        var visual = enemy.transform.GetChild(0);
+
         // while enemy not dead
-        while(enemy != null)
+        while(visual != null)
             yield return null;        
     }
 }

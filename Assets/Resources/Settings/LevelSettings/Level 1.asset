@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917a72583186d34c81660b0c81f52de, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  levelLengthInMinutes: 1
-  LevelLength: 8.4
+  levelLengthInMinutes: 1.5
+  LevelLength: 18.9
   spawningSettings:
-    spawnsPerScreenHeight: 4
+    spawnsPerScreenHeight: 7
     spawns:
     - prefab: {fileID: 418859012655280789, guid: 35e488ba7d1fa054ebc794f52d0f9cfe, type: 3}
       likelyhood: 1

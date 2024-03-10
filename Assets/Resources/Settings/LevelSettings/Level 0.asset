@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 0
   m_EditorClassIdentifier: 
   levelLengthInMinutes: 9999
-  LevelLength: 83991.6
+  LevelLength: 125987.41
   spawningSettings:
     spawnsPerScreenHeight: 1
     spawns:

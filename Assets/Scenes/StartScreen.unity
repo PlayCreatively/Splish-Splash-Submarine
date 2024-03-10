@@ -712,9 +712,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663283242}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -887,7 +887,6 @@ MonoBehaviour:
   scene: 0
   playerVerticalSpeed: 0
   latchedEnemyCount: 0
-  efbMoveSpeedOverPlayer: 0
   efbDistanceFromPlayer: 1
 --- !u!4 &1083594480
 Transform:
@@ -1151,7 +1150,6 @@ GameObject:
   - component: {fileID: 1263254991}
   - component: {fileID: 1263254993}
   - component: {fileID: 1263254992}
-  - component: {fileID: 1263254994}
   - component: {fileID: 1263254995}
   m_Layer: 5
   m_Name: CreditScreen
@@ -1221,18 +1219,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263254990}
   m_CullTransparentMesh: 1
---- !u!114 &1263254994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263254990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5fac331af1e2cc4eaec79d11b66ec30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1263254995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,9 +1313,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663283242}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadNextSceneInBuild
+      - m_Target: {fileID: 11400000, guid: c1904d7ef2ea046739c0443fda439e53, type: 2}
+        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1339,14 +1325,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c1904d7ef2ea046739c0443fda439e53, type: 2}
-        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1504,7 +1490,6 @@ GameObject:
   - component: {fileID: 1663283239}
   - component: {fileID: 1663283241}
   - component: {fileID: 1663283240}
-  - component: {fileID: 1663283242}
   - component: {fileID: 1663283243}
   m_Layer: 5
   m_Name: TitleScreen
@@ -1575,18 +1560,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663283238}
   m_CullTransparentMesh: 1
---- !u!114 &1663283242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663283238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5fac331af1e2cc4eaec79d11b66ec30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1663283243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2147,9 +2120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1263254994}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2291,9 +2264,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2128775253}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 11400000, guid: 49c43acd5fd1e2240ba0350336313b47, type: 2}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2364,7 +2337,6 @@ GameObject:
   - component: {fileID: 2128775249}
   - component: {fileID: 2128775251}
   - component: {fileID: 2128775250}
-  - component: {fileID: 2128775253}
   - component: {fileID: 2128775252}
   m_Layer: 5
   m_Name: OptionsScreen
@@ -2443,18 +2415,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5dbef2bf30cfb438e08ce415988011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2128775253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128775248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5fac331af1e2cc4eaec79d11b66ec30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

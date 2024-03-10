@@ -13,11 +13,17 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   levelLengthInMinutes: 2
-  LevelLength: 8.4
+  LevelLength: 25.2
   spawningSettings:
-    spawnsPerScreenHeight: 5
+    spawnsPerScreenHeight: 10
     spawns:
     - prefab: {fileID: 418859012655280789, guid: 35e488ba7d1fa054ebc794f52d0f9cfe, type: 3}
       likelyhood: 1
-    - prefab: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
+    - prefab: {fileID: 7035762626567916201, guid: 8b6acaf05fa2ee5469ec25e037d0f724, type: 3}
+      likelyhood: 1
+    - prefab: {fileID: 7035762626567916201, guid: cabe6ebca11941344a39b93622629ca4, type: 3}
+      likelyhood: 1
+    - prefab: {fileID: 7035762626567916201, guid: 5b55b3a15982f16498cf24abf05ca5a9, type: 3}
+      likelyhood: 1
+    - prefab: {fileID: 7035762626567916201, guid: 1dada49d75f8abc47ad95874e82d1478, type: 3}
       likelyhood: 1

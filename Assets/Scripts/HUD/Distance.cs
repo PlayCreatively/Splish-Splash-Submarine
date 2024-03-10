@@ -29,6 +29,6 @@ public class Distance : MonoBehaviour
         distanceIndicator.localPosition = new Vector3(0, progress * dItopPos, 0);
 
         // Goes at half the speed of the bar
-        preassurePin.localRotation = Quaternion.Euler(0, 0, -315f * (GameState.Get.level - 1 + progress) / 3);
+        preassurePin.localRotation = Quaternion.Euler(0, 0, -315f * (GameState.Get.Level - 1 + progress) / 3);
     }
 }

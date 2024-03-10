@@ -19,7 +19,7 @@ public class TravelDistanceTracker : MonoBehaviour
         if (GameState.Get.distanceTraveled >= GlobalSettings.Current.level.LevelLength)
         {
             GameState.Get.distanceTraveled = GlobalSettings.Current.level.LevelLength;
-            GameState.Get.level++;
+            GameState.Get.Level++;
             OnLevelComplete.Invoke();
             enabled = false;
         }

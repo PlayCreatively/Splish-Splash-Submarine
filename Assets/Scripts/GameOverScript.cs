@@ -6,7 +6,7 @@ public class GameOverScript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
-        GetComponent<Text>().text += " LEVEL " + GameState.Get.level;
+        GetComponent<Text>().text += " LEVEL " + GameState.Get.Level;
     }
 
     void Update()

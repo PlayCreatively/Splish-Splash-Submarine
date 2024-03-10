@@ -44,7 +44,6 @@ public class EFBLurker : MonoBehaviour
         else if(distanceFromPlayer < flickerThreshold)
         {
             float onRatio = distanceFromPlayer / flickerThreshold;
-            Debug.Log(onRatio);
             onRatio = Mathf.Lerp(.3f, 1, onRatio);
             OnApproaching?.Invoke(onRatio);
         }

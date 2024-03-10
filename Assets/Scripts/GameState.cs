@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(-100)]
 public class GameState : MonoBehaviour
 {
     public static GameState Get => _get;
@@ -8,7 +9,16 @@ public class GameState : MonoBehaviour
 
     // Game State Variables //
     [HideInInspector]
-    public int level = 0;
+    public int Level
+    {
+        get => _level;
+        set
+        {
+            _level = value;
+            GlobalSettings.Current.level = Resources.Load<LevelAsset>("Settings/LevelSettings/Level " + value);
+        }
+    }
+    int _level = 0;
     /// <summary>
     /// Normalized level progress
     /// </summary>
@@ -47,23 +57,22 @@ public class GameState : MonoBehaviour
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         this.scene = (SceneType)scene.buildIndex;
-        //Camera.main.rect = new Rect(0, 0, .8f, .8f);
-
+        GameManager.FadeIn();
 
         switch (this.scene)
         {
-            //case SceneType.MainMenu:
-            //    break;
+            case SceneType.StartMenu:
+                Level = 0;
+                break;
             case SceneType.Game:
-                if (level == 0)
+                if (Level == 0)
                 {
                     Tutorial tutorial = Resources.Load<Tutorial>("Settings/LevelSettings/TutorialPrefab");
                     Instantiate(tutorial);
                 } 
-                GlobalSettings.Current.level = Resources.Load<LevelAsset>("Settings/LevelSettings/Level " + level);
                 break;
             case SceneType.Comic:
-                FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(level);
+                FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level);
                 break;
         }
     }
