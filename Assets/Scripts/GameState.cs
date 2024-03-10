@@ -51,6 +51,9 @@ public class GameState : MonoBehaviour
 
         Time.timeScale = GlobalSettings.Current.timeScale;
 
+        // Set the current level to the currently loaded level
+        _level = int.Parse($"{GlobalSettings.Current.level.name[^1]}");
+
         SceneManager.sceneLoaded += OnSceneLoad;
     }
     
