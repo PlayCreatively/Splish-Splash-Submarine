@@ -88,7 +88,10 @@ public class GameState : MonoBehaviour
                 else if(Level > 3)
                 {
                     GameManager.LoadScene(SceneType.StartMenu);
+                    break;
                 }
+                // Assign background according to level
+                GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Backgrounds/Background " + Mathf.Clamp(Level, 1, 3));
                 break;
             case SceneType.Comic:
                     FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level-1);
