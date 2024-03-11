@@ -30,6 +30,7 @@ public class GameState : MonoBehaviour
     [HideInInspector]
     public SceneType scene = SceneType.StartMenu;
 
+    public float PlayerVerticalSpeedUnscaled => _playerVerticalSpeed;
     public float PlayerVerticalSpeed
     {
         get => _playerVerticalSpeed * GlobalSettings.Current.level.moveSpeedMultiplier;

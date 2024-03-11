@@ -9710,7 +9710,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -19546,6 +19546,7 @@ GameObject:
   - component: {fileID: 3769469424818796080}
   - component: {fileID: -5000415510143848852}
   - component: {fileID: 6165952997105868981}
+  - component: {fileID: 267356859450161859}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Player
@@ -19630,13 +19631,49 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3437160882287875938, guid: 1866863b345aae840b5ea4b6c26ff5fe, type: 3}
   onReloaded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2737cee1cbea84079a56e09210951d7c, type: 2}
+        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEmptyMag:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a8669c5399c9e4f85a485c66fc80caf6, type: 2}
+        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onShot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a057903e4ac3d4e1bb883a7f041d3500, type: 2}
+        m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-5000415510143848852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19678,3 +19715,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &267356859450161859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372748033856870707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca157704ff171064bba1a951cb5dec33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

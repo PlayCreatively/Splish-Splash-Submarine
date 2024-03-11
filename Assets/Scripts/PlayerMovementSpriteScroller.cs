@@ -9,16 +9,13 @@ public class PlayerMovementSpriteScroller : MonoBehaviour
         renderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
-    float GetScrollSpeed()
-    {
-        return GameState.Get.PlayerVerticalSpeed * 16f;
-    }
+    float GetPixelsTraveled() => GameState.Get.distanceTraveled * 16f;
 
     void Update()
     {
         foreach (SpriteRenderer sr in renderers)
         {
-            sr.material.SetVector("_Offset", Time.time * GetScrollSpeed() / sr.sprite.texture.height * Vector2.up);
+            sr.material.SetVector("_Offset", GetPixelsTraveled() / sr.sprite.texture.height * Vector2.up);
         }
     }
 }
