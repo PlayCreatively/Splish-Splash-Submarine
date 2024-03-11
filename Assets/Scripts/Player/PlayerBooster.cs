@@ -7,8 +7,8 @@ public class PlayerBooster : MonoBehaviour
     public bool Boosting => boosting;
     bool boosting = false;
 
-    const float speedChangeDuration = .5f;
-    const float boostMultiplier = 6f;
+    const float speedChangeDuration = .25f;
+    const float boostMultiplier = 4f;
     float DefaultSpeed => GlobalSettings.Current.player.verticalSpeed;
 
 
@@ -16,7 +16,7 @@ public class PlayerBooster : MonoBehaviour
     private void Update()
     {
         elapsedSinceCheck += Time.deltaTime;
-        if (elapsedSinceCheck > (boosting ? .1f : 1f))
+        if (boosting || elapsedSinceCheck > .6f)
         {
             Check();
             elapsedSinceCheck = 0;
@@ -32,7 +32,7 @@ public class PlayerBooster : MonoBehaviour
         else 
             closestEnemy = enemies.Select(e => e.transform.position.y).Min();
 
-        bool EnemiesClose = !(closestEnemy == null || closestEnemy > 10f);
+        bool EnemiesClose = !(closestEnemy == null || closestEnemy > 9f);
 
         if (boosting && EnemiesClose)
         {

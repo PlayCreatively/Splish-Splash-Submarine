@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLengthInMinutes: 3
   LevelLength: 25.2
-  moveSpeedMultiplier: 1.75
+  moveSpeedMultiplier: 1.5
   spawningSettings:
     spawnsPerScreenHeight: 6
     spawns:
