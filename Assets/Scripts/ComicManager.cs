@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -40,9 +41,7 @@ public class ComicManager : MonoBehaviour
     {
         if (index < comic.panels.Count)
         {
-            var image = GetComponent<Image>();
-            image.color = Color.white;
-            image.sprite = comic.panels[index];
+            StartCoroutine(LoadPanelRoutine(index));
             onChangePanel.Invoke();
             return true;
         }
@@ -51,5 +50,14 @@ public class ComicManager : MonoBehaviour
             onComicEnd.Invoke();
             return false;
         }
+    }
+
+    IEnumerator LoadPanelRoutine(int index)
+    {
+        yield return GameManager.Fade(.1f, false);
+        var image = GetComponent<Image>();
+        image.color = Color.white;
+        image.sprite = comic.panels[index];
+        yield return GameManager.Fade(.1f, true);
     }
 }
