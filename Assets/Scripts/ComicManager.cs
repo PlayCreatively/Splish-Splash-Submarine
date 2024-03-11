@@ -12,10 +12,13 @@ public class ComicManager : MonoBehaviour
     public UnityEvent onChangePanel;
 
     int panelIndex = 0;
+    Image image;
 
     void Start()
     {
-        if(comic.panels.Count > 0)
+        image = GetComponent<Image>();
+
+        if (comic.panels.Count > 0)
             LoadPanel(panelIndex);
         else
             GameManager.LoadScene(SceneType.Game);
@@ -31,11 +34,45 @@ public class ComicManager : MonoBehaviour
             else
                 GameManager.LoadScene(SceneType.StartMenu);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameManager.LoadScene(SceneType.StartMenu);
-        }
     }
+
+
+
+    public static void InstantiateComicModal(int comicIndex)
+    {
+        GameState.Get.StartCoroutine(ComicModalRoutine(comicIndex));
+    }
+
+    static IEnumerator ComicModalRoutine(int comicIndex)
+    {
+        Time.timeScale = 0;
+        var playerShooterScript =
+        GlobalSettings.Current.player.Ref.GetComponent<Shooter>();
+        playerShooterScript.enabled = false;
+
+        var comicManager = Resources.Load<ComicManager>("Comics/Comic");
+        comicManager = Instantiate(comicManager);
+        comicManager.transform.SetParent(FindAnyObjectByType<Canvas>().transform, false);
+        comicManager.comic = ComicAsset.Load(comicIndex);
+        comicManager.enabled = false;
+        comicManager.Start();
+
+        while (true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                if (comicManager.IsMorePanels())
+                    yield return comicManager.LoadPanelRoutine(++comicManager.panelIndex);
+                else
+                    break;
+                yield return null;
+        }
+
+        Destroy(comicManager.gameObject);
+        playerShooterScript.enabled = true;
+        Time.timeScale = GlobalSettings.Current.timeScale;
+    }
+
+    bool IsMorePanels() => panelIndex+1 < comic.panels.Count;
 
     bool LoadPanel(int index)
     {
@@ -52,12 +89,23 @@ public class ComicManager : MonoBehaviour
         }
     }
 
+    IEnumerator FadePanel(float time, Color color)
+    {
+        Timer fadeTimer = new(time, true);
+        var originalColor = image.color;
+
+        while (!fadeTimer)
+        {
+            image.color = Color.Lerp(originalColor, color, fadeTimer);
+            yield return null;
+        }
+        image.color = color;
+    }
+
     IEnumerator LoadPanelRoutine(int index)
     {
-        yield return GameManager.Fade(.1f, false);
-        var image = GetComponent<Image>();
-        image.color = Color.white;
+        yield return FadePanel(.2f, Color.black);
         image.sprite = comic.panels[index];
-        yield return GameManager.Fade(.1f, true);
+        yield return FadePanel(.2f, Color.white);
     }
 }

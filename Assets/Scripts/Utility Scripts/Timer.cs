@@ -2,23 +2,27 @@
 
 public struct Timer
 {
+    public readonly bool unscaled;
     float startTime, duration;
 
-    public Timer(float duration)
+    public Timer(float duration, bool unscaled = false)
     {
         this.duration = duration;
-        startTime = Time.time;
+        this.unscaled = unscaled;
+        startTime = unscaled ? Time.unscaledTime : Time.time;
     }
 
     public void Start(float duration)
     {
         this.duration = duration;
-        startTime = Time.time;
+        startTime = GetTime;
     }
+
+    readonly float GetTime => unscaled ? Time.unscaledTime : Time.time;
 
     public void Restart()
     {
-        startTime = Time.time;
+        startTime = GetTime;
     }
 
     public void Offset(float duration)
@@ -31,11 +35,11 @@ public struct Timer
         return Mathf.Clamp01(UnClampedNormal / max);
     }
 
-    public readonly bool Finished => Time.time >= startTime + duration;
+    public readonly bool Finished => GetTime >= startTime + duration;
 
     public readonly float Normal => Mathf.Clamp01(UnClampedNormal);
     public readonly float Inverse => 1f - Normal;
-    public readonly float UnClampedNormal => (Time.time - startTime) / duration;
+    public readonly float UnClampedNormal => (GetTime - startTime) / duration;
 
     public static implicit operator bool (Timer timer)
     {

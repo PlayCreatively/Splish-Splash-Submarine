@@ -33,7 +33,7 @@ public class GameManager : ScriptableSingleton<GameManager>
     {
         var fadeImage = GetImage();
         fadeImage.raycastTarget = false;
-        Timer fadeTimer = new (time);
+        Timer fadeTimer = new (time, true);
 
         while (!fadeTimer)
         {
@@ -68,7 +68,7 @@ public class GameManager : ScriptableSingleton<GameManager>
         }
     }
 
-    public const float DEFAULT_FADE_TIME = .1f;
+    public const float DEFAULT_FADE_TIME = .2f;
     public static void FadeOut() => GameState.Get.StartCoroutine(Fade(DEFAULT_FADE_TIME, false));
     public static void FadeIn() => GameState.Get.StartCoroutine(Fade(DEFAULT_FADE_TIME, true));
 

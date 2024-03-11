@@ -43,6 +43,13 @@ public class PlayerLatcher : MonoBehaviour
         GameState.Get.latchedEnemyCount++;
         onLatch?.Invoke();
 
+        // Show latch tutorial comic if this is the first latch
+        if(GameState.Get.hasLatched == false)
+        {
+            GameState.Get.hasLatched = true;
+            ComicManager.InstantiateComicModal(0);
+        }
+
         while (!latchTimer)
             yield return null;
 

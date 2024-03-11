@@ -1489,6 +1489,7 @@ MonoBehaviour:
   scene: 1
   latchedEnemyCount: 0
   efbDistanceFromPlayer: 1
+  hasLatched: 0
 --- !u!4 &550333329
 Transform:
   m_ObjectHideFlags: 0

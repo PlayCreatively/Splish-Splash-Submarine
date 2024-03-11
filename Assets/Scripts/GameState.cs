@@ -40,6 +40,11 @@ public class GameState : MonoBehaviour
     public int latchedEnemyCount = 0;
     [HideInInspector]
     public float efbDistanceFromPlayer  = 1;
+    /// <summary>
+    /// Has the player been latched onto before.
+    /// </summary>
+    [HideInInspector]
+    public bool hasLatched = false;
 
     void Awake()
     {
