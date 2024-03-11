@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLengthInMinutes: 9999
   LevelLength: 125987.41
+  moveSpeedMultiplier: 1
   spawningSettings:
     spawnsPerScreenHeight: 1
     spawns:
     - prefab: {fileID: 418859012655280789, guid: 35e488ba7d1fa054ebc794f52d0f9cfe, type: 3}
+      likelyhood: 1
+    - prefab: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       likelyhood: 1

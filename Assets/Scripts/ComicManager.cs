@@ -35,9 +35,11 @@ public class ComicManager : MonoBehaviour
 
     bool LoadPanel(int index)
     {
-        if (comic.panels.Count > 0 && index < comic.panels.Count)
+        if (index < comic.panels.Count)
         {
-            GetComponent<Image>().sprite = comic.panels[index];
+            var image = GetComponent<Image>();
+            image.color = Color.white;
+            image.sprite = comic.panels[index];
             onChangePanel.Invoke();
             return true;
         }

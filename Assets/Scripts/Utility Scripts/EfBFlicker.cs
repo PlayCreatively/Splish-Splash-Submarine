@@ -24,7 +24,7 @@ public class EfBFlicker : MonoBehaviour
     {
 
         onRatio = 1f - onRatio;
-        if (onRatio < beginFlickerThreshold)
+        if (on && onRatio < beginFlickerThreshold)
             return;
 
         if (frequencyTimer)

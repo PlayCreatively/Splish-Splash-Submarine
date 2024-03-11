@@ -78,6 +78,10 @@ public class GameState : MonoBehaviour
                     Tutorial tutorial = Resources.Load<Tutorial>("Settings/LevelSettings/TutorialPrefab");
                     Instantiate(tutorial);
                 } 
+                else if(Level > 3)
+                {
+                    GameManager.LoadScene(SceneType.StartMenu);
+                }
                 break;
             case SceneType.Comic:
                     FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level-1);

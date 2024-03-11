@@ -37,9 +37,12 @@ public class GameManager : ScriptableSingleton<GameManager>
 
         while (!fadeTimer)
         {
+            // fade audio level
+            AudioListener.volume = fadeIn ? fadeTimer : fadeTimer.Inverse;
             fadeImage.color = new Color(0, 0, 0, fadeIn ? fadeTimer.Inverse : fadeTimer);
             yield return null;
         }
+        AudioListener.volume = fadeIn ? 1 : 0;
         fadeImage.color = new Color(0, 0, 0, fadeIn ? 0 : 1);
     }
 

@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef218cc1bb0ef846ab0241f816f34ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 0.3
+  min: 0.4
   max: 1
   Event: {fileID: 11400000, guid: 2b8b812e0cb06cf4689d356152fe8371, type: 2}
   Response:
