@@ -1487,7 +1487,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceTraveled: 0
   scene: 1
-  playerVerticalSpeed: 0
   latchedEnemyCount: 0
   efbDistanceFromPlayer: 1
 --- !u!4 &550333329
