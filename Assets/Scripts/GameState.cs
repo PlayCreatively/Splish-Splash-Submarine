@@ -15,7 +15,9 @@ public class GameState : MonoBehaviour
         set
         {
             _level = value;
-            GlobalSettings.Current.level = Resources.Load<LevelAsset>("Settings/LevelSettings/Level " + value);
+            var lvl = Resources.Load<LevelAsset>("Settings/LevelSettings/Level " + value);
+            if(lvl != null)
+                GlobalSettings.Current.level = lvl;
         }
     }
     int _level = 0;

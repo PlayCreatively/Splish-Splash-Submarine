@@ -25,7 +25,10 @@ public class ComicManager : MonoBehaviour
         // Switch panel
         if (Input.GetKeyDown(KeyCode.Space) && LoadPanel(++panelIndex) == false)
         {
-            GameManager.LoadScene(SceneType.Game);
+            if(GameState.Get.Level < 3)
+                GameManager.LoadScene(SceneType.Game);
+            else
+                GameManager.LoadScene(SceneType.StartMenu);
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
