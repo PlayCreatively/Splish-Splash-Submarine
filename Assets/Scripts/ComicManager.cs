@@ -14,10 +14,13 @@ public class ComicManager : MonoBehaviour
     int panelIndex = 0;
     Image image;
 
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
+    }
 
+    void Start()
+    {
         if (comic.panels.Count > 0)
             LoadPanel(panelIndex);
         else
@@ -54,8 +57,12 @@ public class ComicManager : MonoBehaviour
         comicManager = Instantiate(comicManager);
         comicManager.transform.SetParent(FindAnyObjectByType<Canvas>().transform, false);
         comicManager.comic = ComicAsset.Load(comicIndex);
+        comicManager.image.sprite = comicManager.comic.panels[0];
         comicManager.enabled = false;
-        comicManager.Start();
+
+        Color clearColor = new (1,1,1,0);
+        comicManager.image.color = clearColor;
+        yield return comicManager.FadePanel(.1f, Color.white);
 
         while (true)
         {
@@ -64,8 +71,10 @@ public class ComicManager : MonoBehaviour
                     yield return comicManager.LoadPanelRoutine(++comicManager.panelIndex);
                 else
                     break;
-                yield return null;
+            yield return null;
         }
+
+        yield return comicManager.FadePanel(.2f, clearColor);
 
         Destroy(comicManager.gameObject);
         playerShooterScript.enabled = true;
@@ -104,8 +113,8 @@ public class ComicManager : MonoBehaviour
 
     IEnumerator LoadPanelRoutine(int index)
     {
-        yield return FadePanel(.2f, Color.black);
+        yield return FadePanel(.1f, Color.black);
         image.sprite = comic.panels[index];
-        yield return FadePanel(.2f, Color.white);
+        yield return FadePanel(.1f, Color.white);
     }
 }
