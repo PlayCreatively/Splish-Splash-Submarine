@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Comic -1
   m_EditorClassIdentifier: 
   panels:
-  - {fileID: 21300000, guid: 4527e2dfe5abac54b9a545b3fe71327d, type: 3}
-  - {fileID: 21300000, guid: 22f3c294b6f77df4a9f944b92b9c400b, type: 3}
-  - {fileID: 21300000, guid: efd0308a6f2c7a44790656da5f6bfccc, type: 3}
-  - {fileID: 21300000, guid: df5dfb646cad606418f8488e8e3cee83, type: 3}
-  - {fileID: 21300000, guid: 7105fba0364e68a4293c7c277f261c23, type: 3}
-  - {fileID: 21300000, guid: c853c8d263c461f48bb01fa4603b12ec, type: 3}
+  - sprite: {fileID: 21300000, guid: 4527e2dfe5abac54b9a545b3fe71327d, type: 3}
+    music: {fileID: 8300000, guid: e3d1d47a85bc34c2ea7647e795133c03, type: 3}
+  - sprite: {fileID: 21300000, guid: 22f3c294b6f77df4a9f944b92b9c400b, type: 3}
+    music: {fileID: 8300000, guid: 4bf595385b97c4de4a0e466218b9e45a, type: 3}
+  - sprite: {fileID: 21300000, guid: efd0308a6f2c7a44790656da5f6bfccc, type: 3}
+    music: {fileID: 8300000, guid: c6e81f8fc9961469487fd227deac2cf2, type: 3}
+  - sprite: {fileID: 21300000, guid: df5dfb646cad606418f8488e8e3cee83, type: 3}
+    music: {fileID: 8300000, guid: 7f7ab8685699442169d210496c45f5ba, type: 3}
+  - sprite: {fileID: 21300000, guid: 7105fba0364e68a4293c7c277f261c23, type: 3}
+    music: {fileID: 8300000, guid: d5e4a1c9a35c64f5c99d8d3818ab3a7f, type: 3}
+  - sprite: {fileID: 21300000, guid: c853c8d263c461f48bb01fa4603b12ec, type: 3}
+    music: {fileID: 8300000, guid: 520a7372a18314f548726c6c6b741538, type: 3}

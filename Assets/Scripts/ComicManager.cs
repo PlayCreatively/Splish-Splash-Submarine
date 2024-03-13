@@ -13,10 +13,13 @@ public class ComicManager : MonoBehaviour
 
     int panelIndex = 0;
     Image image;
+    AudioSource audioSource;
 
     void Awake()
     {
         image = GetComponent<Image>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.loop = true;
     }
 
     void Start()
@@ -57,11 +60,13 @@ public class ComicManager : MonoBehaviour
         comicManager = Instantiate(comicManager);
         comicManager.transform.SetParent(FindAnyObjectByType<Canvas>().transform, false);
         comicManager.comic = ComicAsset.Load(comicIndex);
-        comicManager.image.sprite = comicManager.comic.panels[0];
+        comicManager.image.sprite = comicManager.comic.panels[0].sprite;
         comicManager.enabled = false;
 
         Color clearColor = new (1,1,1,0);
         comicManager.image.color = clearColor;
+
+        AudioListener.volume = .5f;
         yield return comicManager.FadePanel(.1f, Color.white);
 
         while (true)
@@ -74,6 +79,7 @@ public class ComicManager : MonoBehaviour
             yield return null;
         }
 
+        AudioListener.volume = .5f;
         yield return comicManager.FadePanel(.2f, clearColor);
 
         Destroy(comicManager.gameObject);
@@ -87,6 +93,12 @@ public class ComicManager : MonoBehaviour
     {
         if (index < comic.panels.Count)
         {
+            if(comic.panels[index].music != null)
+            {
+                audioSource.clip = comic.panels[index].music;
+                audioSource.Play();
+            }
+
             StartCoroutine(LoadPanelRoutine(index));
             onChangePanel.Invoke();
             return true;
@@ -111,10 +123,25 @@ public class ComicManager : MonoBehaviour
         image.color = color;
     }
 
+    IEnumerator FadePanel(float time, bool fadeIn)
+    {
+        Timer fadeTimer = new(time, true);
+
+        while (!fadeTimer)
+        {
+            image.color = Color.Lerp(Color.black, Color.white, fadeIn ? fadeTimer : fadeTimer.Inverse);
+            audioSource.volume = fadeIn ? fadeTimer : fadeTimer.Inverse;
+            yield return null;
+        }
+        image.color = fadeIn ? Color.white : Color.black;
+        audioSource.volume = fadeIn ? 1 : 0;
+
+    }
+
     IEnumerator LoadPanelRoutine(int index)
     {
-        yield return FadePanel(.1f, Color.black);
-        image.sprite = comic.panels[index];
-        yield return FadePanel(.1f, Color.white);
+        yield return FadePanel(.2f, false);
+        image.sprite = comic.panels[index].sprite;
+        yield return FadePanel(.2f, true);
     }
 }

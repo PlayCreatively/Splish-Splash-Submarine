@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Comic 2
   m_EditorClassIdentifier: 
   panels:
-  - {fileID: 21300000, guid: 835c831ca53ffb64fbb561b2ebb7cb52, type: 3}
-  - {fileID: 21300000, guid: 82388c25067fe1947a997303c41549b7, type: 3}
+  - sprite: {fileID: 21300000, guid: 835c831ca53ffb64fbb561b2ebb7cb52, type: 3}
+    music: {fileID: 8300000, guid: 62bbe6cf1262341dbb5c3587fe31dc4e, type: 3}
+  - sprite: {fileID: 21300000, guid: 82388c25067fe1947a997303c41549b7, type: 3}
+    music: {fileID: 8300000, guid: 8405530a90e214668974df76f628930f, type: 3}

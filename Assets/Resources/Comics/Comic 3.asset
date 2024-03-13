@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Comic 3
   m_EditorClassIdentifier: 
   panels:
-  - {fileID: 21300000, guid: 7a5dea6602af30747ae1e5e5ecc84586, type: 3}
-  - {fileID: 21300000, guid: 66b1d4aa80729294297bc428b12f281d, type: 3}
-  - {fileID: 21300000, guid: 1982bd45e64fbc748baa4dbc83015267, type: 3}
-  - {fileID: 21300000, guid: 51349568c45355c4e8df21556a4ea72a, type: 3}
+  - sprite: {fileID: 21300000, guid: 7a5dea6602af30747ae1e5e5ecc84586, type: 3}
+    music: {fileID: 8300000, guid: 5b097bcf0093d4f8ba62b509119d3976, type: 3}
+  - sprite: {fileID: 21300000, guid: 66b1d4aa80729294297bc428b12f281d, type: 3}
+    music: {fileID: 8300000, guid: 89067b1d3437f4a648d6c11532fd6a26, type: 3}
+  - sprite: {fileID: 21300000, guid: 1982bd45e64fbc748baa4dbc83015267, type: 3}
+    music: {fileID: 8300000, guid: b84f06bdaa7614e7ea0f34dcd393e1e5, type: 3}
+  - sprite: {fileID: 21300000, guid: 51349568c45355c4e8df21556a4ea72a, type: 3}
+    music: {fileID: 8300000, guid: 2474349abf870497c987333b06b9bd18, type: 3}
