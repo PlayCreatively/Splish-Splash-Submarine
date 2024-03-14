@@ -69,6 +69,13 @@ public class GameState : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoad;
     }
+
+    void OpenCredits()
+    {
+        Transform canvas = FindAnyObjectByType<Canvas>().transform;
+        canvas.Find("TitleScreen").gameObject.SetActive(false);
+        canvas.Find("CreditScreen").gameObject.SetActive(true);
+    }
     
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
@@ -78,6 +85,10 @@ public class GameState : MonoBehaviour
         switch (this.scene)
         {
             case SceneType.StartMenu:
+                // If the game has been completed, show the credits
+                if(Level > 3)
+                    OpenCredits();
+                // Reset level
                 Level = 0;
                 break;
             case SceneType.Game:
@@ -86,6 +97,7 @@ public class GameState : MonoBehaviour
                     Tutorial tutorial = Resources.Load<Tutorial>("Settings/LevelSettings/TutorialPrefab");
                     Instantiate(tutorial);
                 } 
+                // Game completed
                 else if(Level > 3)
                 {
                     GameManager.LoadScene(SceneType.StartMenu);
