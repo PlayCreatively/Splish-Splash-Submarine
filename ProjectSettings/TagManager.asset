@@ -51,3 +51,6 @@ TagManager:
   - name: HUD
     uniqueID: 3168181191
     locked: 0
+  - name: comic hud
+    uniqueID: 3307172977
+    locked: 0
