@@ -268,8 +268,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Product Owner/VFX: Sebastian Gustafsson\n\nProkject Manager/SFX: Aleksandra
-    Pavlova-Verevkina\n\nProgramming:  Alexander Freyr \xDEorgeirsson, Joel Segersam\n\nGraphics:
+  m_Text: "<color=#FF6B2B>Product Owner/VFX:</color> Sebastian Gustafsson\n\n<color=#FF6B2B>Project
+    Manager/SFX: </color>Aleksandra Pavlova-Verevkina\n\n<color=#FF6B2B>Programming:</color> 
+    Alexander Freyr \xDEorgeirsson, Joel Segersam\n\n<color=#FF6B2B>Graphics:</color>
     Anne Tombrock, Johanna Phetladda M\xE4kel\xE4, Yelyzaveta Arkusha"
 --- !u!222 &26032767
 CanvasRenderer:
@@ -876,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33333334, g: 0.45882353, b: 0.40392157, a: 1}
+  m_Color: {r: 0.33333334, g: 0.45882356, b: 0.40784317, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
