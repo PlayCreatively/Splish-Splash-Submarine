@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class GameManager : ScriptableSingleton<GameManager>
 {
-    
+    public static void LoadLevel(int index)
+    {
+        GameState.Get.Level = index;
+        StartCoroutine(LoadSceneRoutine(1));
+    }
+
     public static void LoadScene(int index)
     {
         StartCoroutine(LoadSceneRoutine(index));
