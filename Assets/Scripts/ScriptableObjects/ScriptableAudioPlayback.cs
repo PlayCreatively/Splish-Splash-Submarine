@@ -10,25 +10,26 @@ public class ScriptableAudioPlayback : ScriptableObject
     public AudioClip clip;
 
     [Range(-50, 0)]
-    public float dbVolume = 0;
+    [SerializeField]
+    private float dbVolume = 0;
+    public float DbVolume
+    {
+        get { return dbVolume; }
+        set
+        {
+            Debug.Log("Setting volume to " + value);
+            dbVolume = value;
+            // convert db to linear
+            volume = Mathf.Pow(10, dbVolume / 20);
+        }
+    }
     [Range(MIN_PITCH, 3)]
     public float pitch = 1;
     float volume = 1;
+    AudioSource loopingAudioSource;
     
     [Range(0f, .5f)]
     public float randomPitchVariance = .1f;
-
-    void OnValidate()
-    {
-        // convert db to linear
-        volume = Mathf.Pow(10, dbVolume / 20);
-    }
-
-    void OnEnable()
-    {
-        OnValidate();
-    }
-
     public void Play()
     {
         var temp = new GameObject("temp_audio_"+name);
@@ -41,6 +42,31 @@ public class ScriptableAudioPlayback : ScriptableObject
         audioSource.Play();
         Destroy(temp, clip.length / audioSource.pitch);
     }
-
-   
+    public void Loop()
+    {
+        ApplyLoopVolume();
+        var temp = new GameObject("temp_audio_" + name);
+        loopingAudioSource = temp.AddComponent<AudioSource>();
+        loopingAudioSource.outputAudioMixerGroup = mixerGroup;
+        loopingAudioSource.clip = clip;
+        loopingAudioSource.pitch = pitch + Random.Range(-randomPitchVariance, randomPitchVariance);
+        loopingAudioSource.pitch = Mathf.Max(MIN_PITCH, loopingAudioSource.pitch);
+        loopingAudioSource.volume = volume;
+        loopingAudioSource.loop = true;
+        loopingAudioSource.Play();
+    }
+    public void Stop()
+    {
+        loopingAudioSource.Stop();
+        Destroy(loopingAudioSource.gameObject);
+    }
+    public void UpdateLoopVolume()
+    {
+        GlobalSettings.Current.musicVolume = volume;
+        loopingAudioSource.volume = volume;
+    }
+    private void ApplyLoopVolume()
+    {
+        volume = GlobalSettings.Current.musicVolume;
+    }
 }

@@ -11,6 +11,7 @@ public class ModeSettings : ScriptableObject
     public EnemyFromBehindSettings enemyFromBehind;
     public RadarSettings radar;
     public ShootingSettings shooting;
-
-    
+    public AudioSettings audio; 
+    [Range(0, 1)]
+    public float musicVolume = 1; 
 }

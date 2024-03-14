@@ -7,7 +7,7 @@ public class TitleScreenMusic : MonoBehaviour
     private AudioSource audioSource;
     public GameObject creditsMenu;
 
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
