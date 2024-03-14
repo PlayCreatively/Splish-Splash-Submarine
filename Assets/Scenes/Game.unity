@@ -436,17 +436,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174209975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1054705961}
+  m_Father: {fileID: 1838390278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143.1, y: 66.2}
-  m_SizeDelta: {x: 41.9881, y: 13.0284}
+  m_AnchorMin: {x: 0.062261276, y: 0.22200002}
+  m_AnchorMax: {x: 0.9714286, y: 0.92300004}
+  m_AnchoredPosition: {x: -0.07499981, y: -0.025000095}
+  m_SizeDelta: {x: -0.8499999, y: 0.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174209977
 MonoBehaviour:
@@ -475,11 +475,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 40
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_Alignment: 5
+    m_AlignByGeometry: 1
+    m_RichText: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 100m
 --- !u!222 &174209978
@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceTraveled: 0
   scene: 1
+  latchedEnemyCount: 0
   efbDistanceFromPlayer: 1
   hasLatched: 0
 --- !u!4 &550333329
@@ -2122,7 +2123,6 @@ RectTransform:
   m_Children:
   - {fileID: 2010915238}
   - {fileID: 1686742334}
-  - {fileID: 174209976}
   - {fileID: 876654079}
   - {fileID: 869007330}
   m_Father: {fileID: 0}
@@ -3420,14 +3420,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 174209976}
   m_Father: {fileID: 339481019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -10.6, y: -8.9}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10, y: 75}
   m_SizeDelta: {x: 35, y: 13}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838390279
 MonoBehaviour:
   m_ObjectHideFlags: 0
