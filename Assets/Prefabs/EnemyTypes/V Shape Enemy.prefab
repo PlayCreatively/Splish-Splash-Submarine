@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 32a592e14af46124cb946f1d485fcd40, type: 3}
     - target: {fileID: 2354896243213820597, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_Name
-      value: blob enemy 1
+      value: V Shape Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4654118863749535942, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: previewLength
@@ -106,11 +106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1661983
+      value: 1.6455095
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21993113
+      value: 0.39893663
       objectReference: {fileID: 0}
     - target: {fileID: 7939722483443238647, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9057798184906943073, guid: 857444b1afb4f9946b8505b6f38482a7, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
