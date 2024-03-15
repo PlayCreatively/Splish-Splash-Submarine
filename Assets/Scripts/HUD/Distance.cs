@@ -6,29 +6,27 @@ public class Distance : MonoBehaviour
 {
     const int targetInMeters = 100;
     public Text distanceText;
-    public Transform distanceIndicator;
     public Transform preassurePin;
+    public RectTransform distanceBar;
 
-    float dItopPos;
+    float maxHeight;
 
     void Start()
     {
-        transform.localScale = new Vector3(1, 0, 1);
-
-        dItopPos = distanceIndicator.localPosition.y;
+        maxHeight = distanceBar.rect.height;
     }
 
     void Update()
     {
         float progress = GameState.Get.LevelProgress;
+        int lastLevel = GameState.Get.Level - 1;
 
-        transform.localScale = new Vector3(1, progress, 1);
+        distanceBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, progress * maxHeight);
 
-        distanceText.text = (Math.Floor(progress) * targetInMeters + targetInMeters).ToString() + "m";
+        distanceText.text = (Step(progress * targetInMeters + lastLevel * targetInMeters, 5)).ToString() + "m";
 
-        distanceIndicator.localPosition = new Vector3(0, progress * dItopPos, 0);
-
-        // Goes at half the speed of the bar
-        preassurePin.localRotation = Quaternion.Euler(0, 0, -315f * (GameState.Get.Level - 1 + progress) / 3);
+        preassurePin.localRotation = Quaternion.Euler(0, 0, -265f * (lastLevel + progress) / 3);
     }
+
+    int Step(float value, int step) => (int)(value / step) * step;
 }
