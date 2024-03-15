@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Image))]
 public class ComicManager : MonoBehaviour
@@ -14,12 +15,14 @@ public class ComicManager : MonoBehaviour
     int panelIndex = 0;
     Image image;
     AudioSource audioSource;
+    [SerializeField] AudioMixerGroup musicVolumeGroup;
 
     void Awake()
     {
         image = GetComponent<Image>();
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
+        audioSource.outputAudioMixerGroup = musicVolumeGroup;
     }
 
     void Start()

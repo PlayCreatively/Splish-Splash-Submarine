@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e83659a0c204914f983a8f6e2aced9b, type: 3}
   m_Name: FishDetaching
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
+  mixerGroup: {fileID: -139484552567922167, guid: 8488b8a369a99694baba696f5b52bc1c, type: 2}
   clip: {fileID: 8300000, guid: 8687707817b794dbfbdd1a4924fbd9fc, type: 3}
   dbVolume: 0
   pitch: 0.85

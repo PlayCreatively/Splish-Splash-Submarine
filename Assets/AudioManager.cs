@@ -1,25 +1,25 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour
 {
-    [Range(0f, 1f)]
     [SerializeField]
-    private float volume;
-    public float Volume
-    {
-        get { return volume; }
-        set
-        {
-            volume = value;
-            GlobalSettings.Current.musicVolume = volume;
-            OnVolumeChanged.Invoke(volume);
-        }
-    }
-    public UnityEvent<float> OnVolumeChanged;
+    private AudioMixer audioMixer;
 
-    void Awake()
+    public void SetVolume(float volume)
     {
-        Volume = GlobalSettings.Current.musicVolume;
+        audioMixer.SetFloat("MasterVolume", volume);
     }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("MusicVolume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFXVolume", volume);
+    }
+
 }

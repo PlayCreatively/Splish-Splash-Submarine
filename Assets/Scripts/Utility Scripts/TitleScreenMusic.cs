@@ -7,9 +7,8 @@ public class TitleScreenMusic : MonoBehaviour
     private AudioSource audioSource;
     public GameObject creditsMenu;
 
-    void Awake()
+    void Start()
     {
-        GlobalSettings.Current.musicVolume = 1;
         audioSource = GetComponent<AudioSource>();
     }
 
