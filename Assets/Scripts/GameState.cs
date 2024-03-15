@@ -58,6 +58,7 @@ public class GameState : MonoBehaviour
     public bool hasLatched = true;
     [HideInInspector]
     public Action<int> OnPlayerLatchChange;
+    public Action OnLevelComplete;
 
     void Awake()
     {
@@ -119,6 +120,7 @@ public class GameState : MonoBehaviour
                 }
                 // Assign background according to level
                 GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Backgrounds/Background " + Mathf.Clamp(Level, 1, 3));
+                OnLevelComplete = null;
                 break;
             case SceneType.Comic:
                     FindAnyObjectByType<ComicManager>().comic = ComicAsset.Load(Level-1);
