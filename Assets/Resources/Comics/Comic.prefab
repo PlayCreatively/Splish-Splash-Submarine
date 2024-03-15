@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1380935584238497308}
   - component: {fileID: 7899036405031397976}
   - component: {fileID: 921902039833869934}
+  - component: {fileID: 4797002443934371706}
   m_Layer: 5
   m_Name: Comic
   m_TagString: Untagged
@@ -107,4 +108,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  defaultBehaviour: 1
+--- !u!114 &4797002443934371706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957595673727927154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c9403f3867d2e4f88958646092ff47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}

@@ -9,6 +9,7 @@ public class TitleScreenMusic : MonoBehaviour
 
     void Awake()
     {
+        GlobalSettings.Current.musicVolume = 1;
         audioSource = GetComponent<AudioSource>();
     }
 

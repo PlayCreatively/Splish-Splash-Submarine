@@ -5269,7 +5269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e8ed36cf6a134ab02a7c9ca7417a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0
+  volume: 1
   OnVolumeChanged:
     m_PersistentCalls:
       m_Calls: []

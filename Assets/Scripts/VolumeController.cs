@@ -4,15 +4,18 @@ using UnityEngine.Events;
 
 public class VolumeController : MonoBehaviour
 {
+    private AudioManager audioManager;
     private AudioSource audioSource;
-    public AudioManager audioManager;
     void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.volume = GlobalSettings.Current.musicVolume;
         audioManager.OnVolumeChanged.AddListener(UpdateVolume);
     }
-
+    void Start()
+    {
+        UpdateVolume(audioManager.Volume);
+    }
     void UpdateVolume(float newVolume)
     {
         audioSource.volume = newVolume;

@@ -20,6 +20,6 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        volume = GlobalSettings.Current.musicVolume;
+        Volume = GlobalSettings.Current.musicVolume;
     }
 }
