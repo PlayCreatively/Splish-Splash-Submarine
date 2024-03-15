@@ -39,9 +39,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8300000, guid: b442459d84272e449852ec77390b4476, type: 3}
+      - m_Target: {fileID: 11400000, guid: bcd91d9116b626a4db362703b234ccbb, type: 2}
         m_TargetAssemblyTypeName: ScriptableAudioPlayback, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
