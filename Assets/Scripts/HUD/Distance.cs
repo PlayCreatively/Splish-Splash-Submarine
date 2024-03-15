@@ -23,7 +23,7 @@ public class Distance : MonoBehaviour
         }
 
         maxHeight = distanceBar.rect.height;
-        distanceText.text = ((int)(GlobalSettings.Current.level.LevelLength * 10)).ToString() + "m";
+        distanceText.text = Step(GlobalSettings.Current.level.LevelLength * 10, 10).ToString() + "m";
 
     }
 
