@@ -51,6 +51,15 @@ public class GameManager : ScriptableSingleton<GameManager>
         fadeImage.color = new Color(0, 0, 0, fadeIn ? 0 : 1);
     }
 
+    public static void SmallShakeCamera()
+    {
+        Camera.main.GetComponent<Shaker>().StartShakeRoutine(.2f, 10);
+    }
+    public static void ShakeCamera()
+    {
+        Camera.main.GetComponent<Shaker>().StartShakeRoutine(.2f, 25);
+    }
+
     static Image GetImage()
     {
         var canvas = FindAnyObjectByType<Canvas>();
