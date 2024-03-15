@@ -18,7 +18,17 @@ public class PlayerLatcher : MonoBehaviour
     void Start()
     {
         player = GlobalSettings.Current.player.Ref.transform;
-        GameState.Get.OnLevelComplete += () => Destroy(transform.parent.gameObject);
+        GameState.Get.OnLevelComplete += Destroy;
+    }
+
+    void Destroy()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        GameState.Get.OnLevelComplete -= Destroy;
     }
 
     void Update()
