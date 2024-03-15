@@ -40,7 +40,7 @@ public class PlayerLatcher : MonoBehaviour
         ApplyLatchingSpeedChanges();
         Timer latchTimer = new(latchDuration);
 
-        GameState.Get.latchedEnemyCount++;
+        GameState.Get.LatchedEnemyCount++;
         onLatch?.Invoke();
 
         // Show latch tutorial comic if this is the first latch
@@ -53,7 +53,7 @@ public class PlayerLatcher : MonoBehaviour
         while (!latchTimer)
             yield return null;
 
-        GameState.Get.latchedEnemyCount--;
+        GameState.Get.LatchedEnemyCount--;
         onRelease?.Invoke();
 
         ApplyLatchingSpeedChanges();
@@ -74,6 +74,6 @@ public class PlayerLatcher : MonoBehaviour
 
     void ApplyLatchingSpeedChanges()
     {
-        GameState.Get.PlayerVerticalSpeed = Mathf.Lerp(GlobalSettings.Current.player.verticalSpeed, GlobalSettings.Current.player.verticalSpeed / (GameState.Get.latchedEnemyCount + 1), .5f);
+        GameState.Get.PlayerVerticalSpeed = Mathf.Lerp(GlobalSettings.Current.player.verticalSpeed, GlobalSettings.Current.player.verticalSpeed / (GameState.Get.LatchedEnemyCount + 1), .5f);
     }
 }

@@ -40,7 +40,7 @@ public class PlayerBooster : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(SpeedChangeRoutine(DefaultSpeed));
         }
-        else if(!boosting && GameState.Get.latchedEnemyCount == 0 && !EnemiesClose)
+        else if(!boosting && GameState.Get.LatchedEnemyCount == 0 && !EnemiesClose)
         {
             boosting = true;
             StopAllCoroutines();

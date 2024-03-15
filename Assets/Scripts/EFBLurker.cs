@@ -20,7 +20,7 @@ public class EFBLurker : MonoBehaviour
 
         State.efbDistanceFromPlayer = GlobalSettings.Current.enemyFromBehind.maxDistanceFromPlayer;
         State.PlayerVerticalSpeed = GlobalSettings.Current.player.verticalSpeed;
-        State.latchedEnemyCount = 0;
+        State.LatchedEnemyCount = 0;
     }
 
     void Update()
@@ -28,8 +28,8 @@ public class EFBLurker : MonoBehaviour
         distanceFromPlayer = State.efbDistanceFromPlayer;
 
         // Update distance to player
-        float VerticalDelta = State.latchedEnemyCount > 0
-            ? State.latchedEnemyCount
+        float VerticalDelta = State.LatchedEnemyCount > 0
+            ? State.LatchedEnemyCount
             : -GlobalSettings.Current.enemyFromBehind.detractingSpeedRatio;
 
         distanceFromPlayer -= VerticalDelta * Time.deltaTime;

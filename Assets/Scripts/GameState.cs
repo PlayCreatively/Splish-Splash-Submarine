@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,7 +39,16 @@ public class GameState : MonoBehaviour
     }
     float _playerVerticalSpeed;
     [HideInInspector]
-    public int latchedEnemyCount = 0;
+    public int LatchedEnemyCount
+    {
+        get => _latchedEnemyCount;
+        set
+        {
+            _latchedEnemyCount = value;
+            OnPlayerLatchChange?.Invoke(value);
+        }
+    }
+    int _latchedEnemyCount = 0;
     [HideInInspector]
     public float efbDistanceFromPlayer  = 1;
     /// <summary>
@@ -46,6 +56,8 @@ public class GameState : MonoBehaviour
     /// </summary>
     [HideInInspector]
     public bool hasLatched = true;
+    [HideInInspector]
+    public Action<int> OnPlayerLatchChange;
 
     void Awake()
     {
