@@ -45,7 +45,7 @@ public class GameState : MonoBehaviour
     /// Has the player been latched onto before.
     /// </summary>
     [HideInInspector]
-    public bool hasLatched = false;
+    public bool hasLatched = true;
 
     void Awake()
     {
@@ -62,6 +62,7 @@ public class GameState : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
+        hasLatched = true;
         Time.timeScale = GlobalSettings.Current.timeScale;
 
         // Set the current level to the currently loaded level
@@ -94,6 +95,7 @@ public class GameState : MonoBehaviour
             case SceneType.Game:
                 if (Level == 0)
                 {
+                    hasLatched = false;
                     Tutorial tutorial = Resources.Load<Tutorial>("Settings/LevelSettings/TutorialPrefab");
                     Instantiate(tutorial);
                 } 
