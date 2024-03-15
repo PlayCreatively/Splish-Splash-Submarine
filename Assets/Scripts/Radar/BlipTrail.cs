@@ -13,10 +13,14 @@ public class BlipTrail : MonoBehaviour
         BlipTrails = GetComponents<LocalTrailRenderer>();
         for (int i = 0; i < 2; i++)
         {
-            BlipTrails[i].emitting = false;
+            BlipTrails[i].emitting = true;
+            BlipTrails[i].trail.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+
+            var color = BlipTrails[i].Color;
+            color.a = 0f;
+            BlipTrails[i].Color = color;
         }
 
-        OnBlip();
     }
 
     public void OnBlip()
@@ -28,8 +32,8 @@ public class BlipTrail : MonoBehaviour
     IEnumerator StartTrail(LocalTrailRenderer trailRend)
     {
         trailRend.emitting = false;
-        trailRend.trail.sortingLayerName = "Default";
-        trailRend.trail.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+        //trailRend.trail.sortingLayerName = "Default";
+        //trailRend.trail.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
 
         Timer timer = new(GlobalSettings.Current.radar.scanSpeed);
         Color color = trailRend.Color;
