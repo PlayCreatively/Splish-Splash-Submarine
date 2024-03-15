@@ -13,7 +13,18 @@ public class Distance : MonoBehaviour
 
     void Start()
     {
+        // is tutorial
+        if (GameState.Get.Level == 0) 
+        {
+            distanceText.text = "0m";
+            //preassurePin.localRotation = Quaternion.Euler(0, 0, 0);
+            distanceBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
+            enabled = false;
+            return;
+        }
+
         maxHeight = distanceBar.rect.height;
+
     }
 
     void Update()
