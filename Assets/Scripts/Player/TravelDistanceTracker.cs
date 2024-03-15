@@ -8,6 +8,13 @@ public class TravelDistanceTracker : MonoBehaviour
     void Start()
     {
         GameState.Get.distanceTraveled = 0;
+
+        // is tutorial
+        if(GameState.Get.Level == 0)
+        {
+            enabled = false;
+            return;
+        }
     }
 
     void Update()
