@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchSprites : MonoBehaviour
 {
@@ -6,11 +7,11 @@ public class SwitchSprites : MonoBehaviour
 
     void Start()
     {
-        originalSprite = GetComponent<SpriteRenderer>().sprite;
+        originalSprite = GetComponent<Image>().sprite;
     }
     public void ChangeTo(Sprite sprite)
     {
-        GetComponent<SpriteRenderer>().sprite = sprite;
+        GetComponent<Image>().sprite = sprite;
     }
     public void ChangeToIf(Sprite sprite, bool condition)
     {
@@ -19,7 +20,7 @@ public class SwitchSprites : MonoBehaviour
     }
     public void Default()
     {
-        GetComponent<SpriteRenderer>().sprite = originalSprite;
+        GetComponent<Image>().sprite = originalSprite;
     }
 
     // public Sprite[] Sprites;
