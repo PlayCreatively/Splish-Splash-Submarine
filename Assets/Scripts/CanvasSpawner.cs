@@ -35,7 +35,8 @@ public class CanvasSpawner : MonoBehaviour
             {
                 i = Random.Range(0, i + 1);
                 i = Random.Range(0, 2) == 0 ? i : -i;
-                Instantiate(movePattern, transform.position + new Vector3(margin * i, 0), Quaternion.identity);
+                var instance = Instantiate(movePattern, transform.position + new Vector3(margin * i, 0), Quaternion.identity);
+                instance.transform.GetChild(0).localPosition = Vector3.zero;
                 return;
             }
         }
