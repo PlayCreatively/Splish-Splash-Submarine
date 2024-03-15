@@ -15,6 +15,15 @@ public class GameManager : ScriptableSingleton<GameManager>
     {
         StartCoroutine(LoadSceneRoutine(index));
     }
+
+    /// <summary>
+    /// Increments the level and loads the next comic
+    /// </summary>
+    public static void CompleteLevel()
+    {
+        GameState.Get.Level++;
+        StartCoroutine(LoadSceneRoutine(2));
+    }
     
     public static void LoadScene(SceneType type)
     {

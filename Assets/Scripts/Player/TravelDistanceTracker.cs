@@ -26,7 +26,6 @@ public class TravelDistanceTracker : MonoBehaviour
         if (GameState.Get.distanceTraveled >= GlobalSettings.Current.level.LevelLength)
         {
             GameState.Get.distanceTraveled = GlobalSettings.Current.level.LevelLength;
-            GameState.Get.Level++;
             GameState.Get.OnLevelComplete?.Invoke();
             FindAnyObjectByType<CanvasSpawner>().gameObject.SetActive(false);
             OnLevelComplete.Invoke();
