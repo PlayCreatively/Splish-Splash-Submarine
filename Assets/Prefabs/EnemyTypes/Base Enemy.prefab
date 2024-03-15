@@ -4950,6 +4950,18 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5303727220844384674}
+        m_TargetAssemblyTypeName: EnemyVFX, Assembly-CSharp
+        m_MethodName: PlayDeathVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4189023037277894226}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: DestroyRoot
@@ -5034,6 +5046,7 @@ GameObject:
   - component: {fileID: 2169180696372056494}
   - component: {fileID: 9057798184906943073}
   - component: {fileID: 6984493157884421312}
+  - component: {fileID: 5303727220844384674}
   m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
@@ -5050,7 +5063,7 @@ Transform:
   m_GameObject: {fileID: 4982864365773053542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3856966, y: 0.747296, z: 0}
+  m_LocalPosition: {x: 2.4291263, y: 0.5910539, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5201,3 +5214,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5303727220844384674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982864365773053542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13147073127d146a9da71b5a12bde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 5700644315087262437, guid: 58974170eb95faf4eabd90db98c8664d, type: 3}
