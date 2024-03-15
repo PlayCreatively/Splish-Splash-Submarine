@@ -17,13 +17,13 @@ public class Distance : MonoBehaviour
         if (GameState.Get.Level == 0) 
         {
             distanceText.text = "0m";
-            //preassurePin.localRotation = Quaternion.Euler(0, 0, 0);
             distanceBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
             enabled = false;
             return;
         }
 
         maxHeight = distanceBar.rect.height;
+        distanceText.text = ((int)(GlobalSettings.Current.level.LevelLength * 10)).ToString() + "m";
 
     }
 
@@ -34,7 +34,6 @@ public class Distance : MonoBehaviour
 
         distanceBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, progress * maxHeight);
 
-        distanceText.text = (Step(progress * targetInMeters + lastLevel * targetInMeters, 5)).ToString() + "m";
 
         preassurePin.localRotation = Quaternion.Euler(0, 0, -265f * (lastLevel + progress) / 3);
     }
