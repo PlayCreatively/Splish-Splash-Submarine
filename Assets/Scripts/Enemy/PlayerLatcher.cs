@@ -46,7 +46,6 @@ public class PlayerLatcher : MonoBehaviour
         yield return StartCoroutine(InterpolateRoutine(player.position, 12f));
 
         transform.parent = player.GetChild(0).GetChild(0);
-        transform.localPosition = new Vector3(0, -1, 10);
 
         ApplyLatchingSpeedChanges();
         Timer latchTimer = new(latchDuration);
