@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2155de47bde6de449b1168755213b97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialSprites:
+  - {fileID: 21300000, guid: 43eb9c950f1744349950b75203753de6, type: 3}
+  - {fileID: 21300000, guid: d473b63053493d643ab414d5d3449d9e, type: 3}
+  - {fileID: 21300000, guid: 7daf86e83ceaecf4c87470e866ae8205, type: 3}

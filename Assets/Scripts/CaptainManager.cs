@@ -4,10 +4,16 @@ using UnityEngine.UI;
 public class CaptainManager : MonoBehaviour
 {
     //SwitchText switchText;
-    public Text captainText;
+    public Image captainSpeech;
 
-    public void Say(string line)
+    //public void Say(string line)
+    //{
+    //    captainText.text = line;
+    //}
+
+    public void Say(Sprite sprite)
     {
-        captainText.text = line;
+        captainSpeech.rectTransform.sizeDelta = new Vector2(sprite.texture.width, sprite.texture.height);
+        captainSpeech.sprite = sprite;
     }
 }
