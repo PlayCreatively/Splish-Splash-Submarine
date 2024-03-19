@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
     CaptainManager captainManager;
     Transform spawnPoint;
+    [SerializeField]
+    List<Sprite> tutorialSprites;
 
     IEnumerator Start()
     {
@@ -12,10 +15,10 @@ public class Tutorial : MonoBehaviour
         spawnPoint.gameObject.SetActive(false);
 
         captainManager = FindAnyObjectByType<CaptainManager>();
-        captainManager.captainText.transform.parent.gameObject.SetActive(true);
-        
+        captainManager.captainSpeech.transform.parent.gameObject.SetActive(true);
+
         // Showcase movemement //
-        captainManager.Say("Move with left and right arrow keys");
+        captainManager.Say(tutorialSprites[0]);
 
         static bool isMoving() => Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) ||
                                   Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow);
@@ -25,7 +28,7 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(3);
         
         // Showcase shooting //
-        captainManager.Say("Shoot with spacebar or up arrow");
+        captainManager.Say(tutorialSprites[1]);
         
         static bool isShooting() => Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ||
                                     Input.GetKeyDown(KeyCode.Space);
@@ -35,7 +38,7 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         // spawn enemies section //
-        captainManager.Say("Enemies...");
+        captainManager.Say(tutorialSprites[2]);
         SpawningSettings spawningSettings = GlobalSettings.Current.level.spawningSettings;
         foreach (var spawn in spawningSettings.spawns)
         {
