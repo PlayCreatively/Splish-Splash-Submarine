@@ -42,6 +42,7 @@ public class PlayerLatcher : MonoBehaviour
         Destroy(transform.parent.gameObject);
         transform.parent = null;
         enabled = false;
+        GetComponentInChildren<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
         yield return StartCoroutine(InterpolateRoutine(player.position, 12f));
 
