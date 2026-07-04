@@ -1,8 +1,6 @@
 # Splish Splash Submarine
 
-![Visual representation of the truth](splish_splash.png)
-
-# GlobalSettings
+## GlobalSettings
 
 - SPAWNER
   - spawning frequency
